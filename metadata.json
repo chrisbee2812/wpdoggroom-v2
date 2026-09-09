@@ -1,0 +1,7 @@
+{
+  "name": "West Park Dog Grooming",
+  "description": "West Park Dog Grooming salon in Leeds (LS16) featuring a pet transformation gallery, transparent pricing packages in GBP (£), client FAQs, grooming terms, and a custom consultation inquiry form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
