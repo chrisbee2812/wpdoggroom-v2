@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
-  Scissors,
+  Droplets,
   Sparkles,
   Heart,
   ShieldCheck,
@@ -15,8 +15,11 @@ import {
   HelpCircle,
   FileText,
   Mail,
-  Camera
+  Camera,
+  Info,
+  Waves
 } from 'lucide-react';
+import { GOOD_TO_KNOW } from '../data/pricing';
 
 export const HomePage: React.FC = () => {
   return (
@@ -34,58 +37,64 @@ export const HomePage: React.FC = () => {
             >
               {/* Quality Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#2A4736]" />
-                <span>Cage-Free • 1-on-1 Private Appointments</span>
+                <Droplets className="w-3.5 h-3.5 text-[#2A4736]" />
+                <span>Private Home-Based Garden Studio • West Park, Leeds</span>
               </div>
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-title font-bold text-stone-900 tracking-tight leading-[1.15]">
-                Calm, Gentle Grooming Tailored to Your Dog.
+                WEST PARK DOG SPA
               </h1>
 
-              {/* Subheading */}
+              {/* Tagline */}
+              <div className="text-lg sm:text-xl font-serif-title font-medium text-[#2A4736]">
+                Specialist Bathing • Skin & Coat Care • Spa Treatments
+              </div>
+
+              {/* Subheading / Core Description */}
               <p className="text-base sm:text-lg text-stone-600 font-sans max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Welcome to West Park Dog Grooming. We provide a peaceful, fear-free sanctuary where every pet receives dedicated one-on-one attention, organic botanical spa washes, and master hand-scissoring.
+                A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We specialise in short-haired breeds, professional bathing, deshedding and specialist skin & coat care, alongside luxury spa treatments using carefully selected professional products.
               </p>
 
               {/* Key Service Highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                   <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                  <span>Fear-Free Handling</span>
+                  <span>Short-Haired Specialists</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                   <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                  <span>100% Organic Products</span>
+                  <span>Deshed Bath & Blow-Out</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                   <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                  <span>No Cage Dryers</span>
+                  <span>Japanese & Korean Spas</span>
                 </div>
               </div>
 
-              {/* Primary Call to Action buttons linking to separate pages */}
+              {/* Primary Call to Action buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
                 <Link
-                  to="/gallery"
-                  className="w-full sm:w-auto px-7 py-3.5 bg-[#2A4736] hover:bg-[#1a3325] text-white rounded-full font-semibold text-sm transition-all shadow-sm flex items-center justify-center gap-2"
+                  to="/pricing"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-[#2A4736] hover:bg-[#1a3325] text-white rounded-full font-semibold text-sm transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Scissors className="w-4 h-4" />
-                  View Transformation Gallery
+                  <Droplets className="w-4 h-4" />
+                  View Spa Menu & Pricing
                 </Link>
 
                 <Link
-                  to="/pricing"
-                  className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 rounded-full font-semibold text-sm transition-all shadow-2xs flex items-center justify-center gap-2"
+                  to="/gallery"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 rounded-full font-semibold text-sm transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  View Pricing & Services
+                  <Sparkles className="w-4 h-4 text-amber-600" />
+                  View Spa Transformations
                 </Link>
               </div>
 
-              {/* Notice regarding consultation model */}
+              {/* Good to know summary */}
               <div className="pt-1">
                 <p className="text-xs text-stone-500 italic max-w-xl mx-auto lg:mx-0">
-                  * We operate on a personalized consultation & inquiry model rather than generic automated booking, guaranteeing dedicated attention and accurate timing for every coat.
+                  * Good to know: We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All appointments are 1-on-1 private sessions.
                 </p>
               </div>
             </motion.div>
@@ -100,8 +109,8 @@ export const HomePage: React.FC = () => {
               <div className="relative mx-auto max-w-md lg:max-w-none group">
                 <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-4/5 bg-stone-100">
                   <img
-                    src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1000&q=80"
-                    alt="Happy freshly groomed dog receiving gentle care"
+                    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80"
+                    alt="Pampered dog enjoying specialist bathing treatment"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="eager"
                   />
@@ -112,10 +121,10 @@ export const HomePage: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-[10px] font-bold uppercase tracking-wider text-[#2A4736] block">
-                          West Park Studio
+                          Dedicated Garden Studio
                         </span>
                         <h4 className="font-serif-title font-bold text-stone-900 text-base">
-                          Private 1-on-1 Sessions
+                          West Park, Leeds
                         </h4>
                       </div>
                       <Link
@@ -129,13 +138,13 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Floating Credential Chip */}
-                <div className="absolute -top-4 -left-4 bg-white px-4 py-2.5 rounded-2xl shadow-lg border border-stone-200/80 items-center gap-2.5 hidden sm:flex">
+                <div className="absolute -top-4 -left-4 bg-white px-4 py-2.5 rounded-2xl shadow-lg border border-stone-200/80 flex items-center gap-2.5 sm:flex">
                   <div className="w-8 h-8 rounded-full bg-[#EBF1ED] flex items-center justify-center text-[#2A4736]">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-bold text-stone-900">Fear-Free Certified</div>
-                    <div className="text-[10px] text-stone-500">Low-stress techniques</div>
+                    <div className="text-[11px] font-bold text-stone-900">Product Safety First</div>
+                    <div className="text-[10px] text-stone-500">Reviewed ingredients</div>
                   </div>
                 </div>
               </div>
@@ -144,7 +153,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Salon Pillars */}
+      {/* Spa Pillars */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -154,10 +163,10 @@ export const HomePage: React.FC = () => {
           className="text-center max-w-2xl mx-auto mb-10"
         >
           <span className="text-xs font-bold uppercase tracking-wider text-[#2A4736]">
-            The West Park Standard
+            Our Core Specialty
           </span>
           <h2 className="text-3xl font-serif-title font-bold text-stone-900 mt-1">
-            Why Pet Parents Choose Our Studio
+            Why Choose West Park Dog Spa
           </h2>
         </motion.div>
 
@@ -171,13 +180,13 @@ export const HomePage: React.FC = () => {
             className="bg-white p-7 rounded-2xl border border-stone-200/90 shadow-sm space-y-3"
           >
             <div className="w-12 h-12 rounded-xl bg-[#EBF1ED] text-[#2A4736] flex items-center justify-center">
-              <Heart className="w-6 h-6" />
+              <Droplets className="w-6 h-6" />
             </div>
             <h3 className="font-serif-title font-bold text-xl text-stone-900">
-              1-on-1 Gentle Care
+              Short-Coat & Deshedding Experts
             </h3>
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              We never juggle multiple pets simultaneously. Your dog enjoys uninterrupted personal attention in a quiet, cage-free boutique environment.
+            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+              We specialise in short-haired breeds and smooth coats. Our Deshed Bath & Blow-Out evacuates dead undercoat, releases trapped dander, and restores skin breathability.
             </p>
           </motion.div>
 
@@ -190,13 +199,13 @@ export const HomePage: React.FC = () => {
             className="bg-white p-7 rounded-2xl border border-stone-200/90 shadow-sm space-y-3"
           >
             <div className="w-12 h-12 rounded-xl bg-[#EBF1ED] text-[#2A4736] flex items-center justify-center">
-              <Scissors className="w-6 h-6" />
+              <Sparkles className="w-6 h-6" />
             </div>
             <h3 className="font-serif-title font-bold text-xl text-stone-900">
-              Bespoke Breed Styling
+              Specialist Luxury Spa Treatments
             </h3>
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              Whether you want a signature round Asian-fusion teddy head, breed-standard schnauzer profile, or easy summer comb-out, we tailor every groom.
+            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+              From Japanese Marshmallow Foam and Thalassotherapy Sea Mud to Korean Carbonated Baths and Cloud Coat silk conditioning, we elevate bathing into true restorative skin care.
             </p>
           </motion.div>
 
@@ -212,12 +221,47 @@ export const HomePage: React.FC = () => {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="font-serif-title font-bold text-xl text-stone-900">
-              Comfort Over Vanity
+              Product Safety & Garden Studio Calm
             </h3>
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              We strictly pledge never to pull painfully on matted hair or force an anxious dog. Animal wellness, dignity, and trust always take top priority.
+            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+              Before introducing products into our spa, we review ingredients, manufacturer guidance and intended use. Treatments are selected with the individual dog and coat in mind.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Prominent Good To Know Callout */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#EBF1ED]/80 rounded-3xl p-8 sm:p-10 border border-[#2A4736]/20">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-[#2A4736] text-white flex items-center justify-center shrink-0">
+              <Info className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2A4736]">
+                Clear Standards
+              </span>
+              <h3 className="text-2xl font-serif-title font-bold text-stone-900">
+                Good to know
+              </h3>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-stone-700">
+            {GOOD_TO_KNOW.points.map((pt, i) => (
+              <div key={i} className="bg-white p-5 rounded-2xl border border-[#2A4736]/15 shadow-2xs space-y-2">
+                <div className="flex items-center gap-2 text-stone-900 font-bold text-sm">
+                  <span className="w-5 h-5 rounded-full bg-[#EBF1ED] text-[#2A4736] flex items-center justify-center text-xs">
+                    {i + 1}
+                  </span>
+                  <span>{pt.title}</span>
+                </div>
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+                  {pt.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -238,7 +282,7 @@ export const HomePage: React.FC = () => {
               Explore Our Dedicated Pages
             </h2>
             <p className="text-stone-600 text-xs sm:text-sm mt-2">
-              Browse our separate sections to view transformations, inspect size-tiered pricing, read policies, and submit an inquiry.
+              Browse our separate sections to view transformations, inspect size-tiered pricing, read policies, and submit a consultation inquiry.
             </p>
           </motion.div>
 
@@ -260,10 +304,10 @@ export const HomePage: React.FC = () => {
                     <Camera className="w-6 h-6" />
                   </div>
                   <h3 className="font-serif-title font-bold text-xl text-stone-900 group-hover:text-[#2A4736] transition-colors">
-                    Transformation Gallery
+                    Spa Transformations Gallery
                   </h3>
                   <p className="text-xs text-stone-600 mt-2 leading-relaxed">
-                    View interactive Before & After split-sliders showing curls, de-shedding, matted coat relief, and breed scissoring.
+                    View interactive Before & After split-sliders showing short coat revivals, deshedding blow-out results, and therapeutic sea mud & foam baths.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#2A4736]">
@@ -287,13 +331,13 @@ export const HomePage: React.FC = () => {
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#EBF1ED] text-[#2A4736] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Sparkles className="w-6 h-6" />
+                    <Droplets className="w-6 h-6" />
                   </div>
                   <h3 className="font-serif-title font-bold text-xl text-stone-900 group-hover:text-[#2A4736] transition-colors">
-                    Pricing & Services
+                    Spa Packages & Pricing
                   </h3>
                   <p className="text-xs text-stone-600 mt-2 leading-relaxed">
-                    Interactive dog size calculator, 4 core packages (Bath & Dry, Custom Groom, De-Shed, Puppy), and a la carte spa treatments.
+                    Interactive size calculator for Bath & Blow-Dry, Signature Experiences (Short-Coat Spa, Ultimate Spa), and specialist upgrades.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#2A4736]">
@@ -323,7 +367,7 @@ export const HomePage: React.FC = () => {
                     Frequently Asked Questions
                   </h3>
                   <p className="text-xs text-stone-600 mt-2 leading-relaxed">
-                    Searchable client answers for vaccinations, grooming frequency, nervous pets, puppy prep, and appointment timing.
+                    Answers on short-coat care, product safety, ingredient screening, starting rates, vaccinations, and our calm garden studio setting.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#2A4736]">
@@ -333,7 +377,7 @@ export const HomePage: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Page 4: Terms & Conditions */}
+            {/* Page 4: Terms & Policies */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -353,7 +397,7 @@ export const HomePage: React.FC = () => {
                     Terms & Policies
                   </h3>
                   <p className="text-xs text-stone-600 mt-2 leading-relaxed">
-                    Transparent guidelines regarding our humane matting pledge, 48-hour cancellation policy, and health requirements.
+                    Transparent guidelines regarding product safety review, 48-hour cancellation policy, starting rates, and 1-on-1 studio standards.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#2A4736]">
@@ -381,14 +425,14 @@ export const HomePage: React.FC = () => {
                     <Mail className="w-6 h-6" />
                   </div>
                   <h3 className="font-serif-title font-bold text-xl text-stone-900 group-hover:text-[#2A4736] transition-colors">
-                    Contact & Consultation Inquiries
+                    Consultation & Inquiries
                   </h3>
                   <p className="text-xs text-stone-600 mt-2 leading-relaxed">
-                    Fill out our customized dog inquiry form with breed, coat details, and temperament notes. View studio map, opening hours, and phone contact.
+                    Fill out our tailored spa inquiry form with breed, coat details, and temperament notes. View studio contact info, phone, and opening hours.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#2A4736]">
-                  <span>Open Contact & Inquiry Page</span>
+                  <span>Open Consultation & Inquiry Page</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -397,7 +441,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Salon Location & Hours Summary */}
+      {/* Garden Studio Location & Hours Summary */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -408,13 +452,13 @@ export const HomePage: React.FC = () => {
         >
           <div className="space-y-3 text-center md:text-left max-w-xl">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-300">
-              West Park, Leeds Studio Location
+              Dedicated Garden Studio • West Park, Leeds
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif-title font-bold text-white">
-              Ready to schedule your dog's consultation?
+              Ready to book your dog's spa experience?
             </h2>
             <p className="text-stone-200 text-xs sm:text-sm leading-relaxed">
-              Located at 72 Latchmere View, Leeds LS16 5DT. Open Monday through Saturday. All visits are scheduled by advance consultation to maintain a tranquil, calm environment.
+              Situated in a quiet West Park garden setting. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All visits are scheduled by advance consultation to preserve our calm, tranquil environment.
             </p>
           </div>
 
@@ -430,7 +474,7 @@ export const HomePage: React.FC = () => {
               to="/contact"
               className="px-8 py-3.5 bg-white hover:bg-stone-100 text-[#2A4736] font-bold text-xs sm:text-sm rounded-full transition-all shadow-md"
             >
-              Submit Styling Inquiry
+              Submit Spa Inquiry
             </Link>
           </div>
         </motion.div>

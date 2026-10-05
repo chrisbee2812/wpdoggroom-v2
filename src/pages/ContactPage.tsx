@@ -1,17 +1,8 @@
-declare module 'react/jsx-runtime';
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      [elemName: string]: any;
-    }
-  }
-}
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { InquiryForm } from '../components/InquiryForm';
-import { ChevronRight, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { ChevronRight, Droplets, Phone, MapPin, Clock } from 'lucide-react';
 import { DogSize } from '../types';
 
 interface LocationState {
@@ -34,7 +25,7 @@ export const ContactPage: React.FC = () => {
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-stone-400" />
-          <span className="font-semibold text-stone-900">Contact & Styling Inquiries</span>
+          <span className="font-semibold text-stone-900">Spa Consultation & Inquiries</span>
         </div>
 
         <motion.div
@@ -45,14 +36,14 @@ export const ContactPage: React.FC = () => {
         >
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider">
-              <Mail className="w-3.5 h-3.5" />
-              Direct Salon Consultation
+              <Droplets className="w-3.5 h-3.5" />
+              1-on-1 Garden Studio Consultation
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900">
-              Contact & Styling Inquiry
+              Spa Inquiries & Consultation
             </h1>
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-              We review every inquiry individually so we can schedule the optimal amount of time and pair your pup with the ideal styling care.
+            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans">
+              A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We review every inquiry individually so we can schedule the optimal amount of time and pair your dog with the ideal coat & skin treatments.
             </p>
           </div>
 

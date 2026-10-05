@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { TRANSFORMATION_GALLERY } from '../data/transformations';
 import { TransformationItem } from '../types';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
-import { Sparkles, Clock, Scissors, Info, ArrowUpRight, CheckCircle2, X } from 'lucide-react';
+import { Sparkles, Clock, Droplets, Info, ArrowUpRight, CheckCircle2, X, Waves, Heart } from 'lucide-react';
 
 interface TransformationGalleryProps {
   onSelectForInquiry?: (dog: TransformationItem) => void;
@@ -16,11 +16,10 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
 
   const categories = [
     { id: 'all', label: 'All Transformations' },
-    { id: 'doodle', label: 'Doodles & Curly' },
-    { id: 'double-coat', label: 'Double Coats & De-Shed' },
-    { id: 'styling', label: 'Breed Scissoring' },
-    { id: 'small-breed', label: 'Small Breeds' },
-    { id: 'senior-rescue', label: 'Senior & Gentle Care' }
+    { id: 'short-coat', label: 'Short-Haired Breeds' },
+    { id: 'deshed', label: 'Deshed & Undercoat' },
+    { id: 'spa-treatment', label: 'Specialist Spa Treatments' },
+    { id: 'deep-clean', label: 'Deep Clean Clarification' }
   ];
 
   const filteredItems = selectedCategory === 'all'
@@ -28,7 +27,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
     : TRANSFORMATION_GALLERY.filter(item => item.category === selectedCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-[#F3EFEA]/60 border-t border-b border-[#E8E2D9]">
+    <section id="gallery" className="py-16 lg:py-20 bg-[#F3EFEA]/60 border-t border-b border-[#E8E2D9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -37,10 +36,10 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
             Real Studio Results
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900 tracking-tight">
-            Pet Transformations Gallery
+            Dog Spa Transformations Gallery
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 font-sans leading-relaxed">
-            Every coat has a story. Explore our before-and-after transformations showcasing gentle de-matting, breed standard scissoring, deep undercoat restoration, and calming puppy resets.
+            See how our specialist bathing, deshedding blow-outs, and luxury spa treatments revitalize short-haired coats, soothe sensitive skin, and impart incredible high-gloss shine.
           </p>
         </div>
 
@@ -51,7 +50,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
               key={cat.id}
               type="button"
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
                 selectedCategory === cat.id
                   ? 'bg-[#2A4736] text-white shadow-sm ring-2 ring-[#2A4736]/20'
                   : 'bg-white text-stone-600 hover:bg-stone-100 hover:text-stone-900 border border-stone-200'
@@ -95,14 +94,14 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                         {item.breed} • <span className="text-stone-500">{item.age}</span>
                       </p>
                     </div>
-                    <span className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                    <span className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200">
                       {item.packageUsed}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-4 text-xs text-stone-500 mb-4 pb-3 border-b border-stone-100">
                     <span className="flex items-center gap-1">
-                      <Scissors className="w-3.5 h-3.5 text-stone-400" />
+                      <Droplets className="w-3.5 h-3.5 text-stone-400" />
                       {item.service}
                     </span>
                     <span className="flex items-center gap-1">
@@ -114,11 +113,11 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                   {/* Descriptions */}
                   <div className="space-y-2 text-xs mb-4">
                     <div className="p-2.5 rounded-lg bg-stone-50 border border-stone-100">
-                      <span className="font-semibold text-stone-700 block mb-0.5">Before condition:</span>
+                      <span className="font-semibold text-stone-700 block mb-0.5">Before arrival:</span>
                       <p className="text-stone-600 line-clamp-2">{item.beforeDescription}</p>
                     </div>
                     <div className="p-2.5 rounded-lg bg-[#EBF1ED]/70 border border-[#2A4736]/10">
-                      <span className="font-semibold text-[#1F372A] block mb-0.5">Transformation result:</span>
+                      <span className="font-semibold text-[#1F372A] block mb-0.5">Spa outcome:</span>
                       <p className="text-[#2A4736] line-clamp-2">{item.afterDescription}</p>
                     </div>
                   </div>
@@ -132,7 +131,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                     className="inline-flex items-center gap-1 text-xs font-semibold text-stone-700 hover:text-[#2A4736] transition-colors py-1.5 px-2 rounded hover:bg-stone-50 cursor-pointer"
                   >
                     <Info className="w-3.5 h-3.5" />
-                    Stylist notes
+                    Spa notes
                   </button>
 
                   <button
@@ -147,7 +146,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                     }}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-[#2A4736] hover:text-[#183123] bg-[#EBF1ED] hover:bg-[#dfebe3] px-3 py-1.5 rounded-full transition-colors cursor-pointer"
                   >
-                    Inquire for this look
+                    Inquire for this treatment
                     <ArrowUpRight className="w-3 h-3" />
                   </button>
                 </div>
@@ -160,14 +159,14 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
         <div className="mt-12 bg-white rounded-2xl p-6 border border-stone-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#EBF1ED] flex items-center justify-center shrink-0 text-[#2A4736]">
-              <Scissors className="w-6 h-6" />
+              <Droplets className="w-6 h-6" />
             </div>
             <div>
               <h4 className="font-serif-title font-bold text-lg text-stone-900">
-                Looking for a specific breed clip or style?
+                Focused on Short-Coat Health & Restorative Spa Care
               </h4>
               <p className="text-sm text-stone-600">
-                Bring reference photos or tell us your lifestyle preferences. We customize every single clip for comfort, weather, and personality.
+                We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. Every treatment is tailored to the individual dog and coat.
               </p>
             </div>
           </div>
@@ -175,7 +174,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
             to="/contact"
             className="shrink-0 px-5 py-2.5 bg-[#2A4736] hover:bg-[#1f3629] text-white rounded-full text-sm font-semibold transition-colors shadow-sm"
           >
-            Start Styling Inquiry
+            Start Spa Inquiry
           </Link>
         </div>
       </div>
@@ -187,7 +186,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
             <div className="p-6 border-b border-stone-100 flex items-center justify-between sticky top-0 bg-white z-10">
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-[#2A4736]">
-                  Styling Case Study
+                  Spa Case Study
                 </div>
                 <h3 className="text-2xl font-serif-title font-bold text-stone-900">
                   {activeModalItem.dogName} • {activeModalItem.breed}
@@ -196,7 +195,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
               <button
                 type="button"
                 onClick={() => setActiveModalItem(null)}
-                className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 transition-colors"
+                className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
@@ -225,7 +224,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                   <div className="font-semibold text-stone-900 text-sm mt-0.5">{activeModalItem.packageUsed}</div>
                 </div>
                 <div className="bg-stone-50 p-3 rounded-xl border border-stone-100">
-                  <span className="text-[11px] text-stone-500 uppercase font-medium">Category</span>
+                  <span className="text-[11px] text-stone-500 uppercase font-medium">Focus</span>
                   <div className="font-semibold text-stone-900 text-sm mt-0.5">{activeModalItem.categoryLabel}</div>
                 </div>
               </div>
@@ -234,22 +233,22 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                 <div>
                   <h5 className="text-sm font-bold text-stone-900 mb-1 flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#2A4736]" />
-                    Before & After Evaluation
+                    Arrival vs. Post-Spa Assessment
                   </h5>
                   <div className="grid sm:grid-cols-2 gap-3 text-xs">
                     <div className="p-3 rounded-lg bg-stone-50 text-stone-700 border border-stone-200">
-                      <strong className="block text-stone-900 mb-1">Arrival Assessment:</strong>
+                      <strong className="block text-stone-900 mb-1">Arrival Condition:</strong>
                       {activeModalItem.beforeDescription}
                     </div>
                     <div className="p-3 rounded-lg bg-[#EBF1ED] text-[#1F372A] border border-[#2A4736]/20">
-                      <strong className="block text-[#1F372A] mb-1">Grooming Outcome:</strong>
+                      <strong className="block text-[#1F372A] mb-1">Post-Spa Transformation:</strong>
                       {activeModalItem.afterDescription}
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-amber-950 text-xs leading-relaxed">
-                  <strong className="block font-bold text-amber-900 mb-1">Lead Stylist Notes & Handling Technique:</strong>
+                <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 text-xs leading-relaxed">
+                  <strong className="block font-bold text-emerald-900 mb-1">Spa Specialist Notes & Product Review:</strong>
                   {activeModalItem.groomerNotes}
                 </div>
               </div>
@@ -259,7 +258,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
               <button
                 type="button"
                 onClick={() => setActiveModalItem(null)}
-                className="px-4 py-2 rounded-lg border border-stone-300 text-stone-700 text-xs font-medium hover:bg-stone-100"
+                className="px-4 py-2 rounded-lg border border-stone-300 text-stone-700 text-xs font-medium hover:bg-stone-100 cursor-pointer"
               >
                 Close
               </button>
@@ -275,7 +274,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-5 py-2 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs font-semibold transition-colors"
+                className="px-5 py-2 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs font-semibold transition-colors cursor-pointer"
               >
                 Inquire For Similar Breed
               </button>

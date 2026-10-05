@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Scissors, Menu, X, Phone, Sparkles } from 'lucide-react';
+import { Sparkles, Menu, X, Phone, Droplets } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,9 +17,9 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Transformations', path: '/gallery' },
-    { name: 'Pricing Packages', path: '/pricing' },
+    { name: 'Spa Packages & Pricing', path: '/pricing' },
     { name: 'FAQ', path: '/faq' },
-    { name: 'Terms & Policies', path: '/terms' },
+    { name: 'Spa Policies', path: '/terms' },
     { name: 'Contact & Inquiry', path: '/contact' }
   ];
 
@@ -31,12 +31,12 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="font-medium text-[11px] sm:text-xs">
-              West Park, Leeds • 1-on-1 Gentle Grooming Consultations Open
+              West Park, Leeds • Dedicated Garden Studio • Specialist Bathing & Spa Treatments
             </span>
           </div>
 
           <div className="hidden sm:flex items-center gap-4 text-[11px] text-stone-300">
-            <span>Hours: Mon–Sat 8:30 am – 5:00 pm</span>
+            <span>Short-Haired Breeds & Deshedding Specialists</span>
             <span>•</span>
             <a href="tel:01133208492" className="hover:text-white flex items-center gap-1 font-semibold">
               <Phone className="w-3 h-3" /> 0113 320 8492
@@ -56,17 +56,23 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2.5 group cursor-pointer">
-            <div className="w-10 h-10 rounded-xl bg-[#2A4736] text-white flex items-center justify-center shadow-xs group-hover:bg-[#1f3629] transition-colors">
-              <Scissors className="w-5 h-5 text-stone-100" />
+            <div className="w-20 h-20 md:w-30 md:h-30 flex items-center justify-center">
+              <img
+                src="/wpds-logo-sm.png"
+                alt="Pampered dog enjoying specialist bathing treatment"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                loading="eager"
+              />
+              {/* <Droplets className="w-5 h-5 text-emerald-300" /> */}
             </div>
-            <div>
+            {/* <div>
               <span className="font-serif-title text-lg sm:text-xl font-bold tracking-tight text-stone-900 block leading-tight">
                 West Park
               </span>
               <span className="text-[10px] tracking-widest uppercase font-semibold text-[#2A4736] block">
-                Dog Grooming
+                Dog Spa
               </span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -77,10 +83,10 @@ export const Navbar: React.FC = () => {
                 to={link.path}
                 end={link.path === '/'}
                 className={({ isActive }) =>
-                  `text-xs lg:text-sm font-medium px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+                  `text-xs lg:text-base font-medium px-2.5 py-1 rounded-full transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[#2A4736] text-white shadow-2xs font-semibold'
-                      : 'text-stone-700 hover:text-[#2A4736] hover:bg-stone-100'
+                      : 'text-stone-400 hover:text-[#2A4736] hover:bg-stone-200'
                   }`
                 }
               >
@@ -95,8 +101,8 @@ export const Navbar: React.FC = () => {
               to="/contact"
               className="px-5 py-2.5 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs lg:text-sm font-semibold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              Book an Inquiry
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              Book Spa Consultation
             </Link>
           </div>
 
@@ -137,7 +143,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3 text-center block rounded-xl bg-[#2A4736] text-white font-semibold text-sm shadow-xs cursor-pointer"
               >
-                Send Styling Inquiry
+                Book Spa Consultation
               </Link>
             </div>
           </div>

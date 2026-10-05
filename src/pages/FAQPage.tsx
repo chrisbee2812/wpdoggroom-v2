@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { FAQSection } from '../components/FAQSection';
-import { ChevronRight, HelpCircle } from 'lucide-react';
+import { ChevronRight, HelpCircle, Droplets } from 'lucide-react';
 
 export const FAQPage: React.FC = () => {
   return (
@@ -25,14 +25,14 @@ export const FAQPage: React.FC = () => {
         >
           <div className="space-y-2 max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider">
-              <HelpCircle className="w-3.5 h-3.5" />
-              Client Resource Center
+              <Droplets className="w-3.5 h-3.5" />
+              West Park Dog Spa Knowledge Base
             </div>
             <h1 className="text-3xl sm:text-4xl font-serif-title font-bold text-stone-900">
               Frequently Asked Questions
             </h1>
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-              Find clear answers regarding vaccination rules, session timing, anxious or elderly dogs, humane matting care, and our consultation model.
+            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans">
+              Learn about our specialist bathing, deshedding blow-outs, product safety review, starting rates, and dedicated 1-on-1 garden studio setting.
             </p>
           </div>
 

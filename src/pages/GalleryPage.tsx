@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { TransformationGallery } from '../components/TransformationGallery';
 import { TransformationItem } from '../types';
-import { Sparkles, ChevronRight, Scissors } from 'lucide-react';
+import { Sparkles, ChevronRight, Droplets } from 'lucide-react';
 
 export const GalleryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const GalleryPage: React.FC = () => {
       state: {
         prefilledPackage: dog.packageUsed,
         prefilledBreed: dog.breed,
-        prefilledNotes: `Hi! I saw ${dog.dogName}'s (${dog.breed}) transformation in your gallery and would love an inquiry for a similar style for my dog.`
+        prefilledNotes: `Hi! I saw ${dog.dogName}'s (${dog.breed}) transformation in your gallery and would love an inquiry for a similar spa experience for my dog.`
       }
     });
   };
@@ -27,7 +27,7 @@ export const GalleryPage: React.FC = () => {
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-stone-400" />
-          <span className="font-semibold text-stone-900">Transformation Gallery</span>
+          <span className="font-semibold text-stone-900">Spa Transformations Gallery</span>
         </div>
 
         <motion.div
@@ -38,14 +38,14 @@ export const GalleryPage: React.FC = () => {
         >
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
-              Before & After Portfolio
+              <Droplets className="w-3.5 h-3.5" />
+              Before & After Spa Results
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900">
-              Pet Transformations Gallery
+              Spa Transformations Gallery
             </h1>
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-              Explore our real studio transformations. Drag the interactive split-slider on each photo to examine our scissor work, matting relief, and de-shedding results.
+            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans">
+              Explore our real studio transformations. Drag the interactive split-slider on each photo to examine short-coat revivals, deshedding blow-out results, and luxurious Japanese & Korean spa therapies in our West Park garden studio.
             </p>
           </div>
 
@@ -54,13 +54,13 @@ export const GalleryPage: React.FC = () => {
               to="/pricing"
               className="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-semibold transition-colors"
             >
-              View Pricing Packages
+              View Spa Packages
             </Link>
             <Link
               to="/contact"
               className="px-6 py-2.5 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs font-semibold transition-colors shadow-sm"
             >
-              Submit Styling Inquiry
+              Book Spa Consultation
             </Link>
           </div>
         </motion.div>

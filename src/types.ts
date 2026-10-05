@@ -1,11 +1,11 @@
-export type DogSize = 'small' | 'medium' | 'large' | 'giant';
+export type DogSize = 'small' | 'medium' | 'large' | 'xl';
 
 export interface TransformationItem {
   id: string;
   dogName: string;
   breed: string;
   age: string;
-  category: 'doodle' | 'double-coat' | 'small-breed' | 'styling' | 'senior-rescue';
+  category: 'short-coat' | 'deshed' | 'spa-treatment' | 'deep-clean' | 'puppy';
   categoryLabel: string;
   service: string;
   beforeImage: string;
@@ -19,16 +19,19 @@ export interface TransformationItem {
 
 export interface PricingPackage {
   id: string;
+  category: 'bath-blowdry' | 'signature-experience' | 'puppy';
+  categoryLabel: string;
   name: string;
   tagline: string;
   description: string;
   badge?: string;
   popular?: boolean;
+  startingPriceNote?: string;
   prices: {
     small: number;
     medium: number;
     large: number;
-    giant: number;
+    xl: number;
   };
   durationEstimate: string;
   features: string[];
@@ -38,9 +41,12 @@ export interface PricingPackage {
 export interface AddOnItem {
   id: string;
   name: string;
-  price: number;
+  flagEmoji?: string;
+  priceNote: string;
+  basePrice: number;
   description: string;
-  category: 'wellness' | 'coat' | 'comfort';
+  subtitle?: string;
+  category: 'spa-foam' | 'mud-ritual' | 'wellness' | 'face-paws' | 'conditioning';
   iconName: string;
 }
 
@@ -48,7 +54,7 @@ export interface FAQItem {
   id: string;
   question: string;
   answer: string;
-  category: 'general' | 'health' | 'pricing' | 'puppy' | 'booking';
+  category: 'general' | 'health' | 'pricing' | 'puppy' | 'booking' | 'spa';
 }
 
 export interface PolicySection {
@@ -73,10 +79,12 @@ export interface InquiryFormData {
   dogAge: string;
   weightCategory: DogSize;
   packageInterest: string;
-  coatCondition: 'good' | 'some-tangles' | 'matted' | 'unsure';
+  selectedSpaUpgrades?: string[];
+  coatCondition: 'good' | 'heavy-shedding' | 'dry-skin' | 'sensitive' | 'unsure';
   temperament: string[];
   preferredContact: 'phone' | 'email' | 'text';
   preferredDays: string[];
   message: string;
   status: 'new' | 'reviewed';
 }
+

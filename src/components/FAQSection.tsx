@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { FAQ_ITEMS } from '../data/faq';
 import { FAQItem } from '../types';
-import { Search, ChevronDown, HelpCircle, MessageSquareText, Shield, Heart } from 'lucide-react';
+import { Search, ChevronDown, HelpCircle, MessageSquareText, Shield, Heart, Droplets } from 'lucide-react';
 
 export const FAQSection: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [openId, setOpenId] = useState<string | null>('faq-booking'); // open the booking question by default
+  const [openId, setOpenId] = useState<string | null>('faq-specialty');
 
   const toggleAccordion = (id: string) => {
     setOpenId(prev => (prev === id ? null : id));
@@ -16,11 +16,12 @@ export const FAQSection: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'All Questions' },
-    { id: 'booking', label: 'Inquiries & Booking' },
-    { id: 'general', label: 'Grooming Process' },
-    { id: 'health', label: 'Health & Behavior' },
+    { id: 'spa', label: 'Spa Treatments & Deshedding' },
+    { id: 'general', label: 'Specialty & Garden Studio' },
+    { id: 'pricing', label: 'Starting Rates' },
+    { id: 'health', label: 'Product Safety & Health' },
     { id: 'puppy', label: 'Puppies' },
-    { id: 'pricing', label: 'Pricing & Care' }
+    { id: 'booking', label: 'Consultations' }
   ];
 
   const filteredFaqs = FAQ_ITEMS.filter(faq => {
@@ -32,7 +33,7 @@ export const FAQSection: React.FC = () => {
   });
 
   return (
-    <section id="faq" className="py-20 bg-[#F3EFEA]/50 border-t border-[#E8E2D9]">
+    <section id="faq" className="py-16 lg:py-20 bg-[#F3EFEA]/50 border-t border-[#E8E2D9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -50,7 +51,7 @@ export const FAQSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-base sm:text-lg text-stone-600 font-sans leading-relaxed">
-            Everything you need to know about preparing your dog, our 1-on-1 gentle grooming philosophy, vaccination standards, and salon policies.
+            Everything you need to know about our garden studio in West Park, Leeds, short-coat deshedding, product safety, starting rates, and spa rituals.
           </p>
         </motion.div>
 
@@ -62,14 +63,14 @@ export const FAQSection: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search questions (e.g. matted hair, vaccinations, anxious dogs, drying)..."
+              placeholder="Search questions (e.g. short coats, deshedding, product safety, starting prices)..."
               className="w-full pl-12 pr-4 py-3 bg-white rounded-2xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#2A4736] focus:border-transparent shadow-xs"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-600"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-600 cursor-pointer"
               >
                 Clear
               </button>
@@ -83,7 +84,7 @@ export const FAQSection: React.FC = () => {
                 key={cat.id}
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                   selectedCategory === cat.id
                     ? 'bg-[#2A4736] text-white shadow-xs'
                     : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
@@ -154,7 +155,7 @@ export const FAQSection: React.FC = () => {
                   setSearchQuery('');
                   setSelectedCategory('all');
                 }}
-                className="mt-2 text-xs font-semibold text-[#2A4736] underline hover:text-[#183123]"
+                className="mt-2 text-xs font-semibold text-[#2A4736] underline hover:text-[#183123] cursor-pointer"
               >
                 Reset filters
               </button>
@@ -170,17 +171,17 @@ export const FAQSection: React.FC = () => {
             </div>
             <div>
               <h4 className="text-lg font-serif-title font-bold text-white">
-                Have a specific question about your dog?
+                Have a specific question about your dog’s coat or skin?
               </h4>
               <p className="text-xs sm:text-sm text-stone-200">
-                Every pup is an individual. Submit an inquiry form below with photos or notes, and our lead groomer will get back to you personally.
+                Every dog is unique. Send us your inquiry and our spa specialist will gladly advise on the most suitable treatments.
               </p>
             </div>
           </div>
 
           <Link
             to="/contact"
-            className="shrink-0 px-6 py-3 bg-white hover:bg-stone-100 text-[#2A4736] font-semibold text-xs sm:text-sm rounded-full transition-colors shadow-sm"
+            className="shrink-0 px-6 py-3 bg-white hover:bg-stone-100 text-[#2A4736] font-semibold text-xs sm:text-sm rounded-full transition-colors shadow-sm cursor-pointer"
           >
             Submit an Inquiry
           </Link>

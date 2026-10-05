@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PricingSection } from '../components/PricingSection';
 import { PricingPackage, DogSize } from '../types';
-import { ChevronRight, ShieldCheck } from 'lucide-react';
+import { ChevronRight, Droplets, ShieldCheck } from 'lucide-react';
 
 export const PricingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ export const PricingPage: React.FC = () => {
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-stone-400" />
-          <span className="font-semibold text-stone-900">Current Pricing Packages</span>
+          <span className="font-semibold text-stone-900">Spa Packages & Pricing</span>
         </div>
 
         <motion.div
@@ -38,14 +38,14 @@ export const PricingPage: React.FC = () => {
         >
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Transparent Rates
+              <Droplets className="w-3.5 h-3.5" />
+              Specialist Bathing • Skin & Coat Care • Spa Treatments
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900">
-              Pricing Packages & Services
+              West Park Dog Spa Menu
             </h1>
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-              Every appointment is a dedicated 1-on-1 private spa session. Select your dog’s weight bracket below to calculate baseline rates and explore our restorative spa add-ons.
+            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans">
+              A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We specialise in short-haired breeds, professional bathing, deshedding and specialist skin & coat care, alongside luxury spa treatments using carefully selected professional products.
             </p>
           </div>
 
@@ -54,13 +54,13 @@ export const PricingPage: React.FC = () => {
               to="/terms"
               className="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-semibold transition-colors"
             >
-              Matting & Pricing Policies
+              Product Safety & Policies
             </Link>
             <Link
               to="/contact"
               className="px-6 py-2.5 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs font-semibold transition-colors shadow-sm"
             >
-              Request a Custom Quote
+              Book a Spa Consultation
             </Link>
           </div>
         </motion.div>

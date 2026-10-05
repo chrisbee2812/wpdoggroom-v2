@@ -1,5 +1,6 @@
 import React from 'react';
-import { Sparkles, Shield, Heart, Scissors, Clock, ArrowDown, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Sparkles, Shield, Heart, Droplets, ArrowDown, CheckCircle2, Waves, Leaf } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -13,60 +14,61 @@ export const Hero: React.FC = () => {
           {/* Left Text Content */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF1ED] border border-[#2A4736]/15 text-[#2A4736] text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-[#2A4736]" />
-              Dedicated 1-on-1 Gentle Grooming Studio
+              <Droplets className="w-3.5 h-3.5 text-[#2A4736]" />
+              Dedicated Garden Studio • West Park, Leeds
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-title font-bold text-stone-900 tracking-tight leading-[1.12]">
-              Where every dog is treated like <span className="italic font-normal text-[#2A4736]">family</span>.
+              Specialist Bathing, Skin & Coat Care <span className="italic font-normal text-[#2A4736]">& Luxury Spa Treatments</span>.
             </h1>
 
             <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 font-sans leading-relaxed">
-              Welcome to <strong>West Park Dog Grooming</strong>. We specialize in stress-free, cage-free grooming sessions tailored to your dog’s coat, personality, and physical comfort. From custom scissoring to intensive de-shedding, we take the time to do it right.
+              Welcome to <strong>West Park Dog Spa</strong>. A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We specialise in short-haired breeds, professional bathing, deshedding and specialist skin & coat care, alongside luxury spa treatments using carefully selected professional products.
             </p>
 
             {/* Value Checkmarks */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0 text-left pt-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0 text-left pt-1">
               <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                <span>1-on-1 Private Sessions</span>
+                <span>Short-Haired Breeds & Deshedding</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                <span>Fear-Free Certified Handling</span>
+                <span>Private 1-on-1 Garden Studio</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                <span>100% Organic Botanical Shampoos</span>
+                <span>Carefully Reviewed Product Safety</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2A4736] shrink-0" />
-                <span>No Cages or Forced Drying</span>
+                <span>Japanese & Korean Spa Treatments</span>
               </div>
             </div>
 
             {/* CTA Group */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
-              <a
-                href="#gallery"
-                className="w-full sm:w-auto px-7 py-3.5 bg-[#2A4736] hover:bg-[#1a3325] text-white rounded-full font-semibold text-sm transition-all shadow-sm flex items-center justify-center gap-2"
+              <Link
+                to="/pricing"
+                className="w-full sm:w-auto px-7 py-3.5 bg-[#2A4736] hover:bg-[#1a3325] text-white rounded-full font-semibold text-sm transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Scissors className="w-4 h-4" />
-                View Transformation Gallery
-              </a>
+                <Droplets className="w-4 h-4" />
+                Explore Spa Menu & Pricing
+              </Link>
 
-              <a
-                href="#pricing"
-                className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 rounded-full font-semibold text-sm transition-all shadow-2xs flex items-center justify-center gap-2"
+              <Link
+                to="/gallery"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 rounded-full font-semibold text-sm transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
               >
-                Pricing Packages
-              </a>
+                <Sparkles className="w-4 h-4 text-amber-600" />
+                View Spa Transformations
+              </Link>
             </div>
 
-            {/* Note regarding consultation & no booking */}
+            {/* Important Good To Know Note */}
             <div className="pt-2">
               <p className="text-xs text-stone-500 italic max-w-xl mx-auto lg:mx-0">
-                * We operate on a consultation & inquiry basis rather than generic automated booking, ensuring every pet receives the ideal timing and individualized care.
+                * Good to know: We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All sessions are 1-on-1 by advance consultation.
               </p>
             </div>
           </div>
@@ -78,7 +80,7 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-4/5">
                 <img
                   src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80"
-                  alt="Happy pampered dog enjoying grooming at West Park"
+                  alt="Happy pampering dog enjoying bath at West Park Dog Spa"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center"
                 />
@@ -90,10 +92,10 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-bold text-stone-400 block tracking-wider">
-                      Salon Philosophy
+                      Garden Studio
                     </span>
                     <span className="text-xs font-bold text-stone-900 block">
-                      Comfort Over Vanity
+                      Calm 1-on-1 Sanctuary
                     </span>
                   </div>
                 </div>
@@ -105,10 +107,10 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-bold text-stone-300 block tracking-wider">
-                      Pet Safety
+                      Ingredients First
                     </span>
                     <span className="text-xs font-bold text-white block">
-                      Fear-Free Certified
+                      Product Safety Assessed
                     </span>
                   </div>
                 </div>
@@ -117,14 +119,14 @@ export const Hero: React.FC = () => {
               {/* Small accent image card */}
               <div className="hidden sm:block absolute -bottom-6 -left-6 w-44 rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-white p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=400&q=80"
-                  alt="Freshly groomed schnauzer"
+                  src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&q=80"
+                  alt="Sleek glossy coat after deshedding"
                   referrerPolicy="no-referrer"
                   className="w-full h-28 object-cover rounded-xl"
                 />
                 <div className="pt-2 text-center">
-                  <span className="text-[11px] font-bold text-stone-800 block">West Park Studio</span>
-                  <span className="text-[10px] text-[#2A4736] font-medium">Bespoke Styling</span>
+                  <span className="text-[11px] font-bold text-stone-800 block">West Park Dog Spa</span>
+                  <span className="text-[10px] text-[#2A4736] font-medium">Sleek Coat Gloss</span>
                 </div>
               </div>
             </div>

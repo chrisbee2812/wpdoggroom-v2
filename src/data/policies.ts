@@ -2,138 +2,114 @@ import { PolicySection } from '../types';
 
 export const TERMS_AND_CONDITIONS: PolicySection[] = [
   {
-    id: 'vaccinations',
-    title: 'Vaccination & Health Certification',
-    shortSummary: 'Protecting the health, immune systems, and safety of all salon pets.',
+    id: 'product-safety',
+    title: 'Product Safety & Coat Suitability Standards',
+    shortSummary: 'Rigorous review of ingredients, manufacturer guidance, and individual suitability.',
     iconName: 'Shield',
     rules: [
       {
-        heading: 'Mandatory Vaccines',
-        text: 'All dogs entering West Park Dog Grooming must be current on Rabies, DHPP (Distemper, Hepatitis, Parvovirus, Parainfluenza), and Bordetella. Proof of vaccination must be provided before or upon the first salon visit.'
+        heading: 'Ingredient & Safety Review',
+        text: 'Product safety and suitability are extremely important to us. Before introducing products into our spa, we review ingredients, manufacturer guidance and intended use. Treatments are selected with the individual dog and coat in mind.'
       },
       {
-        heading: 'Puppy Vaccination Protocols',
-        text: 'Puppies under 5 months of age must have received at least their second round of core puppy immunizations prior to attending their Puppy First Experience appointment.'
+        heading: 'Specialist Bathing & Coat Care Focus',
+        text: 'We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. We focus exclusively on epidermal health, deep clarification, undercoat removal, and therapeutic hydrotherapy.'
       },
       {
-        heading: 'Illness & Contagious Conditions',
-        text: 'If your dog displays vomiting, diarrhea, open wounds, coughing, kennel cough symptoms, or eye discharge within 48 hours of your scheduled visit, please contact us immediately to reschedule without penalty.'
+        heading: 'Sensitive Skin & Allergies',
+        text: 'Please notify us of any known sensitivities or dermatological conditions. We carry hypoallergenic, soothing oat, and clarifying formulas to care gently for allergy-prone skin.'
       }
     ]
   },
   {
-    id: 'matting',
-    title: 'Matting & Humane Care Guarantee',
-    shortSummary: 'Zero tolerance for painful de-matting; prioritizing pet comfort above aesthetics.',
-    iconName: 'HeartHandshake',
+    id: 'pricing-starting-rates',
+    title: 'Pricing & Transparent Starting Rates',
+    shortSummary: 'How our size, shedding level, and time-based pricing works.',
+    iconName: 'Sparkles',
     rules: [
       {
-        heading: 'Humane Treatment Priority',
-        text: 'West Park Dog Grooming strictly adheres to animal welfare ethics and the UK Animal Welfare Act 2006. We will NOT pull, rip, or repeatedly brush out severely compacted mats, as this causes traumatic pain, skin tears, haematomas, and severe psychological distress.'
+        heading: 'Starting Price Policy',
+        text: 'Prices are starting prices and may vary depending on your dog’s size, coat type, coat condition, shedding level and the time required.'
       },
       {
-        heading: 'Humane Shaving Procedure',
-        text: 'When a dog’s coat has felted into tight mats against the dermal layer, the only humane option is to clip beneath the matting with specialized short blades. The stylist will consult the owner whenever possible before clipping.'
+        heading: 'Compacted Shedding & Heavy Undercoat',
+        text: 'Dogs with severe undercoat buildup or heavy seasonal impaction requiring extensive carding and high-velocity evacuation may incur an additional time charge, discussed openly before proceeding.'
       },
       {
-        heading: 'Post-De-Matting Sensitivity',
-        text: 'Removing heavy mats exposes previously smothered skin to air and sensation. Dogs may experience temporary itching, redness, or clipper warmth sensitivity. We apply soothing organic aloe vera and calendula mist to mitigate discomfort.'
+        heading: 'Transparent Quotations',
+        text: 'We assess coat length, density, and skin health during initial check-in and confirm the final cost with you before beginning treatment.'
+      }
+    ]
+  },
+  {
+    id: 'garden-studio-health',
+    title: 'Vaccinations & Health Guidelines',
+    shortSummary: 'Maintaining a clean, hygienic private garden studio environment.',
+    iconName: 'Award',
+    rules: [
+      {
+        heading: 'Core Immunisations',
+        text: 'All dogs visiting West Park Dog Spa must be current on standard UK vaccinations (Distemper, Hepatitis, Parvovirus, Leptospirosis). Proof of vaccination may be sent prior to your appointment.'
       },
       {
-        heading: 'Matting Surcharge',
-        text: 'Grooming matted coats requires extraordinary care, blade replacement, and extended table time. A de-matting surcharge of £15 – £35 may apply depending on severity.'
+        heading: 'Puppy Protocols',
+        text: 'Puppies attending Puppy’s First Spa must have received their second round of vaccinations.'
+      },
+      {
+        heading: 'Illness & Rescheduling',
+        text: 'If your dog is experiencing vomiting, kennel cough symptoms, fever, or open skin lesions within 48 hours of your scheduled spa time, please inform us to reschedule without penalty.'
       }
     ]
   },
   {
     id: 'cancellations',
-    title: 'Cancellations, Rescheduling & Late Arrivals',
-    shortSummary: 'Ensuring seamless 1-on-1 scheduling without crowding or rushing.',
+    title: 'Cancellations, Rescheduling & 1-on-1 Appointments',
+    shortSummary: 'Respecting dedicated 1-on-1 time slots in our home garden studio.',
     iconName: 'CalendarClock',
     rules: [
       {
         heading: '48-Hour Notice Policy',
-        text: 'Because West Park operates strictly on dedicated 1-on-1 appointments, late cancellations prevent other pets in need of grooming from securing that time. We kindly request at least 48 hours advance notice to cancel or reschedule.'
+        text: 'Because West Park Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. We kindly request at least 48 hours advance notice for cancellations or date changes.'
       },
       {
-        heading: 'Late Cancellation & No-Show Fee',
-        text: 'Cancellations made with less than 24 hours notice or missed appointments without notification may incur a 50% fee of the reserved service before a subsequent consultation can be confirmed.'
+        heading: 'Short-Notice Rescheduling',
+        text: 'Cancellations made with less than 24 hours notice or unnotified absences may incur a 50% reservation fee prior to booking subsequent visits.'
       },
       {
-        heading: 'Late Arrival Window',
-        text: 'Please arrive promptly at your scheduled start time. Clients arriving more than 15 minutes late may need to adjust their styling package or reschedule to prevent overlapping the next guest’s dedicated slot.'
+        heading: 'Punctual Drop-Off',
+        text: 'Please arrive promptly at your scheduled time so we can provide your pet with their full, unhurried spa ritual.'
       }
     ]
   },
   {
-    id: 'behavior',
-    title: 'Pet Behavior, Reactivity & Safety',
-    shortSummary: 'Patient, fear-free handling with strict safety standards for pets and stylists.',
-    iconName: 'AlertCircle',
+    id: 'gentle-handling',
+    title: 'Gentle Handling & Fear-Free Care',
+    shortSummary: 'Zero force, cage-free calm, and soothing positive reinforcement.',
+    iconName: 'HeartHandshake',
     rules: [
       {
-        heading: 'Behavioral Disclosure',
-        text: 'Owners must disclose any history of bite tendencies, fear aggression, table reactivity, or past traumatic grooming encounters prior to appointment confirmation.'
+        heading: 'Calm Environment',
+        text: 'Our dedicated garden studio is a low-stress, quiet space. We use gentle water pressure, warm towels, and variable-speed dryers to ensure your pet remains comfortable and relaxed.'
       },
       {
-        heading: 'Gentle Handling Standards',
-        text: 'We never use harsh choke restraints, tranquilizers, or physical discipline. If a dog becomes excessively panicked or aggressive, we will stop the service, provide comfort breaks, and reassess.'
-      },
-      {
-        heading: 'Right to Terminate for Safety',
-        text: 'If a dog cannot be groomed safely without risking severe physical injury to itself or salon staff, West Park Dog Grooming reserves the right to halt the session. Charges will be prorated based on services completed.'
+        heading: 'Reactivity & Sensitivities',
+        text: 'Please share details regarding any sensitivities to touch, paws, or water. We tailor our bathing rhythm with treat rewards and breaks to keep stress levels minimal.'
       }
     ]
   },
   {
-    id: 'senior-special-needs',
-    title: 'Senior Pets & Pre-Existing Medical Conditions',
-    shortSummary: 'Comfort-first accommodations for aging joints, blind, deaf, and fragile pets.',
-    iconName: 'Award',
-    rules: [
-      {
-        heading: 'Comfort Over Perfection Philosophy',
-        text: 'For senior dogs (generally 8+ years) or dogs with hip dysplasia, arthritis, or cardiac conditions, our priority is always their physical comfort and dignity rather than a razor-sharp show finish.'
-      },
-      {
-        heading: 'Orthopedic Support & Rest Breaks',
-        text: 'We utilize double-cushioned orthopedic table mats, low-entry hydrobaths, and allow senior pets to sit or lie down comfortably throughout their grooming session.'
-      }
-    ]
-  },
-  {
-    id: 'fleas-parasites',
-    title: 'Fleas, Ticks & Parasite Protocol',
-    shortSummary: 'Rapid quarantine, botanical treatment, and salon sanitization standards.',
-    iconName: 'Sparkles',
-    rules: [
-      {
-        heading: 'Mandatory Parasite Treatment',
-        text: 'If live fleas or active ticks are discovered during the pre-bath inspection, the dog will be immediately administered our natural botanical flea bath to eradicate the parasites and soothe irritated skin.'
-      },
-      {
-        heading: 'Sanitisation Surcharge',
-        text: 'A mandatory £20 fee covers the specialised treatment shampoo plus full industrial decontamination and fogging of the styling suite to ensure zero cross-contamination for subsequent pets.'
-      }
-    ]
-  },
-  {
-    id: 'pickup-vet',
-    title: 'Pick-Up Windows & Veterinary Authorisation',
-    shortSummary: 'Timely pick-ups and emergency medical care authorisation.',
+    id: 'collection-pickup',
+    title: 'Collection & Timely Pick-Up',
+    shortSummary: 'Cage-free studio policies for post-bath collection.',
     iconName: 'CheckCircle2',
     rules: [
       {
         heading: 'Timely Collection',
-        text: 'We are a calm, cage-free boutique salon and do not provide day boarding. We will notify you 15-20 minutes before completion. Please pick up your pet within 45 minutes of the ready notification. Extended delays may incur a £15/half-hour care fee.'
+        text: 'We are a cage-free private studio and do not provide day boarding. We will send you a text notification 15–20 minutes before your dog is finished. Please collect your pet within 30 minutes of completion.'
       },
       {
-        heading: 'Emergency Medical Authorisation',
-        text: 'In the rare event of a sudden medical emergency, our staff will attempt to contact the owner immediately. If unreachable, you authorise West Park Dog Grooming to seek veterinary treatment at our nearest local practice (Beechwood Veterinary Group / Leeds Vets Now Emergency Clinic) in your pet’s best medical interest.'
-      },
-      {
-        heading: 'Satisfaction Guarantee',
-        text: 'We take enormous pride in our craftsmanship. If you notice any touch-up required (such as an uneven nail or stray whisker), contact us within 48 hours and we will happily provide a complimentary adjustment.'
+        heading: 'Veterinary Authorisation',
+        text: 'In the rare event of a medical emergency during care, our staff will contact the owner immediately. If unreachable, you authorise West Park Dog Spa to contact our local veterinary partner (Beechwood Veterinary Group) in the best interest of your pet.'
       }
     ]
   }
