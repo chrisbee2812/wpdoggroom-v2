@@ -23,7 +23,7 @@ export const DOG_SIZE_DEFINITIONS: Record<DogSize, { label: string; weight: stri
   }
 };
 
-// 🫧 BATH & BLOW-DRY PACKAGES
+// 🫧 BATH & BLOW-DRY BASE PACKAGES
 export const BATH_BLOWDRY_PACKAGES: PricingPackage[] = [
   {
     id: 'fresh-and-fluffy',
@@ -42,7 +42,7 @@ export const BATH_BLOWDRY_PACKAGES: PricingPackage[] = [
       xl: 40
     },
     durationEstimate: '45 mins – 1.25 hrs',
-    recommendedFor: 'Short-haired and smooth-coated dogs for routine skin & coat maintenance',
+    recommendedFor: 'Coat & skin care for all breeds and smooth coats for routine skin & coat maintenance',
     features: [
       'Tailored professional shampoo selected for your dog’s specific coat & skin type',
       'Hydrating conditioning treatment for a healthy epidermal barrier',
@@ -53,38 +53,13 @@ export const BATH_BLOWDRY_PACKAGES: PricingPackage[] = [
     ]
   },
   {
-    id: 'deep-clean',
+    id: 'therapeutic-bath-blowout',
     category: 'bath-blowdry',
     categoryLabel: '🫧 Bath & Blow-Dry',
-    name: 'Deep Clean',
-    tagline: 'For dogs needing a little more than their usual bath',
-    description: 'For dogs needing a little more than their usual bath. Includes a thorough cleansing wash using products selected for the individual coat, conditioner, blow-dry and brush-through.',
-    badge: 'Add £5 to Bath & Blow-Dry',
-    startingPriceNote: 'from £30',
-    prices: {
-      small: 30,
-      medium: 35,
-      large: 40,
-      xl: 45
-    },
-    durationEstimate: '1 hr – 1.5 hrs',
-    recommendedFor: 'Active outdoor dogs, muddy trail runners, or coats needing intensive clarification',
-    features: [
-      'Everything in the Fresh & Fluffy package',
-      'Thorough double clarifying wash targeted to remove deep outdoor grit, grease & sebum',
-      'Specialist coat-clarifying products selected for the individual coat type',
-      'Deep restorative conditioner massage',
-      'High-efficiency warm blow-dry & thorough brush-through'
-    ]
-  },
-  {
-    id: 'deshed-blowout',
-    category: 'bath-blowdry',
-    categoryLabel: '🫧 Bath & Blow-Dry',
-    name: 'Deshed Bath & Blow-Out',
+    name: 'Therapeutic Bath & Blow-Out',
     tagline: 'High-velocity undercoat release & shedding relief',
     description: 'Specialist deshedding wash and conditioning treatment followed by a high-velocity blow-out and thorough brush-through to remove loose coat.',
-    badge: 'Specialist Deshedding',
+    badge: 'Therapeutic Care',
     startingPriceNote: 'from £35',
     prices: {
       small: 35,
@@ -93,16 +68,33 @@ export const BATH_BLOWDRY_PACKAGES: PricingPackage[] = [
       xl: 50
     },
     durationEstimate: '1.25 hrs – 2 hrs',
-    recommendedFor: 'Labradors, Pugs, Dalmatians, and all short-haired or double-coated shedding breeds',
+    recommendedFor: 'Labradors, Pugs, Dalmatians, and all breeds needing therapeutic skin rejuvenation, undercoat release, and coat revitalization',
     features: [
-      'Specialist deshedding wash to release impacted dead coat follicles',
-      'Enriched conditioning treatment to loosen undercoat without skin drying',
-      'High-velocity warm blow-out targeting stubborn dead shedding hairs',
-      'Thorough brush-through with professional deshedding carding tools',
-      'Reduces household hair fallout significantly while promoting healthy skin respiration'
+      'Specialist therapeutic wash to release impacted dead coat follicles and soothe the dermis',
+      'Enriched conditioning treatment to replenish natural oils without weighing down the coat',
+      'High-velocity warm blow-out targeting stubborn dead shedding hairs and trapped dander',
+      'Thorough brush-through with professional deshedding and carding tools',
+      'Reduces household hair fallout significantly while promoting healthy epidermal respiration'
     ]
   }
 ];
+
+// 🧼 DEEP CLEAN UPGRADE (Add £5 to Bath & Blow-Dry packages)
+export const DEEP_CLEAN_UPGRADE = {
+  id: 'deep-clean-upgrade',
+  name: 'Deep Clean Clarifying Wash',
+  price: 5,
+  priceNote: 'Add £5 to Bath & Blow-Dry',
+  tagline: 'For dogs needing a little more than their usual bath',
+  description: 'For dogs needing a little more than their usual bath. Includes a thorough cleansing wash using products selected for the individual coat, conditioner, blow-dry and brush-through.',
+  badge: '+£5 to Bath & Blow-Dry',
+  features: [
+    'Thorough double clarifying wash targeted to remove deep outdoor grit, grease & sebum',
+    'Specialist coat-clarifying products selected for the individual coat type',
+    'Deep restorative conditioner massage',
+    'High-efficiency warm blow-dry & thorough brush-through'
+  ]
+};
 
 // 👑 SIGNATURE SPA EXPERIENCES
 export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
@@ -127,8 +119,8 @@ export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
     features: [
       'Professional hydro-bath & warm blow-dry',
       'Coat-specific conditioning treatment',
-      'Fresh Face gentle professional cleanse for delicate face and muzzle folds',
-      'Luxury Paw Spa warm paw cleanse, moisturising paw treatment & finishing balm',
+      'Fresh Face gentle professional cleanse for delicate face and muzzle folds (Included in Short Coat Spa)',
+      'Luxury Paw Spa warm paw cleanse, moisturising paw treatment & finishing balm (Included in Short Coat Spa)',
       'Nail trim check & gentle ear cleanse',
       'Signature silky coat shine finish'
     ]
@@ -139,7 +131,7 @@ export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
     categoryLabel: '👑 Signature Spa Experiences',
     name: 'The Ultimate Dog Spa',
     tagline: 'Our complete pampering experience',
-    description: 'Our complete pampering experience. Professional bath & blow-dry, your choice of one premium specialist coat treatment, Fresh Face, Luxury Paw Spa and finishing coat care.',
+    description: 'Our complete pampering experience. Professional bath & blow-dry, your choice of 1 included specialist coat treatment (Japanese Marshmallow Foam, Thalassotherapy Sea Mud, Japanese Bamboo Charcoal, or Korean Carbonated Bath), Fresh Face and Luxury Paw Spa included.',
     badge: 'All-Inclusive Luxury',
     startingPriceNote: 'From £50',
     prices: {
@@ -152,9 +144,9 @@ export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
     recommendedFor: 'Owners seeking head-to-paw luxury, rejuvenation, and advanced dermal conditioning',
     features: [
       'Everything in The Short-Coat Spa',
-      'Your choice of 1 Premium Specialist Coat Treatment (Marshmallow Foam, Sea Mud, Bamboo Charcoal, or Carbonated Bath)',
-      'Fresh Face delicate face & muzzle cleansing',
-      'Luxury Paw Spa warm cleanse/wrap, nourishing paw care & organic finishing balm',
+      '1 Included Specialist Treatment of your choice (Japanese Marshmallow Foam, Thalassotherapy Sea Mud, Japanese Bamboo Charcoal, or Korean Carbonated Spa Bath)',
+      'Fresh Face delicate face & muzzle cleansing (Included in Ultimate Dog Spa)',
+      'Luxury Paw Spa warm cleanse/wrap, nourishing paw care & organic finishing balm (Included in Ultimate Dog Spa)',
       'Finishing coat care & botanical aromatherapy shine mist',
       'Relaxing 1-on-1 garden studio pampering session'
     ]
@@ -274,6 +266,27 @@ export const SPECIALIST_SPA_TREATMENTS: AddOnItem[] = [
 
 // Alias for backwards compatibility with any component referencing ADD_ON_SERVICES
 export const ADD_ON_SERVICES = SPECIALIST_SPA_TREATMENTS;
+
+// 🌟 PACKAGE INCLUSIONS & SPECIALIST CHOICE CONSTANTS
+export const SHORT_COAT_INCLUDED_ADDON_IDS = ['fresh-face', 'luxury-paw-spa'];
+export const SHORT_COAT_INCLUDED_ADDON_NAMES = ['Fresh Face', 'Luxury Paw Spa'];
+
+export const ULTIMATE_INCLUDED_ADDON_IDS = ['fresh-face', 'luxury-paw-spa'];
+export const ULTIMATE_INCLUDED_ADDON_NAMES = ['Fresh Face', 'Luxury Paw Spa'];
+
+export const ULTIMATE_SPECIALIST_CHOICE_IDS = [
+  'japanese-marshmallow-foam',
+  'thalassotherapy-sea-mud',
+  'japanese-bamboo-charcoal',
+  'korean-carbonated-spa'
+];
+
+export const ULTIMATE_SPECIALIST_CHOICE_NAMES = [
+  'Japanese Marshmallow Foam Spa',
+  'Thalassotherapy Sea Mud Spa',
+  'Japanese Bamboo Charcoal Deep Clean',
+  'Korean Carbonated Spa Bath'
+];
 
 // 🌿 GOOD TO KNOW GUIDELINES
 export const GOOD_TO_KNOW = {

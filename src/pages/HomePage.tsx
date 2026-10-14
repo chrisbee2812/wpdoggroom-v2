@@ -38,7 +38,7 @@ export const HomePage: React.FC = () => {
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-title font-bold text-[#af8967] tracking-tight leading-[1.15]">
-                WEST PARK DOG SPA
+                WEST PARK LUXURY DOG SPA
               </h1>
 
               {/* Tagline */}
@@ -166,7 +166,7 @@ export const HomePage: React.FC = () => {
             Our Core Specialty
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif-title font-bold text-[#af8967] mt-1">
-            Why Choose West Park Dog Spa
+            Why Choose West Park Luxury Dog Spa
           </h2>
         </motion.div>
 

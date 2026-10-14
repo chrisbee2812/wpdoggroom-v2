@@ -49,7 +49,7 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: 'Core Immunisations',
-        text: 'All dogs visiting West Park Dog Spa must be current on standard UK vaccinations (Distemper, Hepatitis, Parvovirus, Leptospirosis). Proof of vaccination may be sent prior to your appointment.'
+        text: 'All dogs visiting West Park Luxury Dog Spa must be current on standard UK vaccinations (Distemper, Hepatitis, Parvovirus, Leptospirosis). Proof of vaccination may be sent prior to your appointment.'
       },
       {
         heading: 'Puppy Protocols',
@@ -69,7 +69,7 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: '48-Hour Notice Policy',
-        text: 'Because West Park Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. We kindly request at least 48 hours advance notice for cancellations or date changes.'
+        text: 'Because West Park Luxury Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. We kindly request at least 48 hours advance notice for cancellations or date changes.'
       },
       {
         heading: 'Short-Notice Rescheduling',
@@ -109,7 +109,7 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
       },
       {
         heading: 'Veterinary Authorisation',
-        text: 'In the rare event of a medical emergency during care, our staff will contact the owner immediately. If unreachable, you authorise West Park Dog Spa to contact our local veterinary partner (Beechwood Veterinary Group) in the best interest of your pet.'
+        text: 'In the rare event of a medical emergency during care, our staff will contact the owner immediately. If unreachable, you authorise West Park Luxury Dog Spa to contact our local veterinary partner (Beechwood Veterinary Group) in the best interest of your pet.'
       }
     ]
   }

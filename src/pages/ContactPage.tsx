@@ -10,6 +10,8 @@ interface LocationState {
   prefilledSize?: DogSize;
   prefilledBreed?: string;
   prefilledNotes?: string;
+  prefilledUpgrades?: string[];
+  prefilledDeepClean?: boolean;
 }
 
 export const ContactPage: React.FC = () => {
@@ -66,6 +68,8 @@ export const ContactPage: React.FC = () => {
         prefilledSize={state.prefilledSize}
         prefilledBreed={state.prefilledBreed}
         prefilledNotes={state.prefilledNotes}
+        prefilledUpgrades={state.prefilledUpgrades}
+        prefilledDeepClean={state.prefilledDeepClean}
       />
     </div>
   );

@@ -204,7 +204,7 @@ export const TermsSection: React.FC = () => {
               <Check className="w-4 h-4 text-white" />
               <span className="text-[#13253b] font-bold">By submitting an inquiry or attending a spa session, owners acknowledge and agree to these standards.</span>
             </div>
-            <span className="text-white/90 font-bold">West Park Dog Spa • Leeds</span>
+            <span className="text-white/90 font-bold">West Park Luxury Dog Spa • Leeds</span>
           </div>
         </div>
       </div>

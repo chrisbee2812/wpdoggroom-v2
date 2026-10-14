@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
                   West Park
                 </span>
                 <span className="text-[10px] tracking-widest uppercase font-semibold text-[#8096bb] block">
-                  Dog Spa
+                  Luxury Dog Spa
                 </span>
               </div>
             </Link>
@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
-          <p>© {new Date().getFullYear()} West Park Dog Spa. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} West Park Luxury Dog Spa. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/pricing" className="hover:text-stone-200">
               Spa Menu

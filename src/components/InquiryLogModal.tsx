@@ -106,9 +106,13 @@ export const InquiryLogModal: React.FC<InquiryLogModalProps> = ({ isOpen, onClos
                   <div>
                     <span className="text-white/70 block text-[10px] uppercase font-bold">Pet & Package</span>
                     <strong className="text-white text-sm">{inq.dogName} ({inq.breed})</strong>
-                    <div className="text-[#13253b] font-bold text-[11px] mt-0.5 bg-white/30 p-1.5 rounded-lg">
-                      <span>{inq.packageInterest} • {inq.weightCategory}</span>
-                      <span className="block text-[#13253b]">Coat: {inq.coatCondition}</span>
+                    <div className="text-[#13253b] font-bold text-[11px] mt-0.5 bg-white/30 p-1.5 rounded-lg space-y-0.5">
+                      <div>{inq.packageInterest} • {inq.weightCategory}</div>
+                      {inq.includeDeepClean && <div>+ Deep Clean Wash Upgrade (+£5)</div>}
+                      {inq.selectedSpaUpgrades && inq.selectedSpaUpgrades.length > 0 && (
+                        <div>+ Upgrades: {inq.selectedSpaUpgrades.join(', ')}</div>
+                      )}
+                      <div className="text-white/90 font-medium">Coat: {inq.coatCondition}</div>
                     </div>
                   </div>
                 </div>

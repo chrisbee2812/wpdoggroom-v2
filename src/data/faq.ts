@@ -4,8 +4,14 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-specialty',
     category: 'spa',
-    question: 'What do you specialise in at West Park Dog Spa?',
-    answer: 'West Park Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
+    question: 'What do you specialise in at West Park Luxury Dog Spa?',
+    answer: 'West Park Luxury Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
+  },
+  {
+    id: 'faq-imported-products',
+    category: 'spa',
+    question: 'Where do your spa products come from?',
+    answer: 'All our specialist shampoos, restorative conditioners, volcanic clay treatments, and carbonated bath rituals are authentic professional products imported directly from Japan and South Korea. Japanese and South Korean pet spas are world-leading innovators in gentle skin dermatology, micro-bubble therapeutic care, and botanical coat restoration. We meticulously select these premium imported lines to deliver a visibly silkier coat and nourish sensitive canine skin without harsh artificial surfactants or heavy perfumes.'
   },
   {
     id: 'faq-clipping',
@@ -23,13 +29,13 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-product-safety',
     category: 'health',
     question: 'How do you ensure product safety and ingredient suitability?',
-    answer: 'Product safety and suitability are extremely important to us. Before introducing products into our spa, we thoroughly review ingredients, manufacturer guidance and intended use. Treatments are selected with the individual dog and coat in mind, ensuring gentle formulations that nurture the skin barrier and suit delicate facial folds or sensitive bellies.'
+    answer: 'Product safety and ingredient suitability are paramount at West Park Luxury Dog Spa. We exclusively use gentle, restorative professional formulations imported from Japan and South Korea alongside carefully vetted hypoallergenic preparations. Before introducing any product into our spa, we thoroughly review ingredients, pH balance, manufacturer guidance, and suitability for delicate facial folds and sensitive skin barriers.'
   },
   {
     id: 'faq-specialist-treatments',
     category: 'spa',
     question: 'What are your specialist spa treatments and coat-care upgrades?',
-    answer: 'You can upgrade your dog’s bath with any of our specialist coat-care experiences: Japanese Marshmallow Foam Spa (dense foam with Honey, Argan & Ghassoul Clay from £10), Thalassotherapy Sea Mud Spa (marine-inspired mud ritual from £12), Japanese Bamboo Charcoal Deep Clean (clarifying treatment from £8), Korean Carbonated Spa Bath (micro-bubble bathing from £10), Cloud Coat Treatment (soft silk conditioning from £10), Luxury Paw Spa (warm wrap & paw balm for £7), and Fresh Face (gentle muzzle & wrinkle cleanse for £5).'
+    answer: 'You can upgrade your dog’s bath with any of our specialist coat-care experiences, featuring authentic professional formulas imported from Japan and South Korea: Japanese Marshmallow Foam Spa (dense foam with Honey, Argan & Ghassoul Clay from £10), Thalassotherapy Sea Mud Spa (marine-inspired mud ritual from £12), Japanese Bamboo Charcoal Deep Clean (clarifying treatment from £8), Korean Carbonated Spa Bath (micro-bubble bathing from £10), Cloud Coat Treatment (soft silk conditioning from £10), Luxury Paw Spa (warm wrap & paw balm for £7), and Fresh Face (gentle muzzle & wrinkle cleanse for £5).'
   },
   {
     id: 'faq-deshedding',

@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-[#2b2520] max-w-2xl mx-auto lg:mx-0 font-sans leading-relaxed">
-              Welcome to <strong>West Park Dog Spa</strong>. A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
+              Welcome to <strong>West Park Luxury Dog Spa</strong>. A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
             </p>
 
             {/* Value Checkmarks Cards - styled on #8096bb */}
@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/5] bg-[#8096bb]">
                 <img
                   src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80"
-                  alt="Happy pampering dog enjoying bath at West Park Dog Spa"
+                  alt="Happy pampering dog enjoying bath at West Park Luxury Dog Spa"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center"
                 />
@@ -130,7 +130,7 @@ export const Hero: React.FC = () => {
                   className="w-full h-28 object-cover rounded-xl"
                 />
                 <div className="pt-2 text-center">
-                  <span className="text-[11px] font-bold text-white block">West Park Dog Spa</span>
+                  <span className="text-[11px] font-bold text-white block">West Park Luxury Dog Spa</span>
                   <span className="text-[10px] text-[#13253b] font-bold">Therapeutic Coat Gloss</span>
                 </div>
               </div>

@@ -79,6 +79,7 @@ export interface InquiryFormData {
   dogAge: string;
   weightCategory: DogSize;
   packageInterest: string;
+  includeDeepClean?: boolean;
   selectedSpaUpgrades?: string[];
   coatCondition: 'good' | 'heavy-shedding' | 'dry-skin' | 'sensitive' | 'unsure';
   temperament: string[];

@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
                 West Park
               </span>
               <span className="text-[10px] tracking-widest uppercase font-semibold text-[#152438] block">
-                Dog Spa
+                Luxury Dog Spa
               </span>
             </div>
           </Link>
