@@ -5,13 +5,13 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-specialty',
     category: 'spa',
     question: 'What do you specialise in at West Park Dog Spa?',
-    answer: 'West Park Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We specialise in short-haired breeds, professional bathing, deshedding and specialist skin & coat care, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
+    answer: 'West Park Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
   },
   {
     id: 'faq-clipping',
     category: 'general',
     question: 'Do you offer haircuts, clipping, or traditional breed styling?',
-    answer: 'We do not offer full clipping or breed standard haircuts. Instead, we are dedicated specialists in restorative bathing, deshedding, skin hydration, and luxury spa rituals. This focused approach means our studio is specifically tailored for short-haired breeds, smooth coats, and shedding dogs who benefit from intensive coat health care without the noise and rush of multi-table haircut salons.'
+    answer: 'We do not offer full clipping or breed standard haircuts. Instead, we are dedicated coat & skin specialists in restorative bathing, therapeutic bath and blow out, skin hydration, and luxury spa rituals. This focused approach means our studio is specifically tailored for dogs and smooth coats who benefit from intensive coat health care without the noise and rush of multi-table haircut salons.'
   },
   {
     id: 'faq-pricing-variation',
@@ -34,8 +34,8 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-deshedding',
     category: 'spa',
-    question: 'How does the Deshed Bath & Blow-Out work for short-haired breeds?',
-    answer: 'Short and smooth coats (such as Labradors, Pugs, Frenchies, and Dalmatians) shed dense undercoat that gets trapped in carpets and clothing. Our Deshed Bath & Blow-Out uses a specialist deshedding wash and conditioning treatment followed by a high-velocity warm blow-out and thorough brush-through to safely release and evacuate loose coat, promoting healthy skin aeration and reducing shedding by up to 80%.'
+    question: 'How does the Therapeutic Bath & Blow-Out work for your dog’s coat?',
+    answer: 'Our Therapeutic Bath & Blow-Out uses a specialist therapeutic wash and conditioning treatment followed by a high-velocity warm blow-out and thorough brush-through to safely release loose dead undercoat, soothing the dermis, promoting healthy skin aeration, and reducing shedding significantly.'
   },
   {
     id: 'faq-garden-studio',
@@ -59,7 +59,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-duration',
     category: 'general',
     question: 'How long does a spa session take?',
-    answer: 'Most short-coat spa visits take between 45 minutes to 1.5 hours depending on size, deshedding volume, and the selected spa rituals. Because we work strictly 1-on-1, your dog is bathed, dried, pamper-treated, and ready for collection without waiting in a cage.'
+    answer: 'Most spa visits take between 45 minutes to 1.5 hours depending on size, coat condition, and the selected spa rituals. Because we work strictly 1-on-1, your dog is bathed, dried, pamper-treated, and ready for collection without waiting in a cage.'
   },
   {
     id: 'faq-vaccines',

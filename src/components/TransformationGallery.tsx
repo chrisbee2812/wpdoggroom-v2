@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { TRANSFORMATION_GALLERY } from '../data/transformations';
 import { TransformationItem } from '../types';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
-import { Sparkles, Clock, Droplets, Info, ArrowUpRight, CheckCircle2, X, Waves, Heart } from 'lucide-react';
+import { Sparkles, Clock, Droplets, X } from 'lucide-react';
 
 interface TransformationGalleryProps {
   onSelectForInquiry?: (dog: TransformationItem) => void;
@@ -16,8 +15,8 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
 
   const categories = [
     { id: 'all', label: 'All Transformations' },
-    { id: 'short-coat', label: 'Short-Haired Breeds' },
-    { id: 'deshed', label: 'Deshed & Undercoat' },
+    { id: 'short-coat', label: 'Coat & Skin Care' },
+    { id: 'deshed', label: 'Therapeutic Bath & Blow-Out' },
     { id: 'spa-treatment', label: 'Specialist Spa Treatments' },
     { id: 'deep-clean', label: 'Deep Clean Clarification' }
   ];
@@ -27,19 +26,19 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
     : TRANSFORMATION_GALLERY.filter(item => item.category === selectedCategory);
 
   return (
-    <section id="gallery" className="py-16 lg:py-20 bg-[#F3EFEA]/60 border-t border-b border-[#E8E2D9]">
+    <section id="gallery" className="py-16 lg:py-20 bg-[#efe0cd] border-t border-b border-[#af8967]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#2A4736]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8096bb] text-white text-xs font-semibold uppercase tracking-wider mb-3 border border-white/30 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-white" />
             Real Studio Results
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-[#af8967] tracking-tight">
             Dog Spa Transformations Gallery
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 font-sans leading-relaxed">
-            See how our specialist bathing, deshedding blow-outs, and luxury spa treatments revitalize short-haired coats, soothe sensitive skin, and impart incredible high-gloss shine.
+          <p className="mt-4 text-base sm:text-lg text-[#2b2520] font-sans leading-relaxed">
+            See how our specialist bathing, therapeutic bath and blow out, and luxury spa treatments revitalize coats, soothe sensitive skin, and impart incredible high-gloss shine.
           </p>
         </div>
 
@@ -52,8 +51,8 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-[#2A4736] text-white shadow-sm ring-2 ring-[#2A4736]/20'
-                  : 'bg-white text-stone-600 hover:bg-stone-100 hover:text-stone-900 border border-stone-200'
+                  ? 'bg-[#8096bb] text-white shadow-sm ring-2 ring-white border border-white/40 font-bold'
+                  : 'bg-white text-[#13253b] hover:bg-[#efe0cd] border border-[#8096bb]/40'
               }`}
             >
               {cat.label}
@@ -61,7 +60,7 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
           ))}
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid of #8096bb Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item, idx) => (
             <motion.div
@@ -71,10 +70,10 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.45, delay: (idx % 3) * 0.08 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col group"
+              className="bg-[#8096bb] rounded-2xl overflow-hidden border border-white/40 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col group text-white"
             >
               {/* Interactive Split Comparison */}
-              <div className="p-3 bg-stone-50/50">
+              <div className="p-3 bg-white/10">
                 <BeforeAfterSlider
                   beforeImage={item.beforeImage}
                   afterImage={item.afterImage}
@@ -82,206 +81,143 @@ export const TransformationGallery: React.FC<TransformationGalleryProps> = ({ on
                 />
               </div>
 
-              {/* Card Details */}
+              {/* Card Details: white headings and darker blue paragraph text */}
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div>
-                      <h3 className="text-xl font-serif-title font-bold text-stone-900 group-hover:text-[#2A4736] transition-colors">
+                      <h3 className="text-xl font-serif-title font-bold text-white group-hover:text-white transition-colors">
                         {item.dogName}
                       </h3>
-                      <p className="text-sm font-medium text-[#2A4736]">
-                        {item.breed} • <span className="text-stone-500">{item.age}</span>
+                      <p className="text-sm font-bold text-white/90">
+                        {item.breed} • <span className="text-white/80 font-normal">{item.age}</span>
                       </p>
                     </div>
-                    <span className="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200">
+                    <span className="inline-flex items-center text-xs font-bold px-2.5 py-1 rounded-full bg-white text-[#13253b] border border-white shadow-2xs">
                       {item.packageUsed}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4 text-xs text-stone-500 mb-4 pb-3 border-b border-stone-100">
-                    <span className="flex items-center gap-1">
-                      <Droplets className="w-3.5 h-3.5 text-stone-400" />
+                  <div className="flex items-center gap-4 text-xs text-white/90 mb-4 pb-3 border-b border-white/20">
+                    <span className="flex items-center gap-1 font-medium">
+                      <Droplets className="w-3.5 h-3.5 text-white" />
                       {item.service}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-stone-400" />
+                    <span className="flex items-center gap-1 font-medium">
+                      <Clock className="w-3.5 h-3.5 text-white" />
                       {item.duration}
                     </span>
                   </div>
 
                   {/* Descriptions */}
                   <div className="space-y-2 text-xs mb-4">
-                    <div className="p-2.5 rounded-lg bg-stone-50 border border-stone-100">
-                      <span className="font-semibold text-stone-700 block mb-0.5">Before arrival:</span>
-                      <p className="text-stone-600 line-clamp-2">{item.beforeDescription}</p>
+                    <div className="p-2.5 rounded-lg bg-white/20 border border-white/20">
+                      <span className="font-bold text-white block mb-0.5">Before arrival:</span>
+                      <p className="text-[#13253b] font-medium line-clamp-2">{item.beforeDescription}</p>
                     </div>
-                    <div className="p-2.5 rounded-lg bg-[#EBF1ED]/70 border border-[#2A4736]/10">
-                      <span className="font-semibold text-[#1F372A] block mb-0.5">Spa outcome:</span>
-                      <p className="text-[#2A4736] line-clamp-2">{item.afterDescription}</p>
+                    <div className="p-2.5 rounded-lg bg-white/30 border border-white/30">
+                      <span className="font-bold text-white block mb-0.5">Spa outcome:</span>
+                      <p className="text-[#13253b] font-bold line-clamp-2">{item.afterDescription}</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Card Actions */}
-                <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+                <div className="pt-2 flex items-center justify-between border-t border-white/20">
                   <button
                     type="button"
                     onClick={() => setActiveModalItem(item)}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-stone-700 hover:text-[#2A4736] transition-colors py-1.5 px-2 rounded hover:bg-stone-50 cursor-pointer"
+                    className="text-xs font-bold text-white underline hover:text-[#13253b] cursor-pointer"
                   >
-                    <Info className="w-3.5 h-3.5" />
-                    Spa notes
+                    View Details & Notes
                   </button>
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (onSelectForInquiry) {
-                        onSelectForInquiry(item);
-                      } else {
-                        const el = document.getElementById('inquiry');
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#2A4736] hover:text-[#183123] bg-[#EBF1ED] hover:bg-[#dfebe3] px-3 py-1.5 rounded-full transition-colors cursor-pointer"
-                  >
-                    Inquire for this treatment
-                    <ArrowUpRight className="w-3 h-3" />
-                  </button>
+                  {onSelectForInquiry && (
+                    <button
+                      type="button"
+                      onClick={() => onSelectForInquiry(item)}
+                      className="px-3 py-1.5 rounded-lg bg-white text-[#13253b] font-bold text-xs hover:bg-[#efe0cd] transition-colors shadow-2xs cursor-pointer"
+                    >
+                      Inquire Similar
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Gallery bottom reassurance */}
-        <div className="mt-12 bg-white rounded-2xl p-6 border border-stone-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#EBF1ED] flex items-center justify-center shrink-0 text-[#2A4736]">
-              <Droplets className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-serif-title font-bold text-lg text-stone-900">
-                Focused on Short-Coat Health & Restorative Spa Care
-              </h4>
-              <p className="text-sm text-stone-600">
-                We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. Every treatment is tailored to the individual dog and coat.
+        {/* Modal for detail view */}
+        {activeModalItem && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+            <div className="bg-[#8096bb] rounded-3xl max-w-2xl w-full border border-white/50 shadow-2xl p-6 sm:p-8 text-white relative max-h-[90vh] overflow-y-auto">
+              <button
+                type="button"
+                onClick={() => setActiveModalItem(null)}
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 text-white cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-white/80">
+                  Detailed Case Study
+                </span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-white mb-1">
+                {activeModalItem.dogName} ({activeModalItem.breed})
+              </h3>
+              <p className="text-xs text-[#13253b] font-bold mb-4">
+                Service: {activeModalItem.service} • Package: {activeModalItem.packageUsed}
               </p>
+
+              <div className="rounded-xl overflow-hidden mb-6 border border-white/30">
+                <BeforeAfterSlider
+                  beforeImage={activeModalItem.beforeImage}
+                  afterImage={activeModalItem.afterImage}
+                  dogName={activeModalItem.dogName}
+                />
+              </div>
+
+              <div className="space-y-3 text-xs sm:text-sm">
+                <div className="p-3 bg-white/20 rounded-xl border border-white/20">
+                  <strong className="text-white block mb-1">Before Condition:</strong>
+                  <p className="text-[#13253b] font-medium leading-relaxed">{activeModalItem.beforeDescription}</p>
+                </div>
+                <div className="p-3 bg-white/30 rounded-xl border border-white/30">
+                  <strong className="text-white block mb-1">Treatment & Outcome:</strong>
+                  <p className="text-[#13253b] font-bold leading-relaxed">{activeModalItem.afterDescription}</p>
+                </div>
+                <div className="p-3 bg-white/20 rounded-xl border border-white/20">
+                  <strong className="text-white block mb-1">Specialist Notes:</strong>
+                  <p className="text-[#13253b] font-medium leading-relaxed">{activeModalItem.groomerNotes}</p>
+                </div>
+              </div>
+
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setActiveModalItem(null)}
+                  className="px-4 py-2 rounded-full border border-white/50 text-white text-xs font-bold hover:bg-white/10 cursor-pointer"
+                >
+                  Close
+                </button>
+                {onSelectForInquiry && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onSelectForInquiry(activeModalItem);
+                      setActiveModalItem(null);
+                    }}
+                    className="px-5 py-2 rounded-full bg-white text-[#13253b] font-bold text-xs hover:bg-[#efe0cd] shadow-xs cursor-pointer"
+                  >
+                    Inquire For Similar Spa
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-          <Link
-            to="/contact"
-            className="shrink-0 px-5 py-2.5 bg-[#2A4736] hover:bg-[#1f3629] text-white rounded-full text-sm font-semibold transition-colors shadow-sm"
-          >
-            Start Spa Inquiry
-          </Link>
-        </div>
+        )}
       </div>
-
-      {/* Stylist Notes Modal */}
-      {activeModalItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-stone-200 shadow-2xl">
-            <div className="p-6 border-b border-stone-100 flex items-center justify-between sticky top-0 bg-white z-10">
-              <div>
-                <div className="text-xs font-semibold uppercase tracking-wider text-[#2A4736]">
-                  Spa Case Study
-                </div>
-                <h3 className="text-2xl font-serif-title font-bold text-stone-900">
-                  {activeModalItem.dogName} • {activeModalItem.breed}
-                </h3>
-              </div>
-              <button
-                type="button"
-                onClick={() => setActiveModalItem(null)}
-                className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 transition-colors cursor-pointer"
-                aria-label="Close modal"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="p-6 space-y-6">
-              {/* Modal Slider */}
-              <BeforeAfterSlider
-                beforeImage={activeModalItem.beforeImage}
-                afterImage={activeModalItem.afterImage}
-                dogName={activeModalItem.dogName}
-              />
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                <div className="bg-stone-50 p-3 rounded-xl border border-stone-100">
-                  <span className="text-[11px] text-stone-500 uppercase font-medium">Age</span>
-                  <div className="font-semibold text-stone-900 text-sm mt-0.5">{activeModalItem.age}</div>
-                </div>
-                <div className="bg-stone-50 p-3 rounded-xl border border-stone-100">
-                  <span className="text-[11px] text-stone-500 uppercase font-medium">Duration</span>
-                  <div className="font-semibold text-stone-900 text-sm mt-0.5">{activeModalItem.duration}</div>
-                </div>
-                <div className="bg-stone-50 p-3 rounded-xl border border-stone-100">
-                  <span className="text-[11px] text-stone-500 uppercase font-medium">Package</span>
-                  <div className="font-semibold text-stone-900 text-sm mt-0.5">{activeModalItem.packageUsed}</div>
-                </div>
-                <div className="bg-stone-50 p-3 rounded-xl border border-stone-100">
-                  <span className="text-[11px] text-stone-500 uppercase font-medium">Focus</span>
-                  <div className="font-semibold text-stone-900 text-sm mt-0.5">{activeModalItem.categoryLabel}</div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <h5 className="text-sm font-bold text-stone-900 mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2A4736]" />
-                    Arrival vs. Post-Spa Assessment
-                  </h5>
-                  <div className="grid sm:grid-cols-2 gap-3 text-xs">
-                    <div className="p-3 rounded-lg bg-stone-50 text-stone-700 border border-stone-200">
-                      <strong className="block text-stone-900 mb-1">Arrival Condition:</strong>
-                      {activeModalItem.beforeDescription}
-                    </div>
-                    <div className="p-3 rounded-lg bg-[#EBF1ED] text-[#1F372A] border border-[#2A4736]/20">
-                      <strong className="block text-[#1F372A] mb-1">Post-Spa Transformation:</strong>
-                      {activeModalItem.afterDescription}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-emerald-950 text-xs leading-relaxed">
-                  <strong className="block font-bold text-emerald-900 mb-1">Spa Specialist Notes & Product Review:</strong>
-                  {activeModalItem.groomerNotes}
-                </div>
-              </div>
-            </div>
-
-            <div className="p-6 border-t border-stone-100 bg-stone-50 flex items-center justify-between gap-4">
-              <button
-                type="button"
-                onClick={() => setActiveModalItem(null)}
-                className="px-4 py-2 rounded-lg border border-stone-300 text-stone-700 text-xs font-medium hover:bg-stone-100 cursor-pointer"
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const item = activeModalItem;
-                  setActiveModalItem(null);
-                  if (onSelectForInquiry) {
-                    onSelectForInquiry(item);
-                  } else {
-                    const el = document.getElementById('inquiry');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="px-5 py-2 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs font-semibold transition-colors cursor-pointer"
-              >
-                Inquire For Similar Breed
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

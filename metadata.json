@@ -1,7 +1,6 @@
 {
   "name": "West Park Dog Grooming",
-  "description": "West Park Dog Spa in West Park, Leeds. A private, home-based dog spa in our dedicated garden studio specialising in short-haired breeds, professional bathing, deshedding, skin & coat care, and luxury spa treatments.",
+  "description": "West Park Dog Spa in West Park, Leeds. A private, home-based dog spa in our dedicated garden studio with coat & skin specialists for bathing, therapeutic bath and blow out, and luxury spa treatments.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
-

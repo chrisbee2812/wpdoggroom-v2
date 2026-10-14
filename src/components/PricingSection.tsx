@@ -13,7 +13,6 @@ import {
   Check,
   Sparkles,
   Clock,
-  HelpCircle,
   ArrowRight,
   ShieldCheck,
   Heart,
@@ -21,7 +20,6 @@ import {
   Smile,
   Waves,
   Sun,
-  Shield,
   Info
 } from 'lucide-react';
 
@@ -45,21 +43,21 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
   const getAddOnIcon = (iconName: string) => {
     switch (iconName) {
       case 'Sparkles':
-        return <Sparkles className="w-4 h-4 text-amber-600" />;
+        return <Sparkles className="w-4 h-4 text-white" />;
       case 'Droplets':
-        return <Droplets className="w-4 h-4 text-cyan-600" />;
+        return <Droplets className="w-4 h-4 text-white" />;
       case 'Waves':
-        return <Waves className="w-4 h-4 text-sky-600" />;
+        return <Waves className="w-4 h-4 text-white" />;
       case 'Sun':
-        return <Sun className="w-4 h-4 text-amber-500" />;
+        return <Sun className="w-4 h-4 text-white" />;
       case 'Heart':
-        return <Heart className="w-4 h-4 text-rose-600" />;
+        return <Heart className="w-4 h-4 text-white" />;
       case 'Smile':
-        return <Smile className="w-4 h-4 text-emerald-600" />;
+        return <Smile className="w-4 h-4 text-white" />;
       case 'ShieldCheck':
-        return <ShieldCheck className="w-4 h-4 text-stone-700" />;
+        return <ShieldCheck className="w-4 h-4 text-white" />;
       default:
-        return <Sparkles className="w-4 h-4 text-stone-500" />;
+        return <Sparkles className="w-4 h-4 text-white" />;
     }
   };
 
@@ -92,32 +90,32 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
   };
 
   return (
-    <section id="pricing" className="py-16 lg:py-20 bg-[#FAF8F5]">
+    <section id="pricing" className="py-16 lg:py-20 bg-[#efe0cd]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Droplets className="w-3.5 h-3.5 text-[#2A4736]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8096bb] text-white text-xs font-semibold uppercase tracking-wider mb-3 border border-white/30 shadow-xs">
+            <Droplets className="w-3.5 h-3.5 text-white" />
             Specialist Bathing • Skin & Coat Care • Spa Treatments
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-[#af8967] tracking-tight">
             Dog Spa Menu & Starting Prices
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-stone-600 font-sans leading-relaxed">
-            A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We specialise in short-haired breeds, professional bathing, deshedding and specialist skin & coat care, alongside luxury spa treatments using carefully selected professional products.
+          <p className="mt-4 text-base sm:text-lg text-[#2b2520] font-sans leading-relaxed">
+            A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
           </p>
         </div>
 
-        {/* Dog Size Selector */}
+        {/* Dog Size Selector Card in #8096bb */}
         <div className="space-y-3">
           <div className="text-center">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#2A4736]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#13253b]">
               Step 1: Choose Your Dog's Size Bracket
             </span>
           </div>
 
-          <div className="max-w-3xl mx-auto bg-white p-2 rounded-2xl border border-stone-200 shadow-sm">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+          <div className="max-w-3xl mx-auto bg-[#8096bb] p-2.5 rounded-2xl border border-white/40 shadow-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {sizes.map(size => {
                 const def = DOG_SIZE_DEFINITIONS[size];
                 const isSelected = selectedSize === size;
@@ -128,14 +126,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                     onClick={() => setSelectedSize(size)}
                     className={`py-3 px-3 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center cursor-pointer ${
                       isSelected
-                        ? 'bg-[#2A4736] text-white shadow-sm'
-                        : 'bg-stone-50 text-stone-700 hover:bg-stone-100'
+                        ? 'bg-white text-[#13253b] shadow-sm font-bold ring-2 ring-white'
+                        : 'bg-white/20 text-white hover:bg-white/30'
                     }`}
                   >
                     <span className="font-serif-title font-bold text-base sm:text-lg">
                       {def.label}
                     </span>
-                    <span className={`text-[11px] mt-0.5 ${isSelected ? 'text-stone-200' : 'text-stone-500'}`}>
+                    <span className={`text-[11px] mt-0.5 ${isSelected ? 'text-[#13253b]/80 font-medium' : 'text-white/80'}`}>
                       {def.weight}
                     </span>
                   </button>
@@ -145,25 +143,25 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
           </div>
 
           {/* Size Examples Line */}
-          <div className="max-w-3xl mx-auto px-4 py-1.5 text-center text-xs text-stone-500 flex items-center justify-center gap-1.5 flex-wrap">
-            <span className="font-semibold text-stone-700">Common {currentSizeDef.label}:</span>
+          <div className="max-w-3xl mx-auto px-4 py-1.5 text-center text-xs text-[#2b2520] flex items-center justify-center gap-1.5 flex-wrap font-medium">
+            <span className="font-bold text-[#13253b]">Common {currentSizeDef.label}:</span>
             <span>{currentSizeDef.examples}</span>
           </div>
         </div>
 
-        {/* 🫧 CATEGORY 1: BATH & BLOW-DRY */}
+        {/* 🫧 CATEGORY 1: BATH & BLOW-DRY CARDS in #8096bb */}
         <div className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200 pb-3 gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#af8967]/30 pb-3 gap-2">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#2A4736]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#13253b]">
                 Core Hydration & Cleansing
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-stone-900 mt-0.5 flex items-center gap-2">
+              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-[#af8967] mt-0.5 flex items-center gap-2">
                 <span>🫧</span> Bath & Blow-Dry
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-stone-500">
-              Showing starting rates for <strong className="text-stone-800">{currentSizeDef.label}</strong> ({currentSizeDef.weight})
+            <p className="text-xs sm:text-sm text-[#2b2520] font-medium">
+              Showing starting rates for <strong className="text-[#13253b]">{currentSizeDef.label}</strong> ({currentSizeDef.weight})
             </p>
           </div>
 
@@ -180,63 +178,55 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                   viewport={{ once: true, margin: '-20px' }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className={`relative bg-white rounded-2xl flex flex-col justify-between transition-shadow duration-300 ${
-                    isPopular
-                      ? 'border-2 border-[#2A4736] shadow-md ring-4 ring-[#2A4736]/10'
-                      : 'border border-stone-200 shadow-xs hover:shadow-md'
+                  className={`relative bg-[#8096bb] rounded-2xl flex flex-col justify-between transition-shadow duration-300 border border-white/40 shadow-sm text-white ${
+                    isPopular ? 'ring-4 ring-white/30 shadow-lg' : ''
                   }`}
                 >
                   {/* Badge */}
                   {pkg.badge && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
-                      <span
-                        className={`px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-xs whitespace-nowrap inline-flex items-center justify-center leading-none ${
-                          isPopular
-                            ? 'bg-[#2A4736] text-white ring-2 ring-white'
-                            : 'bg-emerald-100 text-emerald-900 border border-emerald-300 ring-2 ring-white'
-                        }`}
-                      >
+                      <span className="px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-xs whitespace-nowrap inline-flex items-center justify-center leading-none bg-white text-[#13253b] ring-2 ring-[#8096bb]">
                         {pkg.badge}
                       </span>
                     </div>
                   )}
 
                   <div className="p-6">
-                    <h4 className="text-xl font-serif-title font-bold text-stone-900 mb-1">
+                    <h4 className="text-2xl font-serif-title font-bold text-white mb-1">
                       {pkg.name}
                     </h4>
-                    <p className="text-xs text-[#2A4736] font-medium mb-4 min-h-7.5">
+                    <p className="text-xs text-[#13253b] font-bold mb-4 min-h-[30px]">
                       {pkg.tagline}
                     </p>
 
                     {/* Price Block */}
-                    <div className="mb-4 pb-4 border-b border-stone-100 flex items-baseline gap-1.5">
-                      <span className="text-xs text-stone-500 font-medium">from</span>
-                      <span className="text-4xl font-extrabold text-stone-900 tracking-tight">
+                    <div className="mb-4 pb-4 border-b border-white/20 flex items-baseline gap-1.5">
+                      <span className="text-xs text-white/80 font-medium">from</span>
+                      <span className="text-4xl font-extrabold text-white tracking-tight">
                         £{price}
                       </span>
-                      <span className="text-xs text-stone-500 font-normal">
+                      <span className="text-xs text-white/80 font-normal">
                         / {currentSizeDef.label.toLowerCase()}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-xs text-stone-500 mb-4 bg-stone-50 px-2.5 py-1.5 rounded-lg border border-stone-100">
-                      <Clock className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-xs text-[#13253b] font-medium mb-4 bg-white/25 px-2.5 py-1.5 rounded-lg border border-white/20">
+                      <Clock className="w-3.5 h-3.5 text-white shrink-0" />
                       <span>Est. Duration: ~{pkg.durationEstimate}</span>
                     </div>
 
-                    <p className="text-xs text-stone-600 mb-4 leading-relaxed font-sans">
+                    <p className="text-xs text-[#13253b] font-medium mb-4 leading-relaxed font-sans">
                       {pkg.description}
                     </p>
 
                     {/* Features */}
                     <div className="space-y-2 pt-2">
-                      <span className="text-[11px] uppercase font-bold text-stone-400 tracking-wider">
+                      <span className="text-[11px] uppercase font-bold text-white tracking-wider block">
                         Included in treatment:
                       </span>
                       {pkg.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-stone-700">
-                          <Check className="w-4 h-4 text-[#2A4736] shrink-0 mt-0.5" />
+                        <div key={fIdx} className="flex items-start gap-2 text-xs text-[#13253b] font-medium">
+                          <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
                           <span className="leading-snug">{feat}</span>
                         </div>
                       ))}
@@ -247,11 +237,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                     <button
                       type="button"
                       onClick={() => handleInquireForPackage(pkg)}
-                      className={`w-full py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                        isPopular
-                          ? 'bg-[#2A4736] hover:bg-[#1a3325] text-white shadow-xs'
-                          : 'bg-stone-100 hover:bg-stone-200 text-stone-800'
-                      }`}
+                      className="w-full py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer bg-white text-[#13253b] hover:bg-[#efe0cd] shadow-xs"
                     >
                       Inquire for {pkg.name}
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -263,18 +249,18 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
           </div>
         </div>
 
-        {/* 👑 CATEGORY 2: SIGNATURE SPA EXPERIENCES & PUPPY */}
+        {/* 👑 CATEGORY 2: SIGNATURE SPA EXPERIENCES in #8096bb */}
         <div className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200 pb-3 gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#af8967]/30 pb-3 gap-2">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#13253b]">
                 All-Inclusive Pampering
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-stone-900 mt-0.5 flex items-center gap-2">
+              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-[#af8967] mt-0.5 flex items-center gap-2">
                 <span>👑</span> Signature Spa Experiences
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-stone-500">
+            <p className="text-xs sm:text-sm text-[#2b2520] font-medium">
               Complete head-to-paw restorative wellness rituals
             </p>
           </div>
@@ -292,60 +278,52 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                   viewport={{ once: true, margin: '-20px' }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className={`relative bg-white rounded-2xl flex flex-col justify-between transition-shadow duration-300 ${
-                    isPopular
-                      ? 'border-2 border-amber-600/70 shadow-md ring-4 ring-amber-500/10'
-                      : 'border border-stone-200 shadow-xs hover:shadow-md'
+                  className={`relative bg-[#8096bb] rounded-2xl flex flex-col justify-between transition-shadow duration-300 border border-white/40 shadow-sm text-white ${
+                    isPopular ? 'ring-4 ring-white/30 shadow-lg' : ''
                   }`}
                 >
                   {pkg.badge && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
-                      <span
-                        className={`px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-xs whitespace-nowrap inline-flex items-center justify-center leading-none ${
-                          isPopular
-                            ? 'bg-amber-700 text-white ring-2 ring-white'
-                            : 'bg-stone-800 text-white ring-2 ring-white'
-                        }`}
-                      >
+                      <span className="px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-xs whitespace-nowrap inline-flex items-center justify-center leading-none bg-white text-[#13253b] ring-2 ring-[#8096bb]">
                         {pkg.badge}
                       </span>
                     </div>
                   )}
 
                   <div className="p-6">
-                    <h4 className="text-xl font-serif-title font-bold text-stone-900 mb-1">
+                    <h4 className="text-2xl font-serif-title font-bold text-white mb-1">
                       {pkg.name}
                     </h4>
-                    <p className="text-xs text-amber-800 font-medium mb-4 min-h-7.5">
+                    <p className="text-xs text-[#13253b] font-bold mb-4 min-h-[30px]">
                       {pkg.tagline}
                     </p>
 
-                    <div className="mb-4 pb-4 border-b border-stone-100 flex items-baseline gap-1.5">
-                      <span className="text-xs text-stone-500 font-medium">from</span>
-                      <span className="text-4xl font-extrabold text-stone-900 tracking-tight">
+                    <div className="mb-4 pb-4 border-b border-white/20 flex items-baseline gap-1.5">
+                      <span className="text-xs text-white/80 font-medium">from</span>
+                      <span className="text-4xl font-extrabold text-white tracking-tight">
                         £{price}
                       </span>
-                      <span className="text-xs text-stone-500 font-normal">
+                      <span className="text-xs text-white/80 font-normal">
                         / {currentSizeDef.label.toLowerCase()}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-xs text-stone-500 mb-4 bg-stone-50 px-2.5 py-1.5 rounded-lg border border-stone-100">
-                      <Clock className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-xs text-[#13253b] font-medium mb-4 bg-white/25 px-2.5 py-1.5 rounded-lg border border-white/20">
+                      <Clock className="w-3.5 h-3.5 text-white shrink-0" />
                       <span>Est. Duration: ~{pkg.durationEstimate}</span>
                     </div>
 
-                    <p className="text-xs text-stone-600 mb-4 leading-relaxed font-sans">
+                    <p className="text-xs text-[#13253b] font-medium mb-4 leading-relaxed font-sans">
                       {pkg.description}
                     </p>
 
                     <div className="space-y-2 pt-2">
-                      <span className="text-[11px] uppercase font-bold text-stone-400 tracking-wider">
+                      <span className="text-[11px] uppercase font-bold text-white tracking-wider block">
                         Included in experience:
                       </span>
                       {pkg.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-stone-700">
-                          <Check className="w-4 h-4 text-[#2A4736] shrink-0 mt-0.5" />
+                        <div key={fIdx} className="flex items-start gap-2 text-xs text-[#13253b] font-medium">
+                          <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
                           <span className="leading-snug">{feat}</span>
                         </div>
                       ))}
@@ -356,11 +334,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                     <button
                       type="button"
                       onClick={() => handleInquireForPackage(pkg)}
-                      className={`w-full py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                        isPopular
-                          ? 'bg-[#2A4736] hover:bg-[#1a3325] text-white shadow-xs'
-                          : 'bg-stone-100 hover:bg-stone-200 text-stone-800'
-                      }`}
+                      className="w-full py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer bg-white text-[#13253b] hover:bg-[#efe0cd] shadow-xs"
                     >
                       Inquire for {pkg.name.split(' ')[0]}
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -372,36 +346,36 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
           </div>
         </div>
 
-        {/* 🌿 CATEGORY 3: SPECIALIST SPA TREATMENTS */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-stone-200/90 shadow-sm space-y-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-stone-100">
+        {/* 🌿 CATEGORY 3: SPECIALIST SPA TREATMENTS in #8096bb */}
+        <div className="bg-[#8096bb] rounded-3xl p-6 sm:p-10 border border-white/40 shadow-sm space-y-8 text-white">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/20">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-800 mb-1">
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-white/90 mb-1">
                 <span>🌿</span>
                 Specialist Spa Treatments
               </div>
-              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-stone-900">
+              <h3 className="text-2xl sm:text-3xl font-serif-title font-bold text-white">
                 Upgrade Your Dog’s Bath Experience
               </h3>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1">
+              <p className="text-xs sm:text-sm text-[#13253b] font-medium mt-1">
                 Upgrade your dog’s bath with one of our specialist coat-care experiences. Select treatments below to calculate your personalized estimate.
               </p>
             </div>
 
             {selectedAddOns.length > 0 && (
-              <div className="bg-emerald-50 border border-emerald-200 px-4 py-2.5 rounded-xl text-xs flex items-center gap-4 shrink-0">
+              <div className="bg-white/95 border border-white px-4 py-2.5 rounded-xl text-xs flex items-center gap-4 shrink-0 shadow-sm">
                 <div>
-                  <span className="text-emerald-950 font-bold block">
+                  <span className="text-[#13253b] font-bold block">
                     {selectedAddOns.length} Spa Upgrade{selectedAddOns.length > 1 ? 's' : ''} Selected
                   </span>
-                  <span className="text-emerald-800 text-[11px]">
+                  <span className="text-[#8096bb] font-bold text-[11px]">
                     +£{totalAddOnCost} added to estimate
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedAddOns([])}
-                  className="text-emerald-800 underline hover:text-emerald-950 text-xs font-semibold cursor-pointer"
+                  className="text-[#13253b] underline hover:text-[#8096bb] text-xs font-bold cursor-pointer"
                 >
                   Reset
                 </button>
@@ -423,37 +397,37 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                   onClick={() => toggleAddOn(addon.id)}
                   className={`cursor-pointer p-4 rounded-xl border transition-all duration-200 flex flex-col justify-between ${
                     isChecked
-                      ? 'border-[#2A4736] bg-[#EBF1ED]/50 ring-2 ring-[#2A4736]/20 shadow-xs'
-                      : 'border-stone-200 bg-stone-50/50 hover:bg-stone-50 hover:border-stone-300'
+                      ? 'border-white bg-white/30 ring-2 ring-white shadow-xs'
+                      : 'border-white/30 bg-white/15 hover:bg-white/20'
                   }`}
                 >
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-lg">{addon.flagEmoji || '✨'}</span>
-                        <h4 className="font-semibold text-stone-900 text-sm leading-tight">
+                        <h4 className="font-semibold text-white text-sm leading-tight font-serif-title">
                           {addon.name}
                         </h4>
                       </div>
-                      <span className="font-bold text-xs text-[#2A4736] bg-white px-2 py-0.5 rounded-md border border-stone-200 shrink-0">
+                      <span className="font-bold text-xs text-[#13253b] bg-white px-2 py-0.5 rounded-md border border-white shrink-0">
                         {addon.priceNote}
                       </span>
                     </div>
 
                     {addon.subtitle && (
-                      <div className="text-[11px] font-semibold text-emerald-800 mb-2 pl-7">
+                      <div className="text-[11px] font-bold text-white/90 mb-2 pl-7">
                         {addon.subtitle}
                       </div>
                     )}
 
-                    <p className="text-xs text-stone-600 pl-7 mb-3 leading-relaxed">
+                    <p className="text-xs text-[#13253b] font-medium pl-7 mb-3 leading-relaxed">
                       {addon.description}
                     </p>
                   </div>
 
-                  <div className="pl-7 pt-2 border-t border-stone-200/50 flex items-center justify-between text-[11px]">
-                    <span className="text-stone-400 capitalize">Specialist Care</span>
-                    <span className={`font-semibold ${isChecked ? 'text-[#2A4736]' : 'text-stone-500'}`}>
+                  <div className="pl-7 pt-2 border-t border-white/20 flex items-center justify-between text-[11px]">
+                    <span className="text-white/80 capitalize">Specialist Care</span>
+                    <span className={`font-bold ${isChecked ? 'text-white' : 'text-white/90'}`}>
                       {isChecked ? '✓ Added to Inquiry' : '+ Tap to select'}
                     </span>
                   </div>
@@ -463,45 +437,45 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
           </div>
         </div>
 
-        {/* 🌟 GOOD TO KNOW SECTION */}
-        <div className="bg-[#EBF1ED]/80 rounded-3xl p-6 sm:p-10 border border-[#2A4736]/20">
+        {/* 🌟 GOOD TO KNOW IMPORTANT INFO CARDS: bg #8096bb, white heading, dark blue paragraph text */}
+        <div className="bg-[#8096bb] rounded-3xl p-6 sm:p-10 border border-white/40 shadow-md">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-[#2A4736] text-white flex items-center justify-center shrink-0">
-              <Info className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl bg-white text-[#13253b] flex items-center justify-center shrink-0">
+              <Info className="w-5 h-5 text-[#8096bb]" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#2A4736]">
+              <span className="text-xs font-bold uppercase tracking-wider text-white/90">
                 Transparency & Care Philosophy
               </span>
-              <h3 className="text-2xl font-serif-title font-bold text-stone-900">
+              <h3 className="text-2xl font-serif-title font-bold text-white">
                 Good to know
               </h3>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-stone-700">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {GOOD_TO_KNOW.points.map((pt, i) => (
-              <div key={i} className="bg-white p-5 rounded-2xl border border-[#2A4736]/15 shadow-2xs space-y-2">
-                <div className="flex items-center gap-2 text-stone-900 font-bold text-sm">
-                  <span className="w-5 h-5 rounded-full bg-[#EBF1ED] text-[#2A4736] flex items-center justify-center text-xs">
+              <div key={i} className="bg-[#8096bb] p-5 rounded-2xl border border-white/40 shadow-xs space-y-2">
+                <div className="flex items-center gap-2 text-white font-bold text-base">
+                  <span className="w-6 h-6 rounded-full bg-white text-[#13253b] flex items-center justify-center text-xs font-bold">
                     {i + 1}
                   </span>
-                  <span>{pt.title}</span>
+                  <span className="font-serif-title">{pt.title}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans">
                   {pt.text}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-[#2A4736]/15 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-stone-600">
+          <div className="mt-8 pt-6 border-t border-white/25 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-[#13253b] font-medium">
               Have questions about your dog's coat type, sensitivities, or shedding volume? We're happy to advise.
             </p>
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-[#2A4736] hover:bg-[#1a3325] text-white rounded-full text-xs font-semibold transition-colors shrink-0 shadow-xs"
+              className="px-6 py-2.5 bg-white hover:bg-[#efe0cd] text-[#13253b] rounded-full text-xs font-bold transition-colors shrink-0 shadow-xs"
             >
               Request a Consultation
             </Link>

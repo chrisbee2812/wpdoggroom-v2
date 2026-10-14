@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { TransformationGallery } from '../components/TransformationGallery';
 import { TransformationItem } from '../types';
-import { Sparkles, ChevronRight, Droplets } from 'lucide-react';
+import { ChevronRight, Droplets } from 'lucide-react';
 
 export const GalleryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -19,46 +19,47 @@ export const GalleryPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen py-8 bg-[#efe0cd]">
       {/* Page Breadcrumb & Header Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
-          <Link to="/" className="hover:text-stone-900 transition-colors">
+        <div className="flex items-center gap-2 text-xs text-[#2b2520] mb-4 font-medium">
+          <Link to="/" className="hover:text-[#13253b] transition-colors">
             Home
           </Link>
-          <ChevronRight className="w-3 h-3 text-stone-400" />
-          <span className="font-semibold text-stone-900">Spa Transformations Gallery</span>
+          <ChevronRight className="w-3 h-3 text-[#13253b]" />
+          <span className="font-bold text-[#13253b]">Spa Transformations Gallery</span>
         </div>
 
+        {/* Important Info Header Card in #8096bb */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="bg-white rounded-3xl p-8 sm:p-10 border border-stone-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6"
+          className="bg-[#8096bb] rounded-3xl p-8 sm:p-10 border border-white/40 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1ED] text-[#2A4736] text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/30">
               <Droplets className="w-3.5 h-3.5" />
               Before & After Spa Results
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-stone-900">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-white">
               Spa Transformations Gallery
             </h1>
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans">
-              Explore our real studio transformations. Drag the interactive split-slider on each photo to examine short-coat revivals, deshedding blow-out results, and luxurious Japanese & Korean spa therapies in our West Park garden studio.
+            <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
+              Explore our real studio transformations. Drag the interactive split-slider on each photo to examine coat & skin care revivals, therapeutic bath and blow out results, and luxurious Japanese & Korean spa therapies in our West Park garden studio.
             </p>
           </div>
 
           <div className="shrink-0 flex flex-col sm:flex-row items-center gap-3">
             <Link
               to="/pricing"
-              className="px-5 py-2.5 rounded-full border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-semibold transition-colors"
+              className="px-5 py-2.5 rounded-full border border-white/60 text-white hover:bg-white/20 text-xs font-semibold transition-colors"
             >
               View Spa Packages
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-2.5 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs font-semibold transition-colors shadow-sm"
+              className="px-6 py-2.5 rounded-full bg-white hover:bg-[#efe0cd] text-[#13253b] text-xs font-bold transition-colors shadow-sm"
             >
               Book Spa Consultation
             </Link>

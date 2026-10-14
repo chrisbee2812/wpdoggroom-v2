@@ -23,7 +23,7 @@ export default function App() {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#242220] selection:bg-[#2A4736]/20 selection:text-[#183123]">
+      <div className="min-h-screen flex flex-col bg-[#efe0cd] text-[#2b2520] selection:bg-[#af8967]/30 selection:text-[#13253b]">
         {/* Navigation Bar */}
         <Navbar />
 
@@ -48,10 +48,10 @@ export default function App() {
           <button
             type="button"
             onClick={() => setShowInquiryLog(true)}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white text-stone-800 border border-stone-300 shadow-md hover:shadow-lg hover:border-[#2A4736] text-xs font-semibold transition-all group cursor-pointer"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#8096bb] text-white border border-white/40 shadow-lg hover:shadow-xl hover:bg-[#6e85ab] text-xs font-semibold transition-all group cursor-pointer"
             title="View submitted client inquiries"
           >
-            <ClipboardList className="w-4 h-4 text-[#2A4736] group-hover:scale-110 transition-transform" />
+            <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
             <span>Inquiry Log</span>
           </button>
         </div>

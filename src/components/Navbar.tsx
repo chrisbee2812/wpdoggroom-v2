@@ -26,20 +26,20 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Notification Bar */}
-      <div className="bg-[#1F372A] text-stone-200 text-xs py-2 px-4 border-b border-[#2A4736]">
+      <div className="bg-[#152438] text-stone-200 text-xs py-2 px-4 border-b border-[#243a57]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-medium text-[11px] sm:text-xs">
+            <span className="w-2 h-2 rounded-full bg-[#af8967] animate-pulse" />
+            <span className="font-medium text-[11px] sm:text-xs text-stone-200">
               West Park, Leeds • Dedicated Garden Studio • Specialist Bathing & Spa Treatments
             </span>
           </div>
 
           <div className="hidden sm:flex items-center gap-4 text-[11px] text-stone-300">
-            <span>Short-Haired Breeds & Deshedding Specialists</span>
+            <span>Coat & Skin Specialists • Therapeutic Bath & Blow-Out</span>
             <span>•</span>
-            <a href="tel:01133208492" className="hover:text-white flex items-center gap-1 font-semibold">
-              <Phone className="w-3 h-3" /> 0113 320 8492
+            <a href="tel:01133208492" className="hover:text-white flex items-center gap-1 font-semibold text-[#efe0cd]">
+              <Phone className="w-3 h-3 text-[#af8967]" /> 0113 320 8492
             </a>
           </div>
         </div>
@@ -49,30 +49,24 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-xs border-b border-stone-200/80 py-3'
-            : 'bg-[#FAF8F5] py-4'
+            ? 'bg-[#efe0cd]/95 backdrop-blur-md shadow-sm border-b border-[#af8967]/20 py-3'
+            : 'bg-[#efe0cd] py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2.5 group cursor-pointer">
-            <div className="w-20 h-20 md:w-30 md:h-30 flex items-center justify-center">
-              <img
-                src="/wpds-logo-sm.png"
-                alt="Pampered dog enjoying specialist bathing treatment"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                loading="eager"
-              />
-              {/* <Droplets className="w-5 h-5 text-emerald-300" /> */}
+            <div className="w-10 h-10 rounded-xl bg-[#8096bb] text-white flex items-center justify-center shadow-xs group-hover:bg-[#6e84aa] transition-colors">
+              <Droplets className="w-5 h-5 text-white" />
             </div>
-            {/* <div>
-              <span className="font-serif-title text-lg sm:text-xl font-bold tracking-tight text-stone-900 block leading-tight">
+            <div>
+              <span className="font-serif-title text-xl sm:text-2xl font-bold tracking-tight text-[#af8967] block leading-tight">
                 West Park
               </span>
-              <span className="text-[10px] tracking-widest uppercase font-semibold text-[#2A4736] block">
+              <span className="text-[10px] tracking-widest uppercase font-semibold text-[#152438] block">
                 Dog Spa
               </span>
-            </div> */}
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -83,10 +77,10 @@ export const Navbar: React.FC = () => {
                 to={link.path}
                 end={link.path === '/'}
                 className={({ isActive }) =>
-                  `text-xs lg:text-base font-medium px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                  `text-xs lg:text-sm font-medium px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-[#2A4736] text-white shadow-2xs font-semibold'
-                      : 'text-stone-400 hover:text-[#2A4736] hover:bg-stone-200'
+                      ? 'bg-[#8096bb] text-white shadow-2xs font-semibold'
+                      : 'text-[#2b2520] hover:text-[#13253b] hover:bg-[#8096bb]/20'
                   }`
                 }
               >
@@ -99,9 +93,9 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               to="/contact"
-              className="px-5 py-2.5 rounded-full bg-[#2A4736] hover:bg-[#1a3325] text-white text-xs lg:text-sm font-semibold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+              className="px-5 py-2.5 rounded-full bg-[#8096bb] hover:bg-[#6e84aa] text-white text-xs lg:text-sm font-semibold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer border border-white/30"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <Sparkles className="w-3.5 h-3.5 text-white" />
               Book Spa Consultation
             </Link>
           </div>
@@ -110,7 +104,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-100 focus:outline-none"
+            className="md:hidden p-2 rounded-xl text-[#2b2520] hover:bg-[#8096bb]/20 focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -119,7 +113,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#FAF8F5] border-b border-stone-200 px-4 pt-3 pb-6 space-y-2 animate-fadeIn">
+          <div className="md:hidden bg-[#efe0cd] border-b border-[#af8967]/30 px-4 pt-3 pb-6 space-y-2 animate-fadeIn shadow-lg">
             {navLinks.map(link => (
               <NavLink
                 key={link.name}
@@ -129,8 +123,8 @@ export const Navbar: React.FC = () => {
                 className={({ isActive }) =>
                   `block px-3.5 py-2.5 rounded-xl text-base font-serif-title font-medium transition-colors ${
                     isActive
-                      ? 'bg-[#2A4736] text-white'
-                      : 'text-stone-800 hover:bg-stone-100'
+                      ? 'bg-[#8096bb] text-white'
+                      : 'text-[#2b2520] hover:bg-[#8096bb]/20'
                   }`
                 }
               >
@@ -141,7 +135,7 @@ export const Navbar: React.FC = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 text-center block rounded-xl bg-[#2A4736] text-white font-semibold text-sm shadow-xs cursor-pointer"
+                className="w-full py-3 text-center block rounded-xl bg-[#8096bb] text-white font-semibold text-sm shadow-xs cursor-pointer"
               >
                 Book Spa Consultation
               </Link>
