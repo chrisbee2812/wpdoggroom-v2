@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
             <div className="w-15 h-15 rounded-xl bg-[#8096bb] text-white flex items-center justify-center shadow-xs group-hover:bg-[#6e84aa] transition-colors">
               {/* <Droplets className="w-5 h-5 text-white" /> */}
               <img
-                  src="/white-on-lightblue-bassett-small.webp"
+                  src="/colour-bassett-small.webp"
                   alt="Happy pampering dog enjoying bath at West Park Luxury Dog Spa"
                   referrerPolicy="no-referrer"
                   className="w-full h-full rounded-xl object-cover object-center"
