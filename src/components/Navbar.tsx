@@ -56,14 +56,20 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2.5 group cursor-pointer">
-            <div className="w-10 h-10 rounded-xl bg-[#8096bb] text-white flex items-center justify-center shadow-xs group-hover:bg-[#6e84aa] transition-colors">
-              <Droplets className="w-5 h-5 text-white" />
+            <div className="w-15 h-15 rounded-xl bg-[#8096bb] text-white flex items-center justify-center shadow-xs group-hover:bg-[#6e84aa] transition-colors">
+              {/* <Droplets className="w-5 h-5 text-white" /> */}
+              <img
+                  src="/white-on-lightblue-bassett-small.webp"
+                  alt="Happy pampering dog enjoying bath at West Park Luxury Dog Spa"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full rounded-xl object-cover object-center"
+                />
             </div>
             <div>
-              <span className="font-serif-title text-xl sm:text-2xl font-bold tracking-tight text-[#af8967] block leading-tight">
+              <span className="font-serif-title text-xl sm:text-3xl font-bold tracking-tight text-[#af8967] block leading-tight">
                 West Park
               </span>
-              <span className="text-[10px] tracking-widest uppercase font-semibold text-[#152438] block">
+              <span className="text-[14px] tracking-widest uppercase font-semibold text-[#152438] block">
                 Luxury Dog Spa
               </span>
             </div>
