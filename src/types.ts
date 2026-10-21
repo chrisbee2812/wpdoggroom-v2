@@ -1,4 +1,4 @@
-export type DogSize = 'small' | 'medium' | 'large' | 'xl';
+export type DogSize = 'small' | 'medium' | 'large';
 
 export interface TransformationItem {
   id: string;
@@ -31,7 +31,6 @@ export interface PricingPackage {
     small: number;
     medium: number;
     large: number;
-    xl: number;
   };
   durationEstimate: string;
   features: string[];

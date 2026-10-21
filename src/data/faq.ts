@@ -68,6 +68,12 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: 'Most spa visits take between 45 minutes to 1.5 hours depending on size, coat condition, and the selected spa rituals. Because we work strictly 1-on-1, your dog is bathed, dried, pamper-treated, and ready for collection without waiting in a cage.'
   },
   {
+    id: 'faq-dog-sizes',
+    category: 'general',
+    question: 'What sizes of dogs can you accommodate? Do you accept extra-large (XL) dogs?',
+    answer: 'Due to the dimensions of our specialist hydrobath and custom equipment in our boutique garden studio, we comfortably accommodate small, medium, and large dogs (up to approx. 35 kg, such as Frenchies, Spaniels, Labradors, Boxers, and Pointers). However, we are unable to accommodate extra-large (XL) dogs or giant breeds (such as Great Danes, Newfoundlands, Mastiffs, Cane Corsos, or Saint Bernards) as our bathing facilities and equipment are not large enough to care for them safely and comfortably.'
+  },
+  {
     id: 'faq-vaccines',
     category: 'health',
     question: 'What vaccinations are required before visiting the spa?',

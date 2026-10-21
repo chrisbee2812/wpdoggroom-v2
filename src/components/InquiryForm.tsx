@@ -7,7 +7,8 @@ import {
   PRICING_PACKAGES,
   SHORT_COAT_INCLUDED_ADDON_NAMES,
   ULTIMATE_INCLUDED_ADDON_NAMES,
-  ULTIMATE_SPECIALIST_CHOICE_NAMES
+  ULTIMATE_SPECIALIST_CHOICE_NAMES,
+  PRICING_DISCLAIMER
 } from '../data/pricing';
 import { Send, CheckCircle2, Phone, Mail, MapPin, Clock, Droplets, Heart, Sparkles, Check, Info } from 'lucide-react';
 
@@ -285,7 +286,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
               Starting Price Policy
             </h4>
             <p className="text-xs text-[#13253b] font-medium leading-relaxed">
-              Prices are starting prices and may vary depending on your dog’s size, coat type, coat condition, shedding level and the time required.
+              {PRICING_DISCLAIMER}
             </p>
             <p className="text-xs text-[#13253b] font-medium leading-relaxed">
               We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.
@@ -294,7 +295,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
 
           {/* Live Custom Package Preview Card */}
           {basePrice > 0 && (
-            <div className="bg-[#8096bb] rounded-3xl p-6 border-2 border-white shadow-md text-white space-y-3">
+            <div className="bg-[#8096bb] rounded-3xl p-6 pb-7 border-2 border-white shadow-md text-white space-y-3">
               <div className="flex items-center justify-between">
                 <h4 className="font-serif-title font-bold text-lg text-white flex items-center gap-1.5">
                   <Sparkles className="w-4 h-4 text-white" />
@@ -305,7 +306,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-1.5 text-xs text-[#13253b] font-medium bg-white/20 p-3.5 rounded-xl border border-white/25">
+              <div className="space-y-1.5 text-xs text-[#13253b] font-medium bg-white/20 p-3.5 pb-4 rounded-xl border border-white/25">
                 <div className="flex justify-between items-center text-white font-bold">
                   <span>{packageInterest} ({DOG_SIZE_DEFINITIONS[weightCategory].label})</span>
                   <span>£{basePrice}</span>
@@ -329,9 +330,13 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 })}
 
                 <div className="pt-2 mt-2 border-t border-white/30 flex justify-between items-center text-sm font-extrabold text-white">
-                  <span>Starting Estimate</span>
-                  <span className="text-xl">from £{estimatedTotal}</span>
+                  <span>Estimated Starting Total:</span>
+                  <span className="text-xl font-black">from £{estimatedTotal}</span>
                 </div>
+
+                <p className="text-[10px] text-white/90 font-medium pt-1 leading-snug">
+                  {PRICING_DISCLAIMER}
+                </p>
               </div>
             </div>
           )}
@@ -551,8 +556,8 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                     <label className="block text-xs font-bold text-white mb-1.5">
                       Dog Size Bracket
                     </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {(['small', 'medium', 'large', 'xl'] as DogSize[]).map(size => {
+                    <div className="grid grid-cols-3 gap-2">
+                      {(['small', 'medium', 'large'] as DogSize[]).map(size => {
                         const def = DOG_SIZE_DEFINITIONS[size];
                         return (
                           <button
@@ -654,7 +659,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                           </span>
                         </div>
                         <p className="text-xs text-[#13253b] font-medium mt-1 leading-relaxed">
-                          For dogs needing a little more than their usual bath. Includes a thorough double cleansing wash using products selected for the individual coat, deep conditioner, blow-dry and brush-through.
+                          The additional £5 is for an extra deep-cleansing stage, using specialist products to help remove excess dirt, grease and product build-up from the coat before conditioning and blow-dry.
                         </p>
                         {!isBathAndBlowDry && (
                           <p className="text-[11px] text-white/80 font-medium mt-1 italic">
@@ -919,16 +924,80 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                     </div>
                   </div>
 
+                  {/* 🌟 INQUIRY SUMMARY SECTION (Dedicated White Box with Zero Text Clipping) */}
+                  <div className="bg-white rounded-2xl p-4 sm:p-5 border border-white/60 shadow-sm text-[#13253b] space-y-3">
+                    <div className="flex items-center justify-between border-b border-[#8096bb]/20 pb-2.5">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-[#8096bb]/15 flex items-center justify-center text-[#8096bb]">
+                          <Sparkles className="w-4 h-4 text-[#8096bb]" />
+                        </div>
+                        <span className="font-serif-title font-bold text-sm sm:text-base text-[#13253b]">
+                          Inquiry Selection Summary
+                        </span>
+                      </div>
+                      <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#8096bb]/15 text-[#13253b]">
+                        {DOG_SIZE_DEFINITIONS[weightCategory].label} ({weightCategory.toUpperCase()})
+                      </span>
+                    </div>
+
+                    <div className="space-y-1.5 text-xs text-[#13253b]">
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium text-stone-700">Selected Package: <strong>{packageInterest}</strong></span>
+                        <span className="font-bold text-[#13253b]">£{basePrice}</span>
+                      </div>
+
+                      {isBathAndBlowDry && includeDeepClean && (
+                        <div className="flex justify-between items-center text-stone-700">
+                          <span>• Deep Clean Clarifying Wash (+£5 stage):</span>
+                          <span className="font-bold text-[#13253b]">+£{DEEP_CLEAN_UPGRADE.price}</span>
+                        </div>
+                      )}
+
+                      {paidUpgrades.map(name => {
+                        const tr = SPECIALIST_SPA_TREATMENTS.find(t => t.name === name);
+                        return (
+                          <div key={name} className="flex justify-between items-center text-stone-700">
+                            <span>• {name}:</span>
+                            <span className="font-bold text-[#13253b]">+£{tr ? tr.basePrice : 0}</span>
+                          </div>
+                        );
+                      })}
+
+                      {(isShortCoat || isUltimate) && (
+                        <div className="text-[11px] text-emerald-800 font-semibold pt-0.5">
+                          {isShortCoat
+                            ? '✓ Fresh Face & Luxury Paw Spa included in package (£0)'
+                            : `✓ Fresh Face, Luxury Paw Spa & ${ultimateChoice} included in package (£0)`}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="pt-3 border-t border-[#8096bb]/20 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 pb-1">
+                      <span className="text-xs sm:text-sm font-bold text-[#13253b]">
+                        Estimated Starting Total:
+                      </span>
+                      <span className="text-xl sm:text-2xl font-black text-[#13253b] tracking-tight">
+                        £{estimatedTotal}
+                      </span>
+                    </div>
+
+                    <div className="pt-1.5 border-t border-stone-200">
+                      <p className="text-[11px] text-stone-600 font-medium leading-relaxed">
+                        {PRICING_DISCLAIMER}
+                      </p>
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-xs font-bold text-white mb-1">
                       Additional Details, Sensitivities, or Questions
                     </label>
                     <textarea
-                      rows={3}
+                      rows={5}
                       value={message}
                       onChange={e => setMessage(e.target.value)}
                       placeholder="Share any sensitivities, coat history, or questions..."
-                      className="w-full px-3.5 py-2.5 bg-white rounded-xl border border-white/40 text-sm text-[#13253b] placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-white font-medium"
+                      className="w-full px-3.5 py-3 bg-white rounded-xl border border-white/40 text-sm text-[#13253b] placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-white font-medium min-h-30 resize-y leading-relaxed"
                     />
                   </div>
                 </div>

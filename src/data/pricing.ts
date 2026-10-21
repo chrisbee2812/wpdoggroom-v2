@@ -15,11 +15,6 @@ export const DOG_SIZE_DEFINITIONS: Record<DogSize, { label: string; weight: stri
     label: 'Large dogs',
     weight: '20 – 35 kg',
     examples: 'Labrador Retriever, Boxer, Dalmatian, Pointer, Doberman, Vizsla, Weimaraner'
-  },
-  xl: {
-    label: 'XL dogs',
-    weight: '35 kg+',
-    examples: 'Great Dane, Cane Corso, Mastiff, Rhodesian Ridgeback, Bullmastiff, Rottweiler'
   }
 };
 
@@ -38,8 +33,7 @@ export const BATH_BLOWDRY_PACKAGES: PricingPackage[] = [
     prices: {
       small: 25,
       medium: 30,
-      large: 35,
-      xl: 40
+      large: 35
     },
     durationEstimate: '45 mins – 1.25 hrs',
     recommendedFor: 'Coat & skin care for all breeds and smooth coats for routine skin & coat maintenance',
@@ -64,8 +58,7 @@ export const BATH_BLOWDRY_PACKAGES: PricingPackage[] = [
     prices: {
       small: 35,
       medium: 40,
-      large: 45,
-      xl: 50
+      large: 45
     },
     durationEstimate: '1.25 hrs – 2 hrs',
     recommendedFor: 'Labradors, Pugs, Dalmatians, and all breeds needing therapeutic skin rejuvenation, undercoat release, and coat revitalization',
@@ -85,14 +78,14 @@ export const DEEP_CLEAN_UPGRADE = {
   name: 'Deep Clean Clarifying Wash',
   price: 5,
   priceNote: 'Add £5 to Bath & Blow-Dry',
-  tagline: 'For dogs needing a little more than their usual bath',
-  description: 'For dogs needing a little more than their usual bath. Includes a thorough cleansing wash using products selected for the individual coat, conditioner, blow-dry and brush-through.',
-  badge: '+£5 to Bath & Blow-Dry',
+  tagline: 'Extra deep-cleansing stage for coats with excess dirt, grease or build-up',
+  description: 'An extra deep-cleansing stage, using specialist products to help remove excess dirt, grease and product build-up from the coat before conditioning and gentle blow-dry.',
+  badge: '+£5 Deep-Cleansing Stage',
   features: [
-    'Thorough double clarifying wash targeted to remove deep outdoor grit, grease & sebum',
-    'Specialist coat-clarifying products selected for the individual coat type',
-    'Deep restorative conditioner massage',
-    'High-efficiency warm blow-dry & thorough brush-through'
+    'An extra deep-cleansing stage prior to conditioning and blow-dry',
+    'Specialist products selected to thoroughly break down excess dirt, grease and product build-up',
+    'Deep clarifying wash targeting stubborn coat grime and skin sebum',
+    'Deep restorative conditioner massage, warm blow-dry & thorough brush-through'
   ]
 };
 
@@ -111,8 +104,7 @@ export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
     prices: {
       small: 40,
       medium: 45,
-      large: 50,
-      xl: 55
+      large: 50
     },
     durationEstimate: '1.25 hrs – 1.75 hrs',
     recommendedFor: 'French Bulldogs, Pugs, Staffies, Boxers, Dachshunds, Labradors, and smooth coats',
@@ -137,8 +129,7 @@ export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
     prices: {
       small: 50,
       medium: 55,
-      large: 60,
-      xl: 65
+      large: 60
     },
     durationEstimate: '1.5 hrs – 2.25 hrs',
     recommendedFor: 'Owners seeking head-to-paw luxury, rejuvenation, and advanced dermal conditioning',
@@ -163,8 +154,7 @@ export const SIGNATURE_SPA_EXPERIENCES: PricingPackage[] = [
     prices: {
       small: 25,
       medium: 30,
-      large: 35,
-      xl: 40
+      large: 35
     },
     durationEstimate: '45 mins – 1 hr',
     recommendedFor: 'Vaccinated puppies having their very first calm spa encounter',
@@ -288,6 +278,10 @@ export const ULTIMATE_SPECIALIST_CHOICE_NAMES = [
   'Korean Carbonated Spa Bath'
 ];
 
+// 🌿 PRICING DISCLAIMER CONSTANT
+export const PRICING_DISCLAIMER =
+  'Prices are starting estimates and may vary depending on coat type, condition, thickness, temperament and the time required.';
+
 // 🌿 GOOD TO KNOW GUIDELINES
 export const GOOD_TO_KNOW = {
   title: 'Good to know',
@@ -297,8 +291,8 @@ export const GOOD_TO_KNOW = {
       text: 'We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
     },
     {
-      title: 'Transparent Starting Prices',
-      text: 'Prices are starting prices and may vary depending on your dog’s size, coat type, coat condition, shedding level and the time required.'
+      title: 'Transparent Starting Estimates',
+      text: 'Prices are starting estimates and may vary depending on coat type, condition, thickness, temperament and the time required.'
     },
     {
       title: 'Product Safety & Suitability',

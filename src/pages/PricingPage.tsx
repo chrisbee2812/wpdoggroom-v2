@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PricingSection } from '../components/PricingSection';
 import { PricingPackage, DogSize } from '../types';
+import { PRICING_DISCLAIMER } from '../data/pricing';
 import { ChevronRight, Droplets, Sparkles, ShieldCheck } from 'lucide-react';
 
 export const PricingPage: React.FC = () => {
@@ -21,7 +22,7 @@ export const PricingPage: React.FC = () => {
         prefilledSize: config.size,
         prefilledUpgrades: config.addOns,
         prefilledDeepClean: config.deepClean,
-        prefilledNotes: `Custom Spa Package Selected:\n• Dog Size: ${config.size.toUpperCase()}\n• Base Package: ${config.package.name}\n${config.deepClean ? '• Deep Clean Clarifying Wash (+£5)\n' : ''}${config.addOns.length > 0 ? `• Specialist Add-ons: ${config.addOns.join(', ')}\n` : ''}• Estimated Starting Total: £${config.totalEstimate}`
+        prefilledNotes: `Custom Spa Package Selected:\n• Dog Size: ${config.size.toUpperCase()}\n• Base Package: ${config.package.name}\n${config.deepClean ? '• Deep Clean Clarifying Wash (+£5 stage)\n' : ''}${config.addOns.length > 0 ? `• Specialist Add-ons: ${config.addOns.join(', ')}\n` : ''}• Estimated Starting Total: £${config.totalEstimate}\n\n*${PRICING_DISCLAIMER}`
       }
     });
   };
@@ -56,6 +57,10 @@ export const PricingPage: React.FC = () => {
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
               A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
             </p>
+            <div className="pt-1 text-xs text-white/95 font-medium">
+              <span className="font-bold">Transparent Pricing: </span>
+              {PRICING_DISCLAIMER}
+            </div>
           </div>
 
           <div className="shrink-0 flex flex-col sm:flex-row items-center gap-3">

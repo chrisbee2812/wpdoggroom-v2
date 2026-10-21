@@ -28,7 +28,7 @@ export default function App() {
         <Navbar />
 
         {/* Dedicated Separate Page Routes */}
-        <main className="flex-1">
+        <main className="flex-1 pb-16 sm:pb-8">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
@@ -43,16 +43,16 @@ export default function App() {
         {/* Salon Footer */}
         <Footer />
 
-        {/* Floating Inquiry Log Access Button */}
-        <div className="fixed bottom-5 right-5 z-30">
+        {/* Floating Inquiry Log Access Button - Adjusted position & mobile-optimized clearance */}
+        <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-40 pointer-events-auto">
           <button
             type="button"
             onClick={() => setShowInquiryLog(true)}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#8096bb] text-white border border-white/40 shadow-lg hover:shadow-xl hover:bg-[#6e85ab] text-xs font-semibold transition-all group cursor-pointer"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-[#8096bb]/95 hover:bg-[#6e85ab] text-white border border-white/50 shadow-xl hover:shadow-2xl text-[11px] sm:text-xs font-semibold transition-all group cursor-pointer backdrop-blur-md active:scale-95 ring-1 ring-black/10"
             title="View submitted client inquiries"
           >
-            <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-            <span>Inquiry Log</span>
+            <ClipboardList className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:scale-110 transition-transform" />
+            <span className="tracking-wide">Inquiry Log</span>
           </button>
         </div>
 

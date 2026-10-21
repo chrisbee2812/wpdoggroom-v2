@@ -29,7 +29,7 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: 'Starting Price Policy',
-        text: 'Prices are starting prices and may vary depending on your dog’s size, coat type, coat condition, shedding level and the time required.'
+        text: 'Prices are starting estimates and may vary depending on coat type, condition, thickness, temperament and the time required.'
       },
       {
         heading: 'Compacted Shedding & Heavy Undercoat',

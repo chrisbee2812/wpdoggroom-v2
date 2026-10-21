@@ -107,14 +107,14 @@ export const HomePage: React.FC = () => {
               className="lg:col-span-5 relative"
             >
               <div className="relative mx-auto max-w-md lg:max-w-none group">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/5] bg-[#8096bb]">
+                <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-4/5 bg-[#8096bb]">
                   <img
                     src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80"
                     alt="Pampered dog enjoying specialist bathing treatment"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#13253b]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#13253b]/80 via-transparent to-transparent" />
                   
                   {/* Overlay Badge */}
                   <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#8096bb]/95 backdrop-blur-md border border-white/50 shadow-lg text-white">
@@ -138,7 +138,7 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Floating Credential Chip */}
-                <div className="absolute -top-4 -left-4 bg-[#8096bb] px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-2.5 hidden sm:flex text-white">
+                <div className="absolute -top-4 -left-4 bg-[#8096bb] px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-2.5 sm:flex text-white">
                   <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
@@ -215,7 +215,7 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.15 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="bg-[#8096bb] p-7 rounded-2xl border border-white/30 shadow-sm space-y-3"
+            className="bg-[#8096bb] p-7 pb-10 sm:pb-7 rounded-2xl border border-white/30 shadow-sm space-y-3"
           >
             <div className="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center">
               <ShieldCheck className="w-6 h-6" />
@@ -223,7 +223,7 @@ export const HomePage: React.FC = () => {
             <h3 className="font-serif-title font-bold text-xl text-white">
               Product Safety & Garden Studio Calm
             </h3>
-            <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans">
+            <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans pr-2 sm:pr-0">
               Before introducing products into our spa, we review ingredients, manufacturer guidance and intended use. Treatments are selected with the individual dog and coat in mind.
             </p>
           </motion.div>
@@ -249,14 +249,14 @@ export const HomePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {GOOD_TO_KNOW.points.map((pt, i) => (
-              <div key={i} className="bg-[#8096bb] p-5 rounded-2xl border border-white/40 shadow-xs space-y-2">
+              <div key={i} className="bg-[#8096bb] p-5 sm:p-6 pb-10 sm:pb-6 rounded-2xl border border-white/40 shadow-xs space-y-2">
                 <div className="flex items-center gap-2 text-white font-bold text-base">
                   <span className="w-6 h-6 rounded-full bg-white text-[#13253b] flex items-center justify-center text-xs font-bold shrink-0">
                     {i + 1}
                   </span>
                   <span className="font-serif-title">{pt.title}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans pr-2 sm:pr-0">
                   {pt.text}
                 </p>
               </div>
@@ -297,7 +297,7 @@ export const HomePage: React.FC = () => {
             >
               <Link
                 to="/gallery"
-                className="bg-[#8096bb] rounded-2xl p-6 border border-white/30 shadow-xs hover:shadow-md hover:border-white transition-all flex flex-col justify-between group h-full"
+                className="bg-[#8096bb] rounded-2xl p-6 pb-9 sm:pb-6 border border-white/30 shadow-xs hover:shadow-md hover:border-white transition-all flex flex-col justify-between group h-full"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -306,11 +306,11 @@ export const HomePage: React.FC = () => {
                   <h3 className="font-serif-title font-bold text-xl text-white group-hover:text-white transition-colors">
                     Spa Transformations Gallery
                   </h3>
-                  <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
+                  <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed pr-2 sm:pr-0">
                     View interactive Before & After split-sliders showing coat & skin care revivals, therapeutic bath and blow out results, and restorative sea mud & foam baths.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
+                <div className="mt-6 pt-4 pb-1 pr-6 sm:pr-0 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
                   <span>Open Gallery Page</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -327,7 +327,7 @@ export const HomePage: React.FC = () => {
             >
               <Link
                 to="/pricing"
-                className="bg-[#8096bb] rounded-2xl p-6 border border-white/30 shadow-xs hover:shadow-md hover:border-white transition-all flex flex-col justify-between group h-full"
+                className="bg-[#8096bb] rounded-2xl p-6 pb-9 sm:pb-6 border border-white/30 shadow-xs hover:shadow-md hover:border-white transition-all flex flex-col justify-between group h-full"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -336,11 +336,14 @@ export const HomePage: React.FC = () => {
                   <h3 className="font-serif-title font-bold text-xl text-white group-hover:text-white transition-colors">
                     Spa Packages & Pricing
                   </h3>
-                  <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
+                  <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed pr-2 sm:pr-0">
                     Interactive size calculator for Bath & Blow-Dry, Therapeutic Bath & Blow-Out, Signature Experiences, and specialist upgrades.
                   </p>
+                  <p className="text-[11px] text-white/90 font-medium mt-2 italic pr-2 sm:pr-0">
+                    Prices are starting estimates and may vary depending on coat type, condition, thickness, temperament and the time required.
+                  </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
+                <div className="mt-6 pt-4 pb-1 pr-6 sm:pr-0 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
                   <span>Open Pricing Page</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>

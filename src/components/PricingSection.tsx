@@ -10,7 +10,8 @@ import {
   GOOD_TO_KNOW,
   SHORT_COAT_INCLUDED_ADDON_IDS,
   ULTIMATE_INCLUDED_ADDON_IDS,
-  ULTIMATE_SPECIALIST_CHOICE_IDS
+  ULTIMATE_SPECIALIST_CHOICE_IDS,
+  PRICING_DISCLAIMER
 } from '../data/pricing';
 import { DogSize, PricingPackage, AddOnItem } from '../types';
 import {
@@ -49,7 +50,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
   const [ultimateIncludedTreatment, setUltimateIncludedTreatment] = useState<string>('japanese-marshmallow-foam');
   const navigate = useNavigate();
 
-  const sizes: DogSize[] = ['small', 'medium', 'large', 'xl'];
+  const sizes: DogSize[] = ['small', 'medium', 'large'];
   const allPackages: PricingPackage[] = [...BATH_BLOWDRY_PACKAGES, ...SIGNATURE_SPA_EXPERIENCES];
 
   const currentSizeDef = DOG_SIZE_DEFINITIONS[selectedSize];
@@ -209,6 +210,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
           <p className="mt-3 text-base sm:text-lg text-[#2b2520] font-sans leading-relaxed">
             A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We specialise in coat & skin care, therapeutic bathing, deshedding and restorative spa rituals.
           </p>
+          <div className="mt-3 inline-block px-4 py-2 rounded-xl bg-[#8096bb]/20 border border-[#8096bb]/30 text-xs sm:text-sm text-[#13253b] font-medium max-w-2xl">
+            <span className="font-bold text-[#13253b]">Please Note: </span>
+            {PRICING_DISCLAIMER}
+          </div>
         </div>
 
         {/* 🌟 3-STEP INTERACTIVE FLOW PROGRESS BAR */}
@@ -270,7 +275,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
           </div>
 
           <div className="max-w-3xl mx-auto bg-[#8096bb] p-2.5 rounded-2xl border border-white/40 shadow-sm">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {sizes.map(size => {
                 const def = DOG_SIZE_DEFINITIONS[size];
                 const isSelected = selectedSize === size;
@@ -355,7 +360,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                     viewport={{ once: true, margin: '-20px' }}
                     transition={{ duration: 0.35, delay: idx * 0.08 }}
                     onClick={() => handleSelectSpecificPackage(pkg)}
-                    className={`relative bg-[#8096bb] rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 border cursor-pointer text-white ${
+                    className={`relative bg-[#8096bb] rounded-3xl p-6 sm:p-7 pb-8 sm:pb-8 flex flex-col justify-between transition-all duration-200 border cursor-pointer text-white ${
                       isSelected
                         ? 'ring-4 ring-white shadow-xl scale-[1.01] border-white'
                         : 'border-white/40 shadow-sm hover:shadow-md hover:border-white/80 opacity-95'
@@ -388,14 +393,19 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                       </p>
 
                       {/* Price Block */}
-                      <div className="mb-4 pb-4 border-b border-white/20 flex items-baseline gap-1.5">
-                        <span className="text-xs text-white/80 font-medium">from</span>
-                        <span className="text-4xl font-extrabold text-white tracking-tight">
-                          £{price}
-                        </span>
-                        <span className="text-xs text-white/80 font-normal">
-                          / {currentSizeDef.label.toLowerCase()}
-                        </span>
+                      <div className="mb-4 pb-4 border-b border-white/20">
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-xs text-white/80 font-medium">from</span>
+                          <span className="text-4xl font-extrabold text-white tracking-tight">
+                            £{price}
+                          </span>
+                          <span className="text-xs text-white/80 font-normal">
+                            / {currentSizeDef.label.toLowerCase()}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-white/95 font-medium mt-1 leading-snug">
+                          {PRICING_DISCLAIMER}
+                        </p>
                       </div>
 
                       <div className="flex items-center gap-1.5 text-xs text-[#13253b] font-medium mb-3 bg-white/25 px-2.5 py-1.5 rounded-lg border border-white/20">
@@ -453,7 +463,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                   setIncludeDeepClean(true);
                 }
               }}
-              className={`p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${
+              className={`p-5 sm:p-6 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${
                 includeDeepClean && isBathAndBlowDryPackage
                   ? 'bg-[#8096bb] text-white border-white ring-2 ring-white shadow-md'
                   : 'bg-[#8096bb]/90 text-white border-white/40 hover:bg-[#8096bb]'
@@ -486,6 +496,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                   </div>
                   <p className="text-xs text-[#13253b] font-medium mt-1 leading-relaxed">
                     {DEEP_CLEAN_UPGRADE.description}
+                  </p>
+                  <p className="text-[11px] text-white font-medium mt-1 leading-relaxed bg-white/15 px-2.5 py-1 rounded-lg border border-white/20 inline-block">
+                    The additional £5 is for an extra deep-cleansing stage, using specialist products to help remove excess dirt, grease and product build-up from the coat.
                   </p>
                   {!isBathAndBlowDryPackage && (
                     <p className="text-[11px] text-white/90 font-medium mt-1">
@@ -536,7 +549,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                     viewport={{ once: true, margin: '-20px' }}
                     transition={{ duration: 0.35, delay: idx * 0.08 }}
                     onClick={() => handleSelectSpecificPackage(pkg)}
-                    className={`relative bg-[#8096bb] rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 border cursor-pointer text-white ${
+                    className={`relative bg-[#8096bb] rounded-3xl p-6 sm:p-7 pb-8 sm:pb-8 flex flex-col justify-between transition-all duration-200 border cursor-pointer text-white ${
                       isSelected
                         ? 'ring-4 ring-white shadow-xl scale-[1.01] border-white'
                         : 'border-white/40 shadow-sm hover:shadow-md hover:border-white/80 opacity-95'
@@ -567,14 +580,19 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                         {pkg.tagline}
                       </p>
 
-                      <div className="mb-4 pb-4 border-b border-white/20 flex items-baseline gap-1.5">
-                        <span className="text-xs text-white/80 font-medium">from</span>
-                        <span className="text-4xl font-extrabold text-white tracking-tight">
-                          £{price}
-                        </span>
-                        <span className="text-xs text-white/80 font-normal">
-                          / {currentSizeDef.label.toLowerCase()}
-                        </span>
+                      <div className="mb-4 pb-4 border-b border-white/20">
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-xs text-white/80 font-medium">from</span>
+                          <span className="text-4xl font-extrabold text-white tracking-tight">
+                            £{price}
+                          </span>
+                          <span className="text-xs text-white/80 font-normal">
+                            / {currentSizeDef.label.toLowerCase()}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-white/95 font-medium mt-1 leading-snug">
+                          {PRICING_DISCLAIMER}
+                        </p>
                       </div>
 
                       <div className="flex items-center gap-1.5 text-xs text-[#13253b] font-medium mb-3 bg-white/25 px-2.5 py-1.5 rounded-lg border border-white/20">
@@ -947,6 +965,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
                   (Base £{basePackagePrice} {deepCleanPrice > 0 ? `+ Deep Clean £${deepCleanPrice}` : ''} {isShortCoatSpa || isUltimateSpa ? '+ Inclusions £0' : ''} {totalAddOnCost > 0 ? `+ Extras £${totalAddOnCost}` : ''})
                 </span>
               </div>
+              <p className="text-[11px] text-white/95 font-medium mt-0.5 leading-snug">
+                {PRICING_DISCLAIMER}
+              </p>
             </div>
 
             <button
@@ -978,14 +999,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {GOOD_TO_KNOW.points.map((pt, i) => (
-              <div key={i} className="bg-[#8096bb] p-5 rounded-2xl border border-white/40 shadow-xs space-y-2">
+              <div key={i} className="bg-[#8096bb] p-5 sm:p-6 pb-10 sm:pb-6 rounded-2xl border border-white/40 shadow-xs space-y-2">
                 <div className="flex items-center gap-2 text-white font-bold text-base">
                   <span className="w-6 h-6 rounded-full bg-white text-[#13253b] flex items-center justify-center text-xs font-bold">
                     {i + 1}
                   </span>
                   <span className="font-serif-title">{pt.title}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans pr-2 sm:pr-0">
                   {pt.text}
                 </p>
               </div>
