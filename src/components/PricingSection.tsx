@@ -928,32 +928,32 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 md:gap-4">
             <div className="space-y-0 md:space-y-1 text-center sm:text-left">
               <div className="flex items-center gap-1 md:gap-2 justify-center sm:justify-start flex-wrap">
-                <span className="text-[8px] md:text-xs font-bold uppercase tracking-tight md:tracking-wide text-white/90">
+                <span className="text-[9px] md:text-xs font-bold uppercase tracking-tight md:tracking-wide text-white/90">
                   Your Custom Package:
                 </span>
-                <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
+                <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[9px] md:text-xs font-bold rounded-md">
                   {currentSizeDef.label}
                 </span>
-                <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
+                <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[9px] md:text-xs font-bold rounded-md">
                   {activePackage.name}
                 </span>
                 {isShortCoatSpa && (
-                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white/25 text-white text-[8px] md:text-xs font-bold rounded-md border border-white/30">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white/25 text-white text-[9px] md:text-xs font-bold rounded-md border border-white/30">
                     ✓ Fresh Face & Paw Spa Included
                   </span>
                 )}
                 {isUltimateSpa && (
-                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white/25 text-white text-[8px] md:text-xs font-bold rounded-md border border-white/30">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white/25 text-white text-[9px] md:text-xs font-bold rounded-md border border-white/30">
                     ✓ Face, Paw Spa & {ultimateTreatmentObj?.name.split(' ')[0]} Included
                   </span>
                 )}
                 {isBathAndBlowDryPackage && includeDeepClean && (
-                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[9px] md:text-xs font-bold rounded-md">
                     + Deep Clean
                   </span>
                 )}
                 {paidAddOnIds.length > 0 && (
-                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[9px] md:text-xs font-bold rounded-md">
                     +{paidAddOnIds.length} Extra Add-on{paidAddOnIds.length > 1 ? 's' : ''}
                   </span>
                 )}
@@ -961,11 +961,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
 
               <div className="text-[9px] md:text-xs text-[#13253b] font-bold md:mt-0.5">
                 Starting Estimate: <strong className="text-[11px] md:text-2xl text-white font-extrabold tracking-tight">£{totalEstimate}</strong>
-                <span className="text-white/80 font-normal text-[8px] md:text-[11px] ml-1">
+                <span className="text-white/80 font-normal text-[9px] md:text-[11px] ml-1">
                   (Base £{basePackagePrice} {deepCleanPrice > 0 ? `+ Deep Clean £${deepCleanPrice}` : ''} {isShortCoatSpa || isUltimateSpa ? '+ Inclusions £0' : ''} {totalAddOnCost > 0 ? `+ Extras £${totalAddOnCost}` : ''})
                 </span>
               </div>
-              <p className="text-[7px] md:text-[11px] text-white/95 font-medium -mt-0.5 md:mt-0.5 leading-snug">
+              <p className="text-[8px] md:text-[11px] text-white/95 font-medium -mt-0.5 md:mt-0.5 leading-snug">
                 {PRICING_DISCLAIMER}
               </p>
             </div>
