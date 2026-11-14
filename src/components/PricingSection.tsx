@@ -924,48 +924,48 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
         {/* ======================================================== */}
         {/* 🌟 LIVE ESTIMATE & BOOKING SUMMARY BAR (Populates Form)  */}
         {/* ======================================================== */}
-        <div className="sticky bottom-4 z-30 max-w-4xl mx-auto bg-[#8096bb] text-white p-4 sm:p-5 rounded-2xl border-2 border-white shadow-2xl backdrop-blur-md">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="space-y-1 text-center sm:text-left">
-              <div className="flex items-center gap-2 justify-center sm:justify-start flex-wrap">
-                <span className="text-xs font-bold uppercase tracking-wider text-white/90">
+        <div className="sticky bottom-4 z-30 max-w-4xl mx-auto bg-[#8096bb] text-white p-1 sm:p-5 rounded-2xl border md:border-2 border-white shadow-2xl backdrop-blur-md">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-1 md:gap-4">
+            <div className="space-y-0 md:space-y-1 text-center sm:text-left">
+              <div className="flex items-center gap-1 md:gap-2 justify-center sm:justify-start flex-wrap">
+                <span className="text-[8px] md:text-xs font-bold uppercase tracking-tight md:tracking-wide text-white/90">
                   Your Custom Package:
                 </span>
-                <span className="px-2 py-0.5 bg-white text-[#13253b] text-xs font-bold rounded-md">
+                <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
                   {currentSizeDef.label}
                 </span>
-                <span className="px-2 py-0.5 bg-white text-[#13253b] text-xs font-bold rounded-md">
+                <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
                   {activePackage.name}
                 </span>
                 {isShortCoatSpa && (
-                  <span className="px-2 py-0.5 bg-white/25 text-white text-xs font-bold rounded-md border border-white/30">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white/25 text-white text-[8px] md:text-xs font-bold rounded-md border border-white/30">
                     ✓ Fresh Face & Paw Spa Included
                   </span>
                 )}
                 {isUltimateSpa && (
-                  <span className="px-2 py-0.5 bg-white/25 text-white text-xs font-bold rounded-md border border-white/30">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white/25 text-white text-[8px] md:text-xs font-bold rounded-md border border-white/30">
                     ✓ Face, Paw Spa & {ultimateTreatmentObj?.name.split(' ')[0]} Included
                   </span>
                 )}
                 {isBathAndBlowDryPackage && includeDeepClean && (
-                  <span className="px-2 py-0.5 bg-white text-[#13253b] text-xs font-bold rounded-md">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
                     + Deep Clean
                   </span>
                 )}
                 {paidAddOnIds.length > 0 && (
-                  <span className="px-2 py-0.5 bg-white text-[#13253b] text-xs font-bold rounded-md">
+                  <span className="px-0.5 py-0.2 md:px-2 md:py-0.5 bg-white text-[#13253b] text-[8px] md:text-xs font-bold rounded-md">
                     +{paidAddOnIds.length} Extra Add-on{paidAddOnIds.length > 1 ? 's' : ''}
                   </span>
                 )}
               </div>
 
-              <div className="text-xs text-[#13253b] font-bold">
-                Starting Estimate: <strong className="text-2xl text-white font-extrabold tracking-tight">£{totalEstimate}</strong>
-                <span className="text-white/80 font-normal text-[11px] ml-1">
+              <div className="text-[9px] md:text-xs text-[#13253b] font-bold -mt-0.5 md:mt-0.5">
+                Starting Estimate: <strong className="text-[11px] md:text-2xl text-white font-extrabold tracking-tight">£{totalEstimate}</strong>
+                <span className="text-white/80 font-normal text-[8px] md:text-[11px] ml-1">
                   (Base £{basePackagePrice} {deepCleanPrice > 0 ? `+ Deep Clean £${deepCleanPrice}` : ''} {isShortCoatSpa || isUltimateSpa ? '+ Inclusions £0' : ''} {totalAddOnCost > 0 ? `+ Extras £${totalAddOnCost}` : ''})
                 </span>
               </div>
-              <p className="text-[11px] text-white/95 font-medium mt-0.5 leading-snug">
+              <p className="text-[7px] md:text-[11px] text-white/95 font-medium -mt-1 md:mt-0.5 leading-snug">
                 {PRICING_DISCLAIMER}
               </p>
             </div>
@@ -973,7 +973,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
             <button
               type="button"
               onClick={handleProceedToInquiry}
-              className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-[#efe0cd] text-[#13253b] rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer hover:scale-105 active:scale-95 shrink-0"
+              className="-mt-1 -mb-0.5 md:mt-0.5 md:mb-0.5 px-1.5 py-0.5 w-auto sm:px-6 sm:py-3 bg-white hover:bg-[#efe0cd] text-[#13253b] rounded-xl text-[9px] sm:text-sm font-bold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer hover:scale-105 active:scale-95 shrink-0"
             >
               <span>Book / Enquire with this Selection</span>
               <ArrowRight className="w-4 h-4" />
