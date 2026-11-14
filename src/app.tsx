@@ -44,11 +44,11 @@ export default function App() {
         <Footer />
 
         {/* Floating Inquiry Log Access Button - Adjusted position & mobile-optimized clearance */}
-        <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-40 pointer-events-auto">
+        <div className="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 z-40 pointer-events-auto">
           <button
             type="button"
             onClick={() => setShowInquiryLog(true)}
-            className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-[#8096bb]/95 hover:bg-[#6e85ab] text-white border border-white/50 shadow-xl hover:shadow-2xl text-[11px] sm:text-xs font-semibold transition-all group cursor-pointer backdrop-blur-md active:scale-95 ring-1 ring-black/10"
+            className="flex items-center gap-1 sm:gap-2 px-1 py-0.5 sm:px-3.5 sm:py-2 rounded-full bg-[#8096bb]/95 hover:bg-[#6e85ab] text-white border border-white/50 shadow-xl hover:shadow-2xl text-[11px] sm:text-xs font-semibold transition-all group cursor-pointer backdrop-blur-md active:scale-95 ring-1 ring-black/10"
             title="View submitted client inquiries"
           >
             <ClipboardList className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:scale-110 transition-transform" />

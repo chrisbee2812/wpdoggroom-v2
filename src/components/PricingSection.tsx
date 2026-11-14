@@ -976,7 +976,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage,
               className="-mt-1 -mb-0.5 md:mt-0.5 md:mb-0.5 px-1.5 py-0.5 w-auto sm:px-6 sm:py-3 bg-white hover:bg-[#efe0cd] text-[#13253b] rounded-xl text-[9px] sm:text-sm font-bold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer hover:scale-105 active:scale-95 shrink-0"
             >
               <span>Book / Enquire with this Selection</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="hidden md:block md:w-4 md:h-4" />
             </button>
           </div>
         </div>
