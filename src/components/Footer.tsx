@@ -10,15 +10,20 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="lg:col-span-5 space-y-4">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-xl bg-[#8096bb] text-white flex items-center justify-center font-bold shadow-xs">
-                <Droplets className="w-5 h-5 text-white" />
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden">
+                <img
+                  src="/white-on-lightblue-bassett-small.webp"
+                  alt="Happy pampering dog enjoying bath at West Park Luxury Dog Spa"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div>
                 <span className="font-serif-title text-xl font-bold tracking-tight text-[#af8967] block">
                   West Park
                 </span>
-                <span className="text-[10px] tracking-widest uppercase font-semibold text-[#8096bb] block">
-                  Luxury Dog Spa
+                <span className="text-xl tracking-tight uppercase font-semibold text-[#8096bb] block">
+                  Dog Spa
                 </span>
               </div>
             </Link>
@@ -115,7 +120,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
-          <p>© {new Date().getFullYear()} West Park Luxury Dog Spa. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} West Park Dog Spa. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/pricing" className="hover:text-stone-200">
               Spa Menu

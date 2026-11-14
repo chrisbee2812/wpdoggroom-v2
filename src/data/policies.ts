@@ -69,7 +69,7 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: '48-Hour Notice Policy',
-        text: 'Because West Park Luxury Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. We kindly request at least 48 hours advance notice for cancellations or date changes.'
+        text: 'Because West Park Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. We kindly request at least 48 hours advance notice for cancellations or date changes.'
       },
       {
         heading: 'Short-Notice Rescheduling',

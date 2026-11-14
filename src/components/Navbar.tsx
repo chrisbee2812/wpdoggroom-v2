@@ -66,11 +66,11 @@ export const Navbar: React.FC = () => {
                 />
             </div>
             <div>
-              <span className="font-serif-title text-xl sm:text-3xl font-bold tracking-tight text-[#af8967] block leading-tight">
+              <span className="font-serif-title text-xl font-bold tracking-tight text-[#af8967] block leading-tight">
                 West Park
               </span>
-              <span className="text-[14px] tracking-widest uppercase font-semibold text-[#152438] block">
-                Luxury Dog Spa
+              <span className="text-xl tracking-tight uppercase font-semibold text-[#152438] block">
+                Dog Spa
               </span>
             </div>
           </Link>

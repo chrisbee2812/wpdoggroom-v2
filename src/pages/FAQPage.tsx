@@ -27,7 +27,7 @@ export const FAQPage: React.FC = () => {
           <div className="space-y-2 max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/30">
               <Droplets className="w-3.5 h-3.5" />
-              West Park Luxury Dog Spa Knowledge Base
+              West Park Dog Spa Knowledge Base
             </div>
             <h1 className="text-3xl sm:text-4xl font-serif-title font-bold text-white">
               Frequently Asked Questions

@@ -4,8 +4,8 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-specialty',
     category: 'spa',
-    question: 'What do you specialise in at West Park Luxury Dog Spa?',
-    answer: 'West Park Luxury Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
+    question: 'What do you specialise in at West Park Dog Spa?',
+    answer: 'West Park Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
   },
   {
     id: 'faq-imported-products',

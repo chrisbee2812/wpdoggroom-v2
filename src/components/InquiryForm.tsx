@@ -234,7 +234,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 Garden Studio
               </div>
               <h3 className="font-serif-title font-bold text-2xl sm:text-3xl text-white">
-                West Park Luxury Dog Spa
+                West Park Dog Spa
               </h3>
               <p className="text-xs text-white/90 font-medium">
                 Specialist Bathing • Skin & Coat Care • Spa Treatments

@@ -52,7 +52,7 @@ export const PricingPage: React.FC = () => {
               Specialist Bathing • Skin & Coat Care • Spa Treatments
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-white">
-              West Park Luxury Dog Spa Menu
+              West Park Dog Spa Menu
             </h1>
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
               A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
