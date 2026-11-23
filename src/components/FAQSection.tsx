@@ -15,12 +15,13 @@ export const FAQSection: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'All Questions' },
-    { id: 'spa', label: 'Spa Treatments & Therapeutic Blow-Out' },
-    { id: 'general', label: 'Specialty & Garden Studio' },
+    { id: 'spa', label: 'Spa & Coat Care' },
+    { id: 'fertility', label: 'Canine Fertility & Ultrasound' },
+    { id: 'general', label: 'Studio & Sizes' },
     { id: 'pricing', label: 'Starting Rates' },
-    { id: 'health', label: 'Product Safety & Health' },
+    { id: 'health', label: 'Safety & Health' },
     { id: 'puppy', label: 'Puppies' },
-    { id: 'booking', label: 'Consultations' }
+    { id: 'booking', label: 'Bookings' }
   ];
 
   const filteredFaqs = FAQ_ITEMS.filter(faq => {

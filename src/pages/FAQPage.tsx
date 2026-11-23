@@ -33,7 +33,7 @@ export const FAQPage: React.FC = () => {
               Frequently Asked Questions
             </h1>
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
-              Learn about our specialist bathing, therapeutic bath and blow out, imported Japanese & South Korean spa products, product safety review, starting rates, and dedicated 1-on-1 garden studio setting.
+              Learn about our specialist bathing, therapeutic bath and blow out, imported Japanese & South Korean spa products, canine fertility & ultrasound diagnostics, starting rates, and dedicated 1-on-1 garden studio setting.
             </p>
           </div>
 

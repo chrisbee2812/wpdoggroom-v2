@@ -29,21 +29,23 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans max-w-md">
-              A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
+              A private, home-based dog spa and canine fertility studio situated within our dedicated garden studio in West Park, Leeds. Offering coat & skin spa treatments, therapeutic bath and blow out, alongside cytology, semen analysis, AI, and pregnancy ultrasound.
             </p>
 
-            <div className="flex flex-wrap items-center gap-2.5 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[11px] text-stone-200 border border-white/15">
+            <div className="flex flex-wrap items-center gap-2.5 pt-2 text-[11px] text-stone-300">
+              <span className="inline-flex items-center gap-1.5">
                 <Sparkles className="w-3 h-3 text-[#af8967]" />
                 Garden Studio Sanctuary
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[11px] text-stone-200 border border-white/15">
+              <span aria-hidden="true">·</span>
+              <span className="inline-flex items-center gap-1.5">
                 <Shield className="w-3 h-3 text-[#8096bb]" />
-                Product Safety Pledged
+                Sterile & Product-Safety Led
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[11px] text-stone-200 border border-white/15">
+              <span aria-hidden="true">·</span>
+              <span className="inline-flex items-center gap-1.5">
                 <Award className="w-3 h-3 text-[#af8967]" />
-                Coat & Skin Specialists
+                Spa & Fertility Specialists
               </span>
             </div>
           </div>
@@ -60,13 +62,18 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="hover:text-white transition-colors">
-                  Spa Transformations Gallery
+                <Link to="/pricing" className="hover:text-white transition-colors">
+                  Bathing & Spa Packages
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="hover:text-white transition-colors">
-                  Bathing & Spa Packages
+                <Link to="/fertility" className="hover:text-white transition-colors">
+                  Canine Fertility & Ultrasound
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="hover:text-white transition-colors">
+                  Spa Transformations Gallery
                 </Link>
               </li>
               <li>
@@ -76,7 +83,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/terms" className="hover:text-white transition-colors">
-                  Spa Policies & Guidelines
+                  Studio Policies & Guidelines
                 </Link>
               </li>
               <li>
@@ -113,7 +120,7 @@ export const Footer: React.FC = () => {
 
             <div className="pt-2 text-[11px] text-[#13253b] bg-[#8096bb] p-3.5 rounded-xl border border-white/30 space-y-1 shadow-xs">
               <span className="text-white font-serif-title font-bold block">Good to Know:</span>
-              <p className="font-medium">We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All appointments are 1-on-1 private sessions.</p>
+              <p className="font-medium">We specialise in bathing, coat care, spa treatments and canine fertility diagnostics rather than clipping or breed styling. All appointments are 1-on-1 private sessions.</p>
             </div>
           </div>
         </div>
@@ -125,11 +132,15 @@ export const Footer: React.FC = () => {
             <Link to="/pricing" className="hover:text-stone-200">
               Spa Menu
             </Link>
-            <span>•</span>
-            <Link to="/terms" className="hover:text-stone-200">
-              Product Safety & Terms
+            <span>·</span>
+            <Link to="/fertility" className="hover:text-stone-200">
+              Fertility
             </Link>
-            <span>•</span>
+            <span>·</span>
+            <Link to="/terms" className="hover:text-stone-200">
+              Policies & Terms
+            </Link>
+            <span>·</span>
             <Link to="/faq" className="hover:text-stone-200">
               FAQ
             </Link>

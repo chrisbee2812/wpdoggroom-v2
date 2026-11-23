@@ -5,7 +5,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-specialty',
     category: 'spa',
     question: 'What do you specialise in at West Park Dog Spa?',
-    answer: 'West Park Dog Spa is a private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
+    answer: 'West Park Dog Spa is a private, home-based studio situated within our dedicated garden suite in West Park, Leeds. On the spa side, we are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products rather than clipping or breed styling. We also offer specialist canine fertility diagnostics, AI, and pregnancy ultrasound.'
   },
   {
     id: 'faq-imported-products',
@@ -20,6 +20,30 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: 'We do not offer full clipping or breed standard haircuts. Instead, we are dedicated coat & skin specialists in restorative bathing, therapeutic bath and blow out, skin hydration, and luxury spa rituals. This focused approach means our studio is specifically tailored for dogs and smooth coats who benefit from intensive coat health care without the noise and rush of multi-table haircut salons.'
   },
   {
+    id: 'faq-cytology',
+    category: 'fertility',
+    question: 'When should I book Canine Vaginal Cytology during my girl’s season?',
+    answer: 'We typically recommend starting vaginal cytology around Day 5 to Day 7 from the first signs of bleeding, then repeating every 2 to 3 days until cellular cornification indicates your bitch is approaching or entering peak estrus. Each session takes around 15–20 minutes (from £25) and uses rapid Diff-Quik slide staining and microscopy to give you a clear breakdown of parabasal, intermediate, and cornified superficial cells.'
+  },
+  {
+    id: 'faq-semen-analysis',
+    category: 'fertility',
+    question: 'What does Canine Semen Collection & Microscopic Analysis check?',
+    answer: 'Our Canine Semen Analysis (from £45, approx. 30–45 mins) takes place 1-on-1 in a calm, temperature-controlled studio. We use fractionated sample handling and warm-stage microscopy to assess total and progressive motility, sperm concentration, and morphology (normal vs. abnormal cells). You receive a detailed written fertility report, and optional semen chilling/extender preparation is available if required.'
+  },
+  {
+    id: 'faq-ai',
+    category: 'fertility',
+    question: 'How does Canine Artificial Insemination (AI) work and should I book 1 or 2 sessions?',
+    answer: 'Canine AI (from £50 per single insemination, or £85 for a 2-session mating package) is a safe, gentle, intravaginal alternative to natural mating—ideal for maiden dogs, size differences, physical limitations, or fresh/chilled semen breedings. Every AI includes a pre-insemination microscopic motility check, sterile single-use catheters, and a calm supported rest period afterwards. Many breeders choose the 2-session mating package (48 hours apart) to maximise conception coverage during the fertile window.'
+  },
+  {
+    id: 'faq-ultrasound',
+    category: 'fertility',
+    question: 'When is the best time for a Canine Pregnancy Ultrasound Scan?',
+    answer: 'We recommend booking your initial Canine Pregnancy Ultrasound (from £35, or £25 for a follow-up re-scan) from Day 25 to Day 30 post-mating. At this stage we can reliably confirm gestation sacs, observe visible fetal heartbeats, check gestational development, and give an estimated puppy count. Most coats do not require harsh shaving, and we send digital ultrasound images and video clips straight to your phone.'
+  },
+  {
     id: 'faq-pricing-variation',
     category: 'pricing',
     question: 'Why are prices listed as starting prices?',
@@ -29,7 +53,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-product-safety',
     category: 'health',
     question: 'How do you ensure product safety and ingredient suitability?',
-    answer: 'Product safety and ingredient suitability are paramount at West Park Luxury Dog Spa. We exclusively use gentle, restorative professional formulations imported from Japan and South Korea alongside carefully vetted hypoallergenic preparations. Before introducing any product into our spa, we thoroughly review ingredients, pH balance, manufacturer guidance, and suitability for delicate facial folds and sensitive skin barriers.'
+    answer: 'Product safety and ingredient suitability are paramount at West Park Dog Spa. We exclusively use gentle, restorative professional formulations imported from Japan and South Korea alongside carefully vetted hypoallergenic preparations. Before introducing any product into our spa, we thoroughly review ingredients, pH balance, manufacturer guidance, and suitability for delicate facial folds and sensitive skin barriers.'
   },
   {
     id: 'faq-specialist-treatments',
@@ -47,7 +71,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-garden-studio',
     category: 'general',
     question: 'What is the garden studio environment like?',
-    answer: 'Our private garden studio in West Park, Leeds is peaceful, cage-free, and designed for genuine 1-on-1 tranquility. With no other dogs barking or competing for attention, your pet enjoys a calm, relaxing spa experience with low-noise equipment, soothing music, and gentle handling.'
+    answer: 'Our private garden studio in West Park, Leeds is peaceful, cage-free, and designed for genuine 1-on-1 tranquility. With no other dogs barking or competing for attention, your pet enjoys a calm, relaxing experience—whether visiting for coat care or fertility appointments.'
   },
   {
     id: 'faq-puppy',
@@ -58,25 +82,25 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-booking',
     category: 'booking',
-    question: 'How do I book a spa appointment or consultation?',
-    answer: 'We operate on a consultation & inquiry basis rather than an automated booking engine. This ensures we review your dog’s breed, size, coat condition, and skin sensitivities in advance to reserve the perfect dedicated time window. Simply submit our quick inquiry form or call us directly.'
+    question: 'How do I book a spa or fertility appointment?',
+    answer: 'We operate on a consultation & inquiry basis rather than an automated booking engine. Simply use our Contact & Inquiry page, select either Dog Spa or Canine Fertility, and choose your required treatments. This ensures we reserve the dedicated 1-on-1 time window—including flexible scheduling around heat cycles and mating windows.'
   },
   {
     id: 'faq-duration',
     category: 'general',
-    question: 'How long does a spa session take?',
-    answer: 'Most spa visits take between 45 minutes to 1.5 hours depending on size, coat condition, and the selected spa rituals. Because we work strictly 1-on-1, your dog is bathed, dried, pamper-treated, and ready for collection without waiting in a cage.'
+    question: 'How long does a studio session take?',
+    answer: 'Spa visits typically take between 45 minutes to 2 hours depending on size, coat condition, and selected rituals. Fertility visits range from 15–20 minutes for vaginal cytology or 20–30 minutes for pregnancy ultrasound, up to 30–45 minutes for semen analysis or artificial insemination. Because we work strictly 1-on-1, there is never any cage waiting time.'
   },
   {
     id: 'faq-dog-sizes',
     category: 'general',
     question: 'What sizes of dogs can you accommodate? Do you accept extra-large (XL) dogs?',
-    answer: 'Due to the dimensions of our specialist hydrobath and custom equipment in our boutique garden studio, we comfortably accommodate small, medium, and large dogs (up to approx. 35 kg, such as Frenchies, Spaniels, Labradors, Boxers, and Pointers). However, we are unable to accommodate extra-large (XL) dogs or giant breeds (such as Great Danes, Newfoundlands, Mastiffs, Cane Corsos, or Saint Bernards) as our bathing facilities and equipment are not large enough to care for them safely and comfortably.'
+    answer: 'Due to the dimensions of our specialist hydrobath and custom equipment in our boutique garden studio, we comfortably accommodate small, medium, and large dogs (up to approx. 35 kg, such as Frenchies, Spaniels, Labradors, Boxers, and Pointers) for bathing and spa sessions. However, we are unable to accommodate extra-large (XL) dogs or giant breeds (such as Great Danes, Newfoundlands, Mastiffs, Cane Corsos, or Saint Bernards) for spa bathing as our bath equipment is not large enough.'
   },
   {
     id: 'faq-vaccines',
     category: 'health',
-    question: 'What vaccinations are required before visiting the spa?',
-    answer: 'To protect all furry guests visiting our garden studio, dogs must be up-to-date on standard UK core vaccinations (Distemper, Hepatitis, Parvovirus, and Leptospirosis). Puppies must have completed their second round of vaccinations.'
+    question: 'What vaccinations and hygiene protocols are required before visiting?',
+    answer: 'To protect all guests visiting our garden studio, dogs must be up-to-date on standard UK core vaccinations (Distemper, Hepatitis, Parvovirus, and Leptospirosis). Puppies must have completed their second round of vaccinations. For fertility appointments, we use sterile single-use consumables and thorough studio sanitisation between every 1-on-1 visit.'
   }
 ];

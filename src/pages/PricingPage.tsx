@@ -18,6 +18,7 @@ export const PricingPage: React.FC = () => {
   }) => {
     navigate('/contact', {
       state: {
+        prefilledServiceType: 'spa',
         prefilledPackage: config.package.name,
         prefilledSize: config.size,
         prefilledUpgrades: config.addOns,

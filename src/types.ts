@@ -49,11 +49,34 @@ export interface AddOnItem {
   iconName: string;
 }
 
+export interface FertilityServiceOption {
+  id: string;
+  label: string;
+  price: number;
+  priceNote: string;
+}
+
+export interface FertilityTreatment {
+  id: string;
+  number: string;
+  categoryLabel: string;
+  name: string;
+  shortName: string;
+  tagline: string;
+  priceNote: string;
+  basePrice: number;
+  durationEstimate: string;
+  description: string;
+  includedInService: string[];
+  iconName: 'Microscope' | 'FlaskConical' | 'HeartPulse' | 'ScanLine';
+  options?: FertilityServiceOption[];
+}
+
 export interface FAQItem {
   id: string;
   question: string;
   answer: string;
-  category: 'general' | 'health' | 'pricing' | 'puppy' | 'booking' | 'spa';
+  category: 'general' | 'health' | 'pricing' | 'puppy' | 'booking' | 'spa' | 'fertility';
 }
 
 export interface PolicySection {
@@ -67,9 +90,12 @@ export interface PolicySection {
   }[];
 }
 
+export type InquiryServiceType = 'spa' | 'fertility';
+
 export interface InquiryFormData {
   id: string;
   createdAt: string;
+  serviceType: InquiryServiceType;
   ownerName: string;
   email: string;
   phone: string;
@@ -82,9 +108,13 @@ export interface InquiryFormData {
   selectedSpaUpgrades?: string[];
   coatCondition: 'good' | 'heavy-shedding' | 'dry-skin' | 'sensitive' | 'unsure';
   temperament: string[];
+  // Fertility-specific fields
+  fertilityServices?: string[];
+  dogRole?: 'bitch' | 'stud' | 'pair';
+  breedingStage?: string;
+  semenType?: 'fresh' | 'chilled' | 'na';
   preferredContact: 'phone' | 'email' | 'text';
   preferredDays: string[];
   message: string;
   status: 'new' | 'reviewed';
 }
-

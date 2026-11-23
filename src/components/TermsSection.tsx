@@ -9,6 +9,7 @@ export const TermsSection: React.FC = () => {
     'product-safety': true,
     'pricing-starting-rates': true,
     'garden-studio-health': true,
+    'fertility-standards': true,
     'cancellations': true,
     'gentle-handling': true,
     'collection-pickup': true
@@ -202,7 +203,7 @@ export const TermsSection: React.FC = () => {
           <div className="mt-10 p-4 rounded-xl bg-[#8096bb] border border-white/40 text-xs text-white flex items-center justify-between flex-wrap gap-3 shadow-xs">
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-white" />
-              <span className="text-[#13253b] font-bold">By submitting an inquiry or attending a spa session, owners acknowledge and agree to these standards.</span>
+              <span className="text-[#13253b] font-bold">By submitting an inquiry or attending an appointment, owners acknowledge and agree to these standards.</span>
             </div>
             <span className="text-white/90 font-bold">West Park Dog Spa • Leeds</span>
           </div>

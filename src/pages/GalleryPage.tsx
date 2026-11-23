@@ -11,6 +11,7 @@ export const GalleryPage: React.FC = () => {
   const handleSelectTransformation = (dog: TransformationItem) => {
     navigate('/contact', {
       state: {
+        prefilledServiceType: 'spa',
         prefilledPackage: dog.packageUsed,
         prefilledBreed: dog.breed,
         prefilledNotes: `Hi! I saw ${dog.dogName}'s (${dog.breed}) transformation in your gallery and would love an inquiry for a similar spa experience for my dog.`

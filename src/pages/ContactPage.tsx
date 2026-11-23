@@ -3,15 +3,17 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { InquiryForm } from '../components/InquiryForm';
 import { ChevronRight, Droplets, Phone } from 'lucide-react';
-import { DogSize } from '../types';
+import { DogSize, InquiryServiceType } from '../types';
 
 interface LocationState {
+  prefilledServiceType?: InquiryServiceType;
   prefilledPackage?: string;
   prefilledSize?: DogSize;
   prefilledBreed?: string;
   prefilledNotes?: string;
   prefilledUpgrades?: string[];
   prefilledDeepClean?: boolean;
+  prefilledFertilityServices?: string[];
 }
 
 export const ContactPage: React.FC = () => {
@@ -27,7 +29,7 @@ export const ContactPage: React.FC = () => {
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-[#13253b]" />
-          <span className="font-bold text-[#13253b]">Spa Consultation & Inquiries</span>
+          <span className="font-bold text-[#13253b]">Studio Consultation & Inquiries</span>
         </div>
 
         {/* Header Card in #8096bb */}
@@ -43,17 +45,17 @@ export const ContactPage: React.FC = () => {
               1-on-1 Garden Studio Consultation
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-white">
-              Spa Inquiries & Consultation
+              Studio Inquiries & Consultation
             </h1>
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
-              A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We review every inquiry individually so we can schedule the optimal amount of time and pair your dog with the ideal coat & skin treatments.
+              Welcome to West Park Dog Spa in West Park, Leeds. Choose either <strong>Dog Spa & Coat Care</strong> or <strong>Canine Fertility & Ultrasound</strong> below to tailor your inquiry so we can schedule the ideal 1-on-1 studio session.
             </p>
           </div>
 
           <div className="shrink-0 flex items-center gap-3">
             <a
               href="tel:01133208492"
-              className="px-5 py-2.5 rounded-full border border-white/60 text-white hover:bg-white/20 text-xs font-semibold transition-colors flex items-center gap-2"
+              className="px-5 py-2.5 rounded-full border border-white/60 text-white hover:bg-white/20 text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5 text-white" />
               Call 0113 320 8492
@@ -64,12 +66,14 @@ export const ContactPage: React.FC = () => {
 
       {/* Inquiry Form Component */}
       <InquiryForm
+        prefilledServiceType={state.prefilledServiceType}
         prefilledPackage={state.prefilledPackage}
         prefilledSize={state.prefilledSize}
         prefilledBreed={state.prefilledBreed}
         prefilledNotes={state.prefilledNotes}
         prefilledUpgrades={state.prefilledUpgrades}
         prefilledDeepClean={state.prefilledDeepClean}
+        prefilledFertilityServices={state.prefilledFertilityServices}
       />
     </div>
   );

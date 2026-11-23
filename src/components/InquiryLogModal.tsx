@@ -85,9 +85,14 @@ export const InquiryLogModal: React.FC<InquiryLogModalProps> = ({ isOpen, onClos
                 className="p-4 rounded-2xl border border-white/40 bg-[#8096bb] text-white space-y-2 text-xs shadow-sm"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono font-bold text-white text-sm bg-white/20 px-2 py-0.5 rounded">
-                    {inq.id}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono font-bold text-white text-sm bg-white/20 px-2 py-0.5 rounded">
+                      {inq.id}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-white text-[#13253b] px-2 py-0.5 rounded">
+                      {inq.serviceType === 'fertility' ? 'Canine Fertility' : 'Dog Spa'}
+                    </span>
+                  </div>
                   <span className="text-white/80 text-[11px] flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5" /> {inq.createdAt}
                   </span>
@@ -104,16 +109,32 @@ export const InquiryLogModal: React.FC<InquiryLogModalProps> = ({ isOpen, onClos
                   </div>
 
                   <div>
-                    <span className="text-white/70 block text-[10px] uppercase font-bold">Pet & Package</span>
+                    <span className="text-white/70 block text-[10px] uppercase font-bold">
+                      {inq.serviceType === 'fertility' ? 'Dog & Fertility Services' : 'Pet & Package'}
+                    </span>
                     <strong className="text-white text-sm">{inq.dogName} ({inq.breed})</strong>
-                    <div className="text-[#13253b] font-bold text-[11px] mt-0.5 bg-white/30 p-1.5 rounded-lg space-y-0.5">
-                      <div>{inq.packageInterest} • {inq.weightCategory}</div>
-                      {inq.includeDeepClean && <div>+ Deep Clean Wash Upgrade (+£5)</div>}
-                      {inq.selectedSpaUpgrades && inq.selectedSpaUpgrades.length > 0 && (
-                        <div>+ Upgrades: {inq.selectedSpaUpgrades.join(', ')}</div>
-                      )}
-                      <div className="text-white/90 font-medium">Coat: {inq.coatCondition}</div>
-                    </div>
+                    {inq.serviceType === 'fertility' ? (
+                      <div className="text-[#13253b] font-bold text-[11px] mt-0.5 bg-white/30 p-1.5 rounded-lg space-y-0.5">
+                        {inq.fertilityServices && inq.fertilityServices.length > 0 && (
+                          <div>{inq.fertilityServices.join(', ')}</div>
+                        )}
+                        {inq.dogRole && (
+                          <div>Role: {inq.dogRole === 'bitch' ? 'Bitch (Dam)' : inq.dogRole === 'stud' ? 'Stud Dog (Sire)' : 'Pair (Bitch & Stud)'}</div>
+                        )}
+                        {inq.breedingStage && (
+                          <div className="text-white/95 font-medium">Stage: {inq.breedingStage}</div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="text-[#13253b] font-bold text-[11px] mt-0.5 bg-white/30 p-1.5 rounded-lg space-y-0.5">
+                        <div>{inq.packageInterest} • {inq.weightCategory}</div>
+                        {inq.includeDeepClean && <div>+ Deep Clean Wash Upgrade (+£5)</div>}
+                        {inq.selectedSpaUpgrades && inq.selectedSpaUpgrades.length > 0 && (
+                          <div>+ Upgrades: {inq.selectedSpaUpgrades.join(', ')}</div>
+                        )}
+                        <div className="text-white/90 font-medium">Coat: {inq.coatCondition}</div>
+                      </div>
+                    )}
                   </div>
                 </div>
 

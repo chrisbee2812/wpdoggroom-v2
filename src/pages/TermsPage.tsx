@@ -27,13 +27,13 @@ export const TermsPage: React.FC = () => {
           <div className="space-y-2 max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/30">
               <Droplets className="w-3.5 h-3.5" />
-              Product Safety & Care Standards
+              Studio Safety & Care Standards
             </div>
             <h1 className="text-3xl sm:text-4xl font-serif-title font-bold text-white">
-              Spa Policies & Terms
+              Studio Policies & Terms
             </h1>
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
-              Our policies safeguard product suitability, coat care ethics, starting rates, and preserve our tranquil 1-on-1 garden studio sanctuary in West Park, Leeds.
+              Our policies safeguard product suitability, coat care ethics, sterile canine fertility protocols, starting rates, and preserve our tranquil 1-on-1 garden studio sanctuary in West Park, Leeds.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export const TermsPage: React.FC = () => {
             to="/contact"
             className="shrink-0 px-6 py-3 rounded-full bg-white hover:bg-[#efe0cd] text-[#13253b] text-xs font-bold transition-colors shadow-sm"
           >
-            Contact the Spa
+            Contact the Studio
           </Link>
         </motion.div>
       </div>

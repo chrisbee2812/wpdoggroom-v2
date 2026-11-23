@@ -49,7 +49,7 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: 'Core Immunisations',
-        text: 'All dogs visiting West Park Luxury Dog Spa must be current on standard UK vaccinations (Distemper, Hepatitis, Parvovirus, Leptospirosis). Proof of vaccination may be sent prior to your appointment.'
+        text: 'All dogs visiting West Park Dog Spa must be current on standard UK vaccinations (Distemper, Hepatitis, Parvovirus, Leptospirosis). Proof of vaccination may be sent prior to your appointment.'
       },
       {
         heading: 'Puppy Protocols',
@@ -57,7 +57,31 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
       },
       {
         heading: 'Illness & Rescheduling',
-        text: 'If your dog is experiencing vomiting, kennel cough symptoms, fever, or open skin lesions within 48 hours of your scheduled spa time, please inform us to reschedule without penalty.'
+        text: 'If your dog is experiencing vomiting, kennel cough symptoms, fever, or open skin lesions within 48 hours of your scheduled appointment, please inform us to reschedule without penalty.'
+      }
+    ]
+  },
+  {
+    id: 'fertility-standards',
+    title: 'Canine Fertility, Cytology, AI & Ultrasound Standards',
+    shortSummary: 'Hygiene, single-use sterile equipment, scan estimates, and breeding support guidelines.',
+    iconName: 'Microscope',
+    rules: [
+      {
+        heading: 'Sterile Single-Use Consumables & Biosecurity',
+        text: 'All vaginal cytology swabs, AI catheters, collection cones, and sample handling consumables are strictly sterile and single-use. Our studio surfaces and microscopy equipment are thoroughly hospital-grade sanitised between every 1-on-1 appointment.'
+      },
+      {
+        heading: 'Non-Veterinary Diagnostic Support & Referrals',
+        text: 'Our cytology staging, semen analysis, intravaginal AI, and abdominal pregnancy ultrasound scans are specialist canine reproductive support services—not a substitute for emergency veterinary surgery or prescription medication. If abnormal discharge, suspected pyometra, or reproductive health concerns are observed, we will advise immediate referral to your veterinary surgeon.'
+      },
+      {
+        heading: 'Pregnancy Ultrasound & Estimated Litter Counts',
+        text: 'Abdominal ultrasound scans (recommended from Day 25–30 post-mating) confirm gestation sacs and visible fetal heartbeats. While we provide an estimated puppy count, ultrasound litter counts remain indicative estimates only, as littermates can sit behind ribs or overlap during late-stage gestation.'
+      },
+      {
+        heading: 'Flexible Heat-Cycle Scheduling',
+        text: 'We understand canine cycles and ovulation windows shift naturally. For fertility clients, please keep us updated on cycle progression so we can adjust re-test, AI, or collection timing with maximum flexibility.'
       }
     ]
   },
@@ -69,15 +93,15 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: '48-Hour Notice Policy',
-        text: 'Because West Park Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. We kindly request at least 48 hours advance notice for cancellations or date changes.'
+        text: 'Because West Park Dog Spa operates strictly on individual 1-on-1 appointments in a quiet garden studio, short-notice cancellations leave an empty suite. For routine spa sessions, we kindly request at least 48 hours advance notice for cancellations or date changes.'
       },
       {
         heading: 'Short-Notice Rescheduling',
-        text: 'Cancellations made with less than 24 hours notice or unnotified absences may incur a 50% reservation fee prior to booking subsequent visits.'
+        text: 'Spa cancellations made with less than 24 hours notice or unnotified absences may incur a 50% reservation fee prior to booking subsequent visits.'
       },
       {
         heading: 'Punctual Drop-Off',
-        text: 'Please arrive promptly at your scheduled time so we can provide your pet with their full, unhurried spa ritual.'
+        text: 'Please arrive promptly at your scheduled time so we can provide your pet with their full, unhurried session.'
       }
     ]
   },
@@ -89,27 +113,27 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
     rules: [
       {
         heading: 'Calm Environment',
-        text: 'Our dedicated garden studio is a low-stress, quiet space. We use gentle water pressure, warm towels, and variable-speed dryers to ensure your pet remains comfortable and relaxed.'
+        text: 'Our dedicated garden studio is a low-stress, quiet space. We use gentle handling, warm towels, and low-noise equipment to ensure your pet remains comfortable and relaxed throughout both spa and fertility visits.'
       },
       {
         heading: 'Reactivity & Sensitivities',
-        text: 'Please share details regarding any sensitivities to touch, paws, or water. We tailor our bathing rhythm with treat rewards and breaks to keep stress levels minimal.'
+        text: 'Please share details regarding any sensitivities to touch, paws, water, or handling. We tailor our rhythm with patience, breaks, and positive reassurance to keep stress levels minimal.'
       }
     ]
   },
   {
     id: 'collection-pickup',
     title: 'Collection & Timely Pick-Up',
-    shortSummary: 'Cage-free studio policies for post-bath collection.',
+    shortSummary: 'Cage-free studio policies for post-session collection.',
     iconName: 'CheckCircle2',
     rules: [
       {
         heading: 'Timely Collection',
-        text: 'We are a cage-free private studio and do not provide day boarding. We will send you a text notification 15–20 minutes before your dog is finished. Please collect your pet within 30 minutes of completion.'
+        text: 'We are a cage-free private studio and do not provide day boarding. For drop-off spa sessions, we send you a text notification 15–20 minutes before your dog is finished. Please collect your pet within 30 minutes of completion. (Fertility & ultrasound clients remain comfortably with their dogs during appointments unless agreed otherwise.)'
       },
       {
         heading: 'Veterinary Authorisation',
-        text: 'In the rare event of a medical emergency during care, our staff will contact the owner immediately. If unreachable, you authorise West Park Luxury Dog Spa to contact our local veterinary partner (Beechwood Veterinary Group) in the best interest of your pet.'
+        text: 'In the rare event of a medical emergency during care, our staff will contact the owner immediately. If unreachable, you authorise West Park Dog Spa to contact our local veterinary partner (Beechwood Veterinary Group) in the best interest of your pet.'
       }
     ]
   }

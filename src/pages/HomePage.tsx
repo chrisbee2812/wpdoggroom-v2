@@ -12,7 +12,8 @@ import {
   FileText,
   Mail,
   Camera,
-  Info
+  Info,
+  Microscope
 } from 'lucide-react';
 import { GOOD_TO_KNOW } from '../data/pricing';
 
@@ -33,7 +34,7 @@ export const HomePage: React.FC = () => {
               {/* Quality Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8096bb] text-white text-xs font-semibold uppercase tracking-wider shadow-2xs border border-white/30">
                 <Droplets className="w-3.5 h-3.5 text-white" />
-                <span>Private Home-Based Garden Studio • West Park, Leeds</span>
+                <span>Private Home-Based Garden Studio · West Park, Leeds</span>
               </div>
 
               {/* Headline */}
@@ -43,12 +44,12 @@ export const HomePage: React.FC = () => {
 
               {/* Tagline */}
               <div className="text-lg sm:text-xl font-serif-title font-medium text-[#13253b]">
-                Specialist Bathing • Skin & Coat Care • Spa Treatments
+                Specialist Bathing · Skin & Coat Care · Canine Fertility
               </div>
 
               {/* Subheading / Core Description */}
               <p className="text-base sm:text-lg text-[#2b2520] font-sans max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                A private, home-based dog spa situated within our dedicated garden studio in West Park, Leeds. We are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products.
+                A private, home-based studio situated within our dedicated garden suite in West Park, Leeds. We are coat & skin specialists offering professional bathing, therapeutic bath and blow out, and restorative spa treatments—alongside calm, 1-on-1 canine fertility diagnostics and pregnancy ultrasound.
               </p>
 
               {/* Key Service Highlights in #8096bb cards */}
@@ -59,11 +60,11 @@ export const HomePage: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#8096bb] text-white border border-white/30 shadow-2xs">
                   <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                  <span className="text-xs sm:text-sm font-medium">Therapeutic Bath & Blow-Out</span>
+                  <span className="text-xs sm:text-sm font-medium">Japanese & Korean Spas</span>
                 </div>
                 <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#8096bb] text-white border border-white/30 shadow-2xs">
                   <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                  <span className="text-xs sm:text-sm font-medium">Japanese & Korean Spas</span>
+                  <span className="text-xs sm:text-sm font-medium">Canine Fertility & Scan</span>
                 </div>
               </div>
 
@@ -78,11 +79,11 @@ export const HomePage: React.FC = () => {
                 </Link>
 
                 <Link
-                  to="/gallery"
+                  to="/fertility"
                   className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-[#efe0cd]/50 text-[#13253b] border border-[#8096bb]/50 rounded-full font-semibold text-sm transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Sparkles className="w-4 h-4 text-[#af8967]" />
-                  View Spa Transformations
+                  <Microscope className="w-4 h-4 text-[#af8967]" />
+                  Canine Fertility Services
                 </Link>
               </div>
 
@@ -93,7 +94,7 @@ export const HomePage: React.FC = () => {
                     Good to know:
                   </span>
                   <p className="text-xs text-[#13253b] font-medium leading-relaxed">
-                    We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All appointments are 1-on-1 private sessions.
+                    We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All spa and fertility appointments are 1-on-1 private sessions.
                   </p>
                 </div>
               </div>
@@ -110,7 +111,7 @@ export const HomePage: React.FC = () => {
                 <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-4/5 bg-[#8096bb]">
                   <img
                     src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80"
-                    alt="Pampered dog enjoying specialist bathing treatment"
+                    alt="Pampered dog enjoying specialist bathing treatment at West Park Dog Spa"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="eager"
                   />
@@ -138,7 +139,7 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Floating Credential Chip */}
-                <div className="absolute -top-4 -left-4 bg-[#8096bb] px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-2.5 sm:flex text-white">
+                <div className="absolute -top-4 -left-4 bg-[#8096bb] px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-2.5 hidden sm:flex text-white">
                   <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
@@ -350,7 +351,37 @@ export const HomePage: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Page 3: FAQ */}
+            {/* Page 3: Canine Fertility & Ultrasound */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.1 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
+              <Link
+                to="/fertility"
+                className="bg-[#8096bb] rounded-2xl p-6 pb-9 sm:pb-6 border border-white/30 shadow-xs hover:shadow-md hover:border-white transition-all flex flex-col justify-between group h-full"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Microscope className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-serif-title font-bold text-xl text-white group-hover:text-white transition-colors">
+                    Canine Fertility & Ultrasound
+                  </h3>
+                  <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed pr-2 sm:pr-0">
+                    Vaginal cytology cycle staging, stud semen collection & microscopic analysis, artificial insemination (AI), and Day 25–30 pregnancy ultrasound scans.
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 pb-1 pr-6 sm:pr-0 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
+                  <span>Open Fertility Page</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Page 4: FAQ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -370,7 +401,7 @@ export const HomePage: React.FC = () => {
                     Frequently Asked Questions
                   </h3>
                   <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
-                    Answers on coat & skin specialists, therapeutic bath and blow out, product safety, ingredient screening, starting rates, and vaccinations.
+                    Answers on coat & skin care, therapeutic blow out, canine fertility timing, ultrasound scans, product safety, and vaccinations.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
@@ -380,7 +411,7 @@ export const HomePage: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Page 4: Terms & Policies */}
+            {/* Page 5: Terms & Policies */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -397,27 +428,26 @@ export const HomePage: React.FC = () => {
                     <FileText className="w-6 h-6" />
                   </div>
                   <h3 className="font-serif-title font-bold text-xl text-white group-hover:text-white transition-colors">
-                    Terms & Policies
+                    Policies & Terms
                   </h3>
                   <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
-                    Transparent guidelines regarding product safety review, 48-hour cancellation policy, starting rates, and 1-on-1 studio standards.
+                    Transparent guidelines regarding product safety review, sterile fertility protocols, 48-hour cancellations, and 1-on-1 studio standards.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
-                  <span>Open Terms Page</span>
+                  <span>Open Policies Page</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
             </motion.div>
 
-            {/* Page 5: Contact & Inquiries */}
+            {/* Page 6: Contact & Inquiries */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.2 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="sm:col-span-2 lg:col-span-2"
             >
               <Link
                 to="/contact"
@@ -431,7 +461,7 @@ export const HomePage: React.FC = () => {
                     Consultation & Inquiries
                   </h3>
                   <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
-                    Fill out our tailored spa inquiry form with breed, coat details, and temperament notes. View studio contact info, phone, and opening hours.
+                    Choose Dog Spa or Canine Fertility to submit tailored details, timing notes, and check studio hours & contact info.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
@@ -455,13 +485,13 @@ export const HomePage: React.FC = () => {
         >
           <div className="space-y-3 text-center md:text-left max-w-xl">
             <span className="text-xs font-bold uppercase tracking-wider text-white/90">
-              Dedicated Garden Studio • West Park, Leeds
+              Dedicated Garden Studio · West Park, Leeds
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif-title font-bold text-white">
-              Ready to book your dog's spa experience?
+              Ready to book your dog's spa or fertility appointment?
             </h2>
             <p className="text-[#13253b] font-medium text-xs sm:text-sm leading-relaxed">
-              Situated in a quiet West Park garden setting. We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All visits are scheduled by advance consultation to preserve our calm, tranquil environment.
+              Situated in a quiet West Park garden setting. We specialise in bathing, coat care, spa treatments and canine fertility diagnostics rather than clipping or breed styling. All visits are scheduled 1-on-1 by advance consultation.
             </p>
           </div>
 
