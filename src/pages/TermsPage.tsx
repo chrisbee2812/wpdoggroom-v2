@@ -33,7 +33,7 @@ export const TermsPage: React.FC = () => {
               Studio Policies & Terms
             </h1>
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
-              Our policies safeguard product suitability, coat care ethics, sterile canine fertility protocols, starting rates, and preserve our tranquil 1-on-1 garden studio sanctuary in West Park, Leeds.
+              Our policies safeguard product suitability, coat care ethics, sterile fertility & microchipping protocols, starting rates, and preserve our tranquil 1-on-1 garden studio sanctuary in West Park, Leeds.
             </p>
           </div>
 

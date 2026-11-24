@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans max-w-md">
-              A private, home-based dog spa and canine fertility studio situated within our dedicated garden studio in West Park, Leeds. Offering coat & skin spa treatments, therapeutic bath and blow out, alongside cytology, semen analysis, AI, and pregnancy ultrasound.
+              A private, home-based dog spa and canine fertility studio situated within our dedicated garden studio in West Park, Leeds. Offering coat & skin spa treatments, therapeutic bath and blow out, alongside cytology, semen analysis, AI, pregnancy ultrasound, and microchipping.
             </p>
 
             <div className="flex flex-wrap items-center gap-2.5 pt-2 text-[11px] text-stone-300">
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/fertility" className="hover:text-white transition-colors">
-                  Canine Fertility & Ultrasound
+                  Canine Fertility & Microchipping
                 </Link>
               </li>
               <li>
@@ -120,7 +120,7 @@ export const Footer: React.FC = () => {
 
             <div className="pt-2 text-[11px] text-[#13253b] bg-[#8096bb] p-3.5 rounded-xl border border-white/30 space-y-1 shadow-xs">
               <span className="text-white font-serif-title font-bold block">Good to Know:</span>
-              <p className="font-medium">We specialise in bathing, coat care, spa treatments and canine fertility diagnostics rather than clipping or breed styling. All appointments are 1-on-1 private sessions.</p>
+              <p className="font-medium">We specialise in bathing, coat care, spa treatments, canine fertility diagnostics, and Defra-compliant microchipping rather than clipping or breed styling. All appointments are 1-on-1 private sessions.</p>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
             </Link>
             <span>·</span>
             <Link to="/fertility" className="hover:text-stone-200">
-              Fertility
+              Fertility & Microchipping
             </Link>
             <span>·</span>
             <Link to="/terms" className="hover:text-stone-200">

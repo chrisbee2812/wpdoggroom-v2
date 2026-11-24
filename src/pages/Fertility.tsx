@@ -14,21 +14,23 @@ import {
   ArrowRight,
   ShieldCheck,
   Sparkles,
-  Check
+  Check,
+  Cpu
 } from 'lucide-react';
 
 export const FertilityPage: React.FC = () => {
   const navigate = useNavigate();
 
-  // Track selected option IDs (e.g., 'cytology-single', 'ai-two-session', 'ultrasound-initial')
+  // Track selected option IDs (e.g., 'cytology-single', 'ai-two-session', 'ultrasound-initial', 'microchip-single')
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({
     'vaginal-cytology': 'cytology-single',
     'semen-analysis': 'semen-standard',
     'artificial-insemination': 'ai-single',
-    'pregnancy-ultrasound': 'ultrasound-initial'
+    'pregnancy-ultrasound': 'ultrasound-initial',
+    'microchipping': 'microchip-single'
   });
 
-  // Track checked fertility treatments for multi-service inquiry
+  // Track checked treatments for multi-service inquiry
   const [selectedTreatmentIds, setSelectedTreatmentIds] = useState<string[]>([]);
 
   const getTreatmentIcon = (iconName: FertilityTreatment['iconName']) => {
@@ -41,6 +43,8 @@ export const FertilityPage: React.FC = () => {
         return <HeartPulse className="w-6 h-6 text-white" />;
       case 'ScanLine':
         return <ScanLine className="w-6 h-6 text-white" />;
+      case 'Cpu':
+        return <Cpu className="w-6 h-6 text-white" />;
     }
   };
 
@@ -102,7 +106,7 @@ export const FertilityPage: React.FC = () => {
       state: {
         prefilledServiceType: 'fertility',
         prefilledFertilityServices: [serviceLabel],
-        prefilledNotes: `Canine Fertility Inquiry:\n• Service: ${serviceLabel} (from £${price})\n• Duration: ${treatment.durationEstimate}\n\nPlease let me know your earliest studio availability.`
+        prefilledNotes: `Canine Fertility & Microchipping Inquiry:\n• Service: ${serviceLabel} (${treatment.priceNote})\n• Duration: ${treatment.durationEstimate}\n\nPlease let me know your earliest studio availability.`
       }
     });
   };
@@ -115,7 +119,7 @@ export const FertilityPage: React.FC = () => {
       state: {
         prefilledServiceType: 'fertility',
         prefilledFertilityServices: labels,
-        prefilledNotes: `Canine Fertility Inquiry:\n• Selected Services:\n${labels.map(l => `  - ${l}`).join('\n')}\n• Estimated Starting Total: £${total}\n\n*${FERTILITY_DISCLAIMER}`
+        prefilledNotes: `Canine Fertility & Microchipping Inquiry:\n• Selected Services:\n${labels.map(l => `  - ${l}`).join('\n')}\n• Estimated Starting Total: £${total}\n\n*${FERTILITY_DISCLAIMER}`
       }
     });
   };
@@ -131,7 +135,7 @@ export const FertilityPage: React.FC = () => {
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-[#13253b]" />
-          <span className="font-bold text-[#13253b]">Canine Fertility & Ultrasound</span>
+          <span className="font-bold text-[#13253b]">Fertility & Microchipping</span>
         </div>
 
         {/* Hero Banner Card */}
@@ -146,15 +150,15 @@ export const FertilityPage: React.FC = () => {
               <Microscope className="w-4 h-4 text-white shrink-0" />
               <span>West Park Dog Spa</span>
               <span aria-hidden="true">·</span>
-              <span>Private 1-on-1 Fertility Studio</span>
+              <span>Private 1-on-1 Fertility & Microchipping Studio</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-title font-bold text-white leading-tight">
-              Canine Fertility Treatments & Pregnancy Ultrasound
+              Canine Fertility, Ultrasound & Microchipping
             </h1>
 
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
-              Calm, hygienic reproductive diagnostics and assisted breeding support in our quiet, temperature-controlled garden studio in West Park, Leeds. From precision vaginal cytology and stud semen analysis to sterile artificial insemination and Day 25–30 pregnancy ultrasound scans.
+              Calm, hygienic reproductive diagnostics, assisted breeding support, and Defra-compliant microchipping in our quiet, temperature-controlled garden studio in West Park, Leeds. From precision vaginal cytology and stud semen analysis to sterile AI, Day 25–30 pregnancy ultrasound scans, and adult or puppy litter microchipping.
             </p>
           </div>
 
@@ -163,14 +167,14 @@ export const FertilityPage: React.FC = () => {
               to="/faq"
               className="px-5 py-2.5 rounded-full border border-white/60 text-white hover:bg-white/20 text-xs font-semibold transition-colors text-center whitespace-nowrap"
             >
-              Fertility FAQs
+              Fertility & Chip FAQs
             </Link>
             <Link
               to="/contact"
               state={{ prefilledServiceType: 'fertility' }}
               className="px-6 py-2.5 rounded-full bg-white hover:bg-[#efe0cd] text-[#13253b] text-xs font-bold transition-colors shadow-sm text-center whitespace-nowrap"
             >
-              Book Fertility Appointment
+              Book Appointment
             </Link>
           </div>
         </motion.div>
@@ -184,7 +188,7 @@ export const FertilityPage: React.FC = () => {
             <div>
               <h3 className="font-serif-title font-bold text-sm text-white">Sterile Single-Use Equipment</h3>
               <p className="text-xs text-[#13253b] font-medium mt-0.5 leading-relaxed">
-                Fresh sterile swabs, catheters, and collection cones for every dog with thorough studio sanitisation between visits.
+                Fresh sterile swabs, catheters, collection cones, and microchip implanters for every dog with thorough studio sanitisation between visits.
               </p>
             </div>
           </div>
@@ -194,9 +198,9 @@ export const FertilityPage: React.FC = () => {
               <Microscope className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="font-serif-title font-bold text-sm text-white">High-Definition Microscopy</h3>
+              <h3 className="font-serif-title font-bold text-sm text-white">Diagnostics & Defra Registration</h3>
               <p className="text-xs text-[#13253b] font-medium mt-0.5 leading-relaxed">
-                On-site Diff-Quik slide staining and warm-stage motility evaluation for immediate, clear breeder guidance.
+                On-site Diff-Quik cytology, warm-stage motility checks, ultrasound scanning, and official UK Defra-compliant microchip registration.
               </p>
             </div>
           </div>
@@ -208,7 +212,7 @@ export const FertilityPage: React.FC = () => {
             <div>
               <h3 className="font-serif-title font-bold text-sm text-white">Calm 1-on-1 Garden Studio</h3>
               <p className="text-xs text-[#13253b] font-medium mt-0.5 leading-relaxed">
-                No noisy waiting rooms or kennel stress—keeping both maiden bitches and stud dogs relaxed and comfortable.
+                No noisy waiting rooms or kennel stress—keeping maiden bitches, stud dogs, and young 8-week puppy litters relaxed and comfortable.
               </p>
             </div>
           </div>
@@ -219,10 +223,10 @@ export const FertilityPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-serif-title font-bold text-[#af8967]">
-            Canine Fertility Services & Pricing
+            Canine Fertility & Microchipping Services
           </h2>
           <p className="text-xs sm:text-sm text-[#2b2520] mt-1.5 font-medium">
-            Select a single service directly to inquire, or tick multiple treatments below to send a combined breeding plan inquiry.
+            Select a single service directly to inquire, or tick multiple treatments below to send a combined breeding, scan, or microchipping inquiry.
           </p>
         </div>
 
@@ -231,6 +235,8 @@ export const FertilityPage: React.FC = () => {
             const isSelected = selectedTreatmentIds.includes(treatment.id);
             const chosenOption = getChosenOption(treatment);
             const hasMultipleOptions = Boolean(treatment.options && treatment.options.length > 1);
+            const isOddLastCard =
+              idx === FERTILITY_TREATMENTS.length - 1 && FERTILITY_TREATMENTS.length % 2 === 1;
 
             return (
               <motion.article
@@ -240,6 +246,8 @@ export const FertilityPage: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 className={`bg-[#8096bb] rounded-3xl p-6 sm:p-8 pb-9 sm:pb-8 flex flex-col justify-between transition-all duration-200 border text-white ${
+                  isOddLastCard ? 'lg:col-span-2' : ''
+                } ${
                   isSelected
                     ? 'ring-4 ring-white border-white shadow-xl'
                     : 'border-white/40 shadow-sm hover:shadow-md'
@@ -385,7 +393,7 @@ export const FertilityPage: React.FC = () => {
           >
             <div className="space-y-1.5">
               <div className="text-xs font-bold uppercase tracking-wider text-[#af8967]">
-                Combined Fertility Inquiry ({selectedTreatmentIds.length} Selected)
+                Combined Fertility & Microchipping Inquiry ({selectedTreatmentIds.length} Selected)
               </div>
               <div className="text-base sm:text-lg font-serif-title font-bold text-white">
                 {buildServiceLabels(selectedTreatmentIds).join(' + ')}
@@ -419,18 +427,18 @@ export const FertilityPage: React.FC = () => {
         <div className="bg-[#8096bb] rounded-3xl p-6 sm:p-8 pb-10 sm:pb-8 border border-white/40 shadow-sm text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <h3 className="font-serif-title font-bold text-xl text-white">
-              Unsure which fertility timing or package fits your breeding plan?
+              Booking a breeding consultation, scan, or puppy litter microchipping?
             </h3>
             <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed">
-              {FERTILITY_DISCLAIMER} Tell us your bitch’s cycle day, mating dates, or stud dog details in our consultation form and we will schedule the ideal 1-on-1 slot.
+              {FERTILITY_DISCLAIMER} Tell us your bitch’s cycle day, mating dates, stud dog details, or how many puppies need microchipping in our consultation form and we will schedule the ideal 1-on-1 slot.
             </p>
           </div>
           <Link
             to="/contact"
             state={{ prefilledServiceType: 'fertility' }}
-            className="shrink-0 px-6 py-3 rounded-full bg-white hover:bg-[#efe0cd] text-[#13253b] text-xs font-bold transition-colors shadow-sm"
+            className="shrink-0 px-6 py-3 rounded-full bg-white hover:bg-[#efe0cd] text-[#13253b] text-xs font-bold transition-colors shadow-sm whitespace-nowrap"
           >
-            Submit Fertility Inquiry
+            Submit Fertility & Chip Inquiry
           </Link>
         </div>
       </div>

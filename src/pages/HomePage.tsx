@@ -44,12 +44,12 @@ export const HomePage: React.FC = () => {
 
               {/* Tagline */}
               <div className="text-lg sm:text-xl font-serif-title font-medium text-[#13253b]">
-                Specialist Bathing · Skin & Coat Care · Canine Fertility
+                Specialist Bathing · Skin & Coat Care · Fertility & Microchipping
               </div>
 
               {/* Subheading / Core Description */}
               <p className="text-base sm:text-lg text-[#2b2520] font-sans max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                A private, home-based studio situated within our dedicated garden suite in West Park, Leeds. We are coat & skin specialists offering professional bathing, therapeutic bath and blow out, and restorative spa treatments—alongside calm, 1-on-1 canine fertility diagnostics and pregnancy ultrasound.
+                A private, home-based studio situated within our dedicated garden suite in West Park, Leeds. We are coat & skin specialists offering professional bathing, therapeutic bath and blow out, and restorative spa treatments—alongside calm, 1-on-1 canine fertility diagnostics, pregnancy ultrasound, and microchipping.
               </p>
 
               {/* Key Service Highlights in #8096bb cards */}
@@ -64,7 +64,7 @@ export const HomePage: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#8096bb] text-white border border-white/30 shadow-2xs">
                   <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                  <span className="text-xs sm:text-sm font-medium">Canine Fertility & Scan</span>
+                  <span className="text-xs sm:text-sm font-medium">Fertility & Microchipping</span>
                 </div>
               </div>
 
@@ -83,7 +83,7 @@ export const HomePage: React.FC = () => {
                   className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-[#efe0cd]/50 text-[#13253b] border border-[#8096bb]/50 rounded-full font-semibold text-sm transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Microscope className="w-4 h-4 text-[#af8967]" />
-                  Canine Fertility Services
+                  Fertility & Microchipping
                 </Link>
               </div>
 
@@ -94,7 +94,7 @@ export const HomePage: React.FC = () => {
                     Good to know:
                   </span>
                   <p className="text-xs text-[#13253b] font-medium leading-relaxed">
-                    We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All spa and fertility appointments are 1-on-1 private sessions.
+                    We specialise in bathing, coat care and spa treatments rather than clipping or breed styling. All spa, fertility, ultrasound, and microchipping appointments are 1-on-1 private sessions.
                   </p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Floating Credential Chip */}
-                <div className="absolute -top-4 -left-4 bg-[#8096bb] px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-2.5 hidden sm:flex text-white">
+                <div className="absolute -top-4 -left-4 bg-[#8096bb] px-4 py-2.5 rounded-2xl shadow-lg border border-white/40 flex items-center gap-2.5 sm:flex text-white">
                   <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
@@ -351,7 +351,7 @@ export const HomePage: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Page 3: Canine Fertility & Ultrasound */}
+            {/* Page 3: Canine Fertility & Microchipping */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -368,14 +368,14 @@ export const HomePage: React.FC = () => {
                     <Microscope className="w-6 h-6" />
                   </div>
                   <h3 className="font-serif-title font-bold text-xl text-white group-hover:text-white transition-colors">
-                    Canine Fertility & Ultrasound
+                    Canine Fertility & Microchipping
                   </h3>
                   <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed pr-2 sm:pr-0">
-                    Vaginal cytology cycle staging, stud semen collection & microscopic analysis, artificial insemination (AI), and Day 25–30 pregnancy ultrasound scans.
+                    Vaginal cytology cycle staging, stud semen analysis, artificial insemination (AI), Day 25–30 pregnancy ultrasound scans, and £25 Defra-compliant microchipping.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 pb-1 pr-6 sm:pr-0 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
-                  <span>Open Fertility Page</span>
+                  <span>Open Fertility & Chip Page</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -401,7 +401,7 @@ export const HomePage: React.FC = () => {
                     Frequently Asked Questions
                   </h3>
                   <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
-                    Answers on coat & skin care, therapeutic blow out, canine fertility timing, ultrasound scans, product safety, and vaccinations.
+                    Answers on coat & skin care, therapeutic blow out, canine fertility timing, ultrasound scans, microchipping, product safety, and vaccinations.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
@@ -461,7 +461,7 @@ export const HomePage: React.FC = () => {
                     Consultation & Inquiries
                   </h3>
                   <p className="text-xs text-[#13253b] font-medium mt-2 leading-relaxed">
-                    Choose Dog Spa or Canine Fertility to submit tailored details, timing notes, and check studio hours & contact info.
+                    Choose Dog Spa or Fertility & Microchipping to submit tailored details, timing notes, and check studio hours & contact info.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/30 flex items-center justify-between text-xs font-bold text-white">
@@ -488,10 +488,10 @@ export const HomePage: React.FC = () => {
               Dedicated Garden Studio · West Park, Leeds
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif-title font-bold text-white">
-              Ready to book your dog's spa or fertility appointment?
+              Ready to book your dog's spa, fertility, or microchipping visit?
             </h2>
             <p className="text-[#13253b] font-medium text-xs sm:text-sm leading-relaxed">
-              Situated in a quiet West Park garden setting. We specialise in bathing, coat care, spa treatments and canine fertility diagnostics rather than clipping or breed styling. All visits are scheduled 1-on-1 by advance consultation.
+              Situated in a quiet West Park garden setting. We specialise in bathing, coat care, spa treatments, canine fertility diagnostics, and Defra-compliant microchipping rather than clipping or breed styling. All visits are scheduled 1-on-1 by advance consultation.
             </p>
           </div>
 

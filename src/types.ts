@@ -68,7 +68,7 @@ export interface FertilityTreatment {
   durationEstimate: string;
   description: string;
   includedInService: string[];
-  iconName: 'Microscope' | 'FlaskConical' | 'HeartPulse' | 'ScanLine';
+  iconName: 'Microscope' | 'FlaskConical' | 'HeartPulse' | 'ScanLine' | 'Cpu';
   options?: FertilityServiceOption[];
 }
 
@@ -108,9 +108,9 @@ export interface InquiryFormData {
   selectedSpaUpgrades?: string[];
   coatCondition: 'good' | 'heavy-shedding' | 'dry-skin' | 'sensitive' | 'unsure';
   temperament: string[];
-  // Fertility-specific fields
+  // Fertility & microchipping fields
   fertilityServices?: string[];
-  dogRole?: 'bitch' | 'stud' | 'pair';
+  dogRole?: 'bitch' | 'stud' | 'pair' | 'puppy-litter';
   breedingStage?: string;
   semenType?: 'fresh' | 'chilled' | 'na';
   preferredContact: 'phone' | 'email' | 'text';

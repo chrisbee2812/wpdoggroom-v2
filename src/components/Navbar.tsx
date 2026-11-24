@@ -37,12 +37,12 @@ export const Navbar: React.FC = () => {
   const primaryLinks = [
     { name: 'Home', path: '/' },
     { name: 'Spa & Pricing', path: '/pricing' },
-    { name: 'Canine Fertility', path: '/fertility' }
+    { name: 'Fertility & Microchipping', path: '/fertility' }
   ];
 
   const studioInfoLinks = [
     { name: 'Transformations Gallery', path: '/gallery', desc: 'Interactive before & after coat results' },
-    { name: 'Frequently Asked Questions', path: '/faq', desc: 'Spa, fertility & ultrasound guides' },
+    { name: 'Frequently Asked Questions', path: '/faq', desc: 'Spa, fertility, ultrasound & microchipping' },
     { name: 'Policies & Terms', path: '/terms', desc: 'Product safety, hygiene & booking terms' }
   ];
 
@@ -54,11 +54,11 @@ export const Navbar: React.FC = () => {
       <div className="bg-[#152438] text-stone-200 text-xs py-2 px-4 border-b border-[#243a57]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <div className="font-medium text-[11px] sm:text-xs text-stone-200 truncate">
-            West Park, Leeds · Dedicated Garden Studio · Dog Spa & Canine Fertility
+            West Park, Leeds · Dedicated Garden Studio · Dog Spa, Fertility & Microchipping
           </div>
 
           <div className="hidden sm:flex items-center gap-3 text-[11px] text-stone-300 shrink-0">
-            <span>Coat Care & Fertility Diagnostics</span>
+            <span>Coat Care, Fertility & Microchipping</span>
             <span aria-hidden="true">·</span>
             <a href="tel:01133208492" className="hover:text-white flex items-center gap-1 font-semibold text-[#efe0cd] whitespace-nowrap">
               <Phone className="w-3 h-3 text-[#af8967]" /> 0113 320 8492

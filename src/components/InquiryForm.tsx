@@ -77,7 +77,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
     'artificial-insemination': 'ai-single',
     'pregnancy-ultrasound': 'ultrasound-initial'
   });
-  const [dogRole, setDogRole] = useState<'bitch' | 'stud' | 'pair'>('bitch');
+  const [dogRole, setDogRole] = useState<'bitch' | 'stud' | 'pair' | 'puppy-litter'>('bitch');
   const [breedingStage, setBreedingStage] = useState<string>('Days 5–12 of Season (Cycle Staging)');
   const [semenType, setSemenType] = useState<'fresh' | 'chilled' | 'na'>('fresh');
 
@@ -148,7 +148,11 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
         setFertilitySubOptions(prev => ({ ...prev, ...nextSubOpts }));
 
         // Sensible defaults for role/stage based on prefilled services
-        if (matchedIds.length === 1 && matchedIds[0] === 'semen-analysis') {
+        if (matchedIds.length === 1 && matchedIds[0] === 'microchipping') {
+          setDogRole('puppy-litter');
+          setBreedingStage('Dog / Puppy Microchipping (6–8+ Weeks)');
+          setSemenType('na');
+        } else if (matchedIds.length === 1 && matchedIds[0] === 'semen-analysis') {
           setDogRole('stud');
           setBreedingStage('Routine Stud Health Check / Pre-Mating');
         } else if (matchedIds.includes('pregnancy-ultrasound')) {
@@ -264,7 +268,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
     if (!dogName.trim()) newErrors.dogName = 'Please enter your dog’s name.';
     if (!breed.trim()) newErrors.breed = 'Please tell us your dog’s breed or mix.';
     if (serviceType === 'fertility' && selectedFertilityIds.length === 0) {
-      newErrors.fertilityServices = 'Please select at least one fertility treatment.';
+      newErrors.fertilityServices = 'Please select at least one fertility or microchipping service.';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -306,7 +310,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
         breed,
         dogAge,
         weightCategory,
-        packageInterest: serviceType === 'spa' ? packageInterest : 'Canine Fertility Services',
+        packageInterest: serviceType === 'spa' ? packageInterest : 'Canine Fertility & Microchipping',
         includeDeepClean: serviceType === 'spa' && isBathAndBlowDry && includeDeepClean,
         selectedSpaUpgrades: serviceType === 'spa' ? finalRecordedUpgrades : [],
         coatCondition,
@@ -363,12 +367,12 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 West Park Dog Spa
               </h3>
               <p className="text-xs text-white/90 font-medium">
-                Specialist Bathing · Skin & Coat Care · Canine Fertility
+                Specialist Bathing · Skin & Coat Care · Fertility & Microchipping
               </p>
             </div>
 
             <p className="text-xs sm:text-sm text-[#13253b] font-medium leading-relaxed font-sans">
-              A private, home-based studio situated within our dedicated garden suite in West Park, Leeds. Offering specialist coat & skin spa treatments as well as 1-on-1 canine fertility diagnostics, AI, and ultrasound scanning.
+              A private, home-based studio situated within our dedicated garden suite in West Park, Leeds. Offering specialist coat & skin spa treatments alongside 1-on-1 canine fertility diagnostics, AI, ultrasound scanning, and Defra-compliant microchipping.
             </p>
 
             <div className="space-y-3 pt-2 border-t border-white/20 text-xs">
@@ -409,7 +413,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
           {/* Pricing & Transparency Card */}
           <div className="bg-[#8096bb] rounded-3xl p-6 border border-white/40 shadow-sm text-white space-y-3">
             <h4 className="font-serif-title font-bold text-lg text-white">
-              {serviceType === 'spa' ? 'Starting Price Policy' : 'Fertility Studio Standards'}
+              {serviceType === 'spa' ? 'Starting Price Policy' : 'Fertility & Microchipping Standards'}
             </h4>
             <p className="text-xs text-[#13253b] font-medium leading-relaxed">
               {serviceType === 'spa' ? PRICING_DISCLAIMER : FERTILITY_DISCLAIMER}
@@ -417,7 +421,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
             <p className="text-xs text-[#13253b] font-medium leading-relaxed">
               {serviceType === 'spa'
                 ? 'We specialise in bathing, coat care and spa treatments rather than clipping or breed styling.'
-                : 'All cytology swabs, AI catheters, and collection equipment are strictly sterile and single-use.'}
+                : 'All cytology swabs, AI catheters, collection cones, and microchip implanters are strictly sterile and single-use.'}
             </p>
           </div>
 
@@ -474,7 +478,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
               <div className="flex items-center justify-between">
                 <h4 className="font-serif-title font-bold text-lg text-white flex items-center gap-1.5">
                   <Microscope className="w-4 h-4 text-white" />
-                  Selected Fertility Services
+                  Selected Fertility & Microchip Services
                 </h4>
                 <span className="text-xs font-bold bg-white text-[#13253b] px-2.5 py-0.5 rounded-full">
                   Live Estimate
@@ -516,19 +520,19 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 </div>
                 <h3 className="font-serif-title text-2xl font-bold text-white">
                   {submittedData.serviceType === 'fertility'
-                    ? 'Fertility Inquiry Received!'
+                    ? 'Fertility & Microchipping Inquiry Received!'
                     : 'Spa Consultation Request Received!'}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#13253b] font-medium max-w-md mx-auto leading-relaxed">
                   Thank you, <strong className="text-white">{submittedData.ownerName}</strong>. We have logged your{' '}
-                  {submittedData.serviceType === 'fertility' ? 'fertility' : 'spa'} request for{' '}
+                  {submittedData.serviceType === 'fertility' ? 'fertility & microchipping' : 'spa'} request for{' '}
                   <strong className="text-white">{submittedData.dogName}</strong>. Reference:{' '}
                   <span className="font-mono font-bold text-white bg-white/20 px-2 py-0.5 rounded">{submittedData.id}</span>.
                 </p>
 
                 <div className="max-w-md mx-auto bg-white/20 rounded-2xl p-4 text-left text-xs space-y-2 border border-white/30 text-white">
                   <div className="font-bold border-b border-white/20 pb-1 text-white">
-                    Confirmed Selections ({submittedData.serviceType === 'fertility' ? 'Canine Fertility' : 'Dog Spa'}):
+                    Confirmed Selections ({submittedData.serviceType === 'fertility' ? 'Fertility & Microchipping' : 'Dog Spa'}):
                   </div>
 
                   {submittedData.serviceType === 'fertility' ? (
@@ -537,10 +541,10 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                         • Dog: {submittedData.dogName} ({submittedData.breed})
                       </div>
                       <div className="text-[#13253b] font-bold">
-                        • Role: {submittedData.dogRole === 'bitch' ? 'Bitch (Dam)' : submittedData.dogRole === 'stud' ? 'Stud Dog (Sire)' : 'Both (Pair)'}
+                        • Role: {submittedData.dogRole === 'bitch' ? 'Bitch (Dam)' : submittedData.dogRole === 'stud' ? 'Stud Dog (Sire)' : submittedData.dogRole === 'puppy-litter' ? 'Puppy / Litter / Adult' : 'Both (Pair)'}
                       </div>
                       <div className="text-[#13253b] font-bold">
-                        • Cycle / Stage: {submittedData.breedingStage}
+                        • Stage / Timing: {submittedData.breedingStage}
                       </div>
                       {submittedData.fertilityServices && submittedData.fertilityServices.length > 0 && (
                         <div className="space-y-1 pt-1 border-t border-white/20">
@@ -600,11 +604,11 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                     Consultation & Booking Inquiry
                   </h3>
                   <p className="text-xs sm:text-sm text-[#13253b] font-medium mt-1 font-sans">
-                    Select whether you are enquiring about <strong>Dog Spa & Coat Care</strong> or <strong>Canine Fertility & Ultrasound</strong> to reveal tailored options.
+                    Select whether you are enquiring about <strong>Dog Spa & Coat Care</strong> or <strong>Canine Fertility & Microchipping</strong> to reveal tailored options.
                   </p>
                 </div>
 
-                {/* 🌟 MAIN 2-WAY SERVICE CATEGORY SELECTOR (SPA vs FERTILITY) */}
+                {/* MAIN 2-WAY SERVICE CATEGORY SELECTOR (SPA vs FERTILITY & MICROCHIPPING) */}
                 <div className="space-y-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-white/90 block">
                     1. Choose Inquiry Department
@@ -657,10 +661,10 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="font-serif-title font-bold text-base leading-tight">
-                          Canine Fertility & Ultrasound
+                          Canine Fertility & Microchipping
                         </div>
                         <div className={`text-[11px] mt-0.5 leading-snug ${serviceType === 'fertility' ? 'text-[#13253b]/80 font-medium' : 'text-white/85'}`}>
-                          Cytology, semen analysis, AI & pregnancy scan
+                          Cytology, semen analysis, AI, ultrasound & microchipping
                         </div>
                       </div>
                       {serviceType === 'fertility' && (
@@ -848,19 +852,20 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-white mb-1.5">
-                          Dog's Role
+                          Dog / Puppy Role
                         </label>
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-2 gap-2">
                           {[
                             { id: 'bitch', label: 'Bitch (Dam)' },
                             { id: 'stud', label: 'Stud (Sire)' },
-                            { id: 'pair', label: 'Pair (Both)' }
+                            { id: 'pair', label: 'Pair (Both)' },
+                            { id: 'puppy-litter', label: 'Puppy / Litter / Adult' }
                           ].map(role => (
                             <button
                               key={role.id}
                               type="button"
-                              onClick={() => setDogRole(role.id as 'bitch' | 'stud' | 'pair')}
-                              className={`py-2.5 px-2 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
+                              onClick={() => setDogRole(role.id as 'bitch' | 'stud' | 'pair' | 'puppy-litter')}
+                              className={`py-2 px-2 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                                 dogRole === role.id
                                   ? 'bg-white text-[#13253b] border-white shadow-2xs ring-2 ring-white'
                                   : 'bg-white/20 text-white border-white/30 hover:bg-white/30'
@@ -1237,13 +1242,13 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 )}
 
                 {/* ========================================================== */}
-                {/* DEPARTMENT 2 SUB-OPTIONS: CANINE FERTILITY & ULTRASOUND     */}
+                {/* DEPARTMENT 2 SUB-OPTIONS: FERTILITY & MICROCHIPPING        */}
                 {/* ========================================================== */}
                 {serviceType === 'fertility' && (
                   <div className="space-y-4 pt-4 border-t border-white/20">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold uppercase tracking-wider text-white/90 block">
-                        4. Fertility Treatments & Cycle Timing
+                        4. Fertility, Ultrasound & Microchipping Services
                       </span>
                       {errors.fertilityServices && (
                         <span className="text-[11px] text-rose-200 font-semibold">
@@ -1254,7 +1259,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
 
                     <div className="space-y-2.5">
                       <label className="block text-xs font-bold text-white">
-                        Select Fertility Service(s) Required
+                        Select Service(s) Required
                       </label>
                       <div className="grid grid-cols-1 gap-2.5">
                         {FERTILITY_TREATMENTS.map(treatment => {
@@ -1335,10 +1340,10 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                       </div>
                     </div>
 
-                    {/* Cycle / Breeding Stage */}
+                    {/* Cycle / Service Timing Stage */}
                     <div>
                       <label className="block text-xs font-bold text-white mb-1">
-                        Cycle / Breeding Timing Stage
+                        Cycle / Service Timing Stage
                       </label>
                       <select
                         value={breedingStage}
@@ -1351,7 +1356,9 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                         <option value="Post-Mating Day 25–30+ (Pregnancy Scan)">Post-Mating Day 25–30+ (Pregnancy Ultrasound Scan)</option>
                         <option value="Follow-Up Ultrasound Re-Scan">Follow-Up Ultrasound Re-Scan</option>
                         <option value="Routine Stud Health Check / Pre-Mating">Routine Stud Health Check / Pre-Mating Semen Analysis</option>
-                        <option value="Unsure / Need Cycle Advice">Unsure / Would like guidance on timing</option>
+                        <option value="Dog / Puppy Microchipping (6–8+ Weeks)">Dog / Puppy Microchipping (6–8+ Weeks)</option>
+                        <option value="Whole Litter Microchipping (Breeder Booking)">Whole Litter Microchipping (Breeder Booking)</option>
+                        <option value="Unsure / Need Advice">Unsure / Would like guidance on timing</option>
                       </select>
                     </div>
                   </div>
@@ -1400,7 +1407,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                     </div>
                     <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#8096bb]/15 text-[#13253b]">
                       {serviceType === 'fertility'
-                        ? 'Canine Fertility'
+                        ? 'Fertility & Microchipping'
                         : `${DOG_SIZE_DEFINITIONS[weightCategory].label} (${weightCategory.toUpperCase()})`}
                     </span>
                   </div>
@@ -1473,7 +1480,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 <div>
                   <label className="block text-xs font-bold text-white mb-1">
                     {serviceType === 'fertility'
-                      ? 'Cycle Dates, Mating Details, or Additional Questions'
+                      ? 'Cycle Dates, Mating Details, Litter Size, or Questions'
                       : 'Additional Details, Sensitivities, or Questions'}
                   </label>
                   <textarea
@@ -1482,7 +1489,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                     onChange={e => setMessage(e.target.value)}
                     placeholder={
                       serviceType === 'fertility'
-                        ? 'Share season start date, mating date, chilled semen shipping details, or questions...'
+                        ? 'Share season start date, mating date, chilled semen details, or number of puppies for microchipping...'
                         : 'Share any sensitivities, coat history, or questions...'
                     }
                     className="w-full px-3.5 py-3 bg-white rounded-xl border border-white/40 text-sm text-[#13253b] placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-white font-medium min-h-30 resize-y leading-relaxed"
@@ -1500,7 +1507,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                       {isSubmitting
                         ? 'Submitting Inquiry...'
                         : serviceType === 'fertility'
-                        ? `Submit Fertility Inquiry (Est. £${fertilityEstimatedTotal})`
+                        ? `Submit Fertility & Chip Inquiry (Est. £${fertilityEstimatedTotal})`
                         : `Submit Spa Consultation Request (Est. £${spaEstimatedTotal})`}
                     </span>
                   </button>

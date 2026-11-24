@@ -48,7 +48,7 @@ export const ContactPage: React.FC = () => {
               Studio Inquiries & Consultation
             </h1>
             <p className="text-[#13253b] font-medium text-sm sm:text-base leading-relaxed font-sans">
-              Welcome to West Park Dog Spa in West Park, Leeds. Choose either <strong>Dog Spa & Coat Care</strong> or <strong>Canine Fertility & Ultrasound</strong> below to tailor your inquiry so we can schedule the ideal 1-on-1 studio session.
+              Welcome to West Park Dog Spa in West Park, Leeds. Choose either <strong>Dog Spa & Coat Care</strong> or <strong>Canine Fertility & Microchipping</strong> below to tailor your inquiry so we can schedule the ideal 1-on-1 studio session.
             </p>
           </div>
 

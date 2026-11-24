@@ -90,7 +90,7 @@ export const InquiryLogModal: React.FC<InquiryLogModalProps> = ({ isOpen, onClos
                       {inq.id}
                     </span>
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-white text-[#13253b] px-2 py-0.5 rounded">
-                      {inq.serviceType === 'fertility' ? 'Canine Fertility' : 'Dog Spa'}
+                      {inq.serviceType === 'fertility' ? 'Fertility & Microchipping' : 'Dog Spa'}
                     </span>
                   </div>
                   <span className="text-white/80 text-[11px] flex items-center gap-1">
@@ -110,7 +110,7 @@ export const InquiryLogModal: React.FC<InquiryLogModalProps> = ({ isOpen, onClos
 
                   <div>
                     <span className="text-white/70 block text-[10px] uppercase font-bold">
-                      {inq.serviceType === 'fertility' ? 'Dog & Fertility Services' : 'Pet & Package'}
+                      {inq.serviceType === 'fertility' ? 'Dog & Selected Services' : 'Pet & Package'}
                     </span>
                     <strong className="text-white text-sm">{inq.dogName} ({inq.breed})</strong>
                     {inq.serviceType === 'fertility' ? (
@@ -119,7 +119,7 @@ export const InquiryLogModal: React.FC<InquiryLogModalProps> = ({ isOpen, onClos
                           <div>{inq.fertilityServices.join(', ')}</div>
                         )}
                         {inq.dogRole && (
-                          <div>Role: {inq.dogRole === 'bitch' ? 'Bitch (Dam)' : inq.dogRole === 'stud' ? 'Stud Dog (Sire)' : 'Pair (Bitch & Stud)'}</div>
+                          <div>Role: {inq.dogRole === 'bitch' ? 'Bitch (Dam)' : inq.dogRole === 'stud' ? 'Stud Dog (Sire)' : inq.dogRole === 'puppy-litter' ? 'Puppy / Litter / Adult' : 'Pair (Bitch & Stud)'}</div>
                         )}
                         {inq.breedingStage && (
                           <div className="text-white/95 font-medium">Stage: {inq.breedingStage}</div>

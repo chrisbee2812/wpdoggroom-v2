@@ -125,8 +125,37 @@ export const FERTILITY_TREATMENTS: FertilityTreatment[] = [
         priceNote: '£25 re-scan'
       }
     ]
+  },
+  {
+    id: 'microchipping',
+    number: '05',
+    categoryLabel: 'Identification & Registration',
+    name: 'Canine Microchipping',
+    shortName: 'Dog & Puppy Microchipping (Defra-Compliant)',
+    tagline: 'Safe, gentle microchip implantation & official database registration',
+    priceNote: '£25 per dog or puppy',
+    basePrice: 25,
+    durationEstimate: 'Est. Duration: ~15 mins',
+    description:
+      'Quick, gentle ISO-standard microchip implantation for adult dogs and puppies from 6–8 weeks of age in our calm, private garden studio. Essential for UK legal compliance prior to rehoming, breeding, or general identification, with full Defra-compliant database registration included.',
+    includedInService: [
+      'Pre-implantation full body scan to verify no existing microchip is present',
+      'Gentle implantation using a sterile, single-use ISO-compliant implanter',
+      'Immediate post-implant scanner verification to confirm chip readability',
+      'Official registration on a UK Defra-compliant microchip database included',
+      'Whole-litter breeder appointments available (please note puppy count on inquiry)'
+    ],
+    iconName: 'Cpu',
+    options: [
+      {
+        id: 'microchip-single',
+        label: 'Single Dog / Puppy Microchip',
+        price: 25,
+        priceNote: '£25 per dog or puppy'
+      }
+    ]
   }
 ];
 
 export const FERTILITY_DISCLAIMER =
-  'All fertility sessions are carried out 1-on-1 in our hygienic, quiet garden studio using sterile single-use consumables. Prices are starting estimates and depend on individual breeding requirements or follow-up visits.';
+  'All fertility, ultrasound, and microchipping sessions are carried out 1-on-1 in our hygienic, quiet garden studio using sterile single-use consumables. Prices are starting estimates and depend on individual breeding requirements, litter size, or follow-up visits.';

@@ -16,7 +16,7 @@ export const FAQSection: React.FC = () => {
   const categories = [
     { id: 'all', label: 'All Questions' },
     { id: 'spa', label: 'Spa & Coat Care' },
-    { id: 'fertility', label: 'Canine Fertility & Ultrasound' },
+    { id: 'fertility', label: 'Fertility & Microchipping' },
     { id: 'general', label: 'Studio & Sizes' },
     { id: 'pricing', label: 'Starting Rates' },
     { id: 'health', label: 'Safety & Health' },
@@ -51,7 +51,7 @@ export const FAQSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#2b2520] font-sans leading-relaxed">
-            Everything you need to know about our garden studio in West Park, Leeds, coat & skin care, therapeutic bath and blow out, product safety, starting rates, and spa rituals.
+            Everything you need to know about our garden studio in West Park, Leeds—coat & skin care, therapeutic bath and blow out, fertility diagnostics, ultrasound, microchipping, and starting rates.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export const FAQSection: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search questions (e.g. coat care, therapeutic blow out, product safety)..."
+              placeholder="Search questions (e.g. coat care, ultrasound, microchipping)..."
               className="w-full pl-12 pr-4 py-3 bg-white rounded-2xl border border-white/40 text-sm text-[#13253b] placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#8096bb] shadow-xs"
             />
             {searchQuery && (

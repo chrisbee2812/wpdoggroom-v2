@@ -5,7 +5,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-specialty',
     category: 'spa',
     question: 'What do you specialise in at West Park Dog Spa?',
-    answer: 'West Park Dog Spa is a private, home-based studio situated within our dedicated garden suite in West Park, Leeds. On the spa side, we are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products rather than clipping or breed styling. We also offer specialist canine fertility diagnostics, AI, and pregnancy ultrasound.'
+    answer: 'West Park Dog Spa is a private, home-based studio situated within our dedicated garden suite in West Park, Leeds. On the spa side, we are coat & skin specialists focusing on professional bathing, therapeutic bath and blow out, alongside luxury spa treatments using carefully selected professional products rather than clipping or breed styling. We also offer specialist canine fertility diagnostics, AI, pregnancy ultrasound, and Defra-compliant microchipping.'
   },
   {
     id: 'faq-imported-products',
@@ -44,6 +44,18 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: 'We recommend booking your initial Canine Pregnancy Ultrasound (from £35, or £25 for a follow-up re-scan) from Day 25 to Day 30 post-mating. At this stage we can reliably confirm gestation sacs, observe visible fetal heartbeats, check gestational development, and give an estimated puppy count. Most coats do not require harsh shaving, and we send digital ultrasound images and video clips straight to your phone.'
   },
   {
+    id: 'faq-microchipping-law',
+    category: 'fertility',
+    question: 'What does Canine Microchipping include and when do puppies legally need to be chipped?',
+    answer: 'Our Canine Microchipping service is £25 per dog or puppy and takes around 15 minutes in our calm 1-on-1 studio. Under UK law, all puppies must be microchipped and first registered to the breeder on a Defra-compliant database before reaching 8 weeks of age and prior to leaving for their new homes. Every appointment includes a pre-scan check for any existing chip, gentle implantation with a sterile single-use ISO-compliant implanter, post-implant scanner verification, and official Defra-compliant database registration.'
+  },
+  {
+    id: 'faq-microchipping-comfort',
+    category: 'fertility',
+    question: 'Is microchipping safe for young puppies or nervous dogs, and can I book a whole litter?',
+    answer: 'Yes. Because our garden studio is completely private, quiet, and cage-free, young puppies and sensitive dogs remain relaxed with zero noisy waiting rooms. Implantation takes just a few seconds and feels similar to a routine vaccination pinch. Breeders are welcome to book whole-litter microchipping slots—simply select Canine Fertility & Microchipping on our Contact page and let us know how many puppies are in the litter.'
+  },
+  {
     id: 'faq-pricing-variation',
     category: 'pricing',
     question: 'Why are prices listed as starting prices?',
@@ -71,7 +83,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: 'faq-garden-studio',
     category: 'general',
     question: 'What is the garden studio environment like?',
-    answer: 'Our private garden studio in West Park, Leeds is peaceful, cage-free, and designed for genuine 1-on-1 tranquility. With no other dogs barking or competing for attention, your pet enjoys a calm, relaxing experience—whether visiting for coat care or fertility appointments.'
+    answer: 'Our private garden studio in West Park, Leeds is peaceful, cage-free, and designed for genuine 1-on-1 tranquility. With no other dogs barking or competing for attention, your pet enjoys a calm, relaxing experience—whether visiting for coat care, fertility appointments, or microchipping.'
   },
   {
     id: 'faq-puppy',
@@ -82,14 +94,14 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-booking',
     category: 'booking',
-    question: 'How do I book a spa or fertility appointment?',
-    answer: 'We operate on a consultation & inquiry basis rather than an automated booking engine. Simply use our Contact & Inquiry page, select either Dog Spa or Canine Fertility, and choose your required treatments. This ensures we reserve the dedicated 1-on-1 time window—including flexible scheduling around heat cycles and mating windows.'
+    question: 'How do I book a spa, fertility, or microchipping appointment?',
+    answer: 'We operate on a consultation & inquiry basis rather than an automated booking engine. Simply use our Contact & Inquiry page, select either Dog Spa & Coat Care or Canine Fertility & Microchipping, and choose your required treatments. This ensures we reserve the dedicated 1-on-1 time window—including flexible scheduling around heat cycles, mating windows, and 8-week puppy litters.'
   },
   {
     id: 'faq-duration',
     category: 'general',
     question: 'How long does a studio session take?',
-    answer: 'Spa visits typically take between 45 minutes to 2 hours depending on size, coat condition, and selected rituals. Fertility visits range from 15–20 minutes for vaginal cytology or 20–30 minutes for pregnancy ultrasound, up to 30–45 minutes for semen analysis or artificial insemination. Because we work strictly 1-on-1, there is never any cage waiting time.'
+    answer: 'Spa visits typically take between 45 minutes to 2 hours depending on size, coat condition, and selected rituals. Fertility and microchipping visits range from around 15 minutes for single microchipping, 15–20 minutes for vaginal cytology, or 20–30 minutes for pregnancy ultrasound, up to 30–45 minutes for semen analysis or artificial insemination. Because we work strictly 1-on-1, there is never any cage waiting time.'
   },
   {
     id: 'faq-dog-sizes',

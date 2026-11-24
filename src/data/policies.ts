@@ -63,13 +63,13 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
   },
   {
     id: 'fertility-standards',
-    title: 'Canine Fertility, Cytology, AI & Ultrasound Standards',
-    shortSummary: 'Hygiene, single-use sterile equipment, scan estimates, and breeding support guidelines.',
+    title: 'Canine Fertility, Ultrasound & Microchipping Standards',
+    shortSummary: 'Hygiene, single-use sterile equipment, scan estimates, and UK Defra-compliant microchipping.',
     iconName: 'Microscope',
     rules: [
       {
         heading: 'Sterile Single-Use Consumables & Biosecurity',
-        text: 'All vaginal cytology swabs, AI catheters, collection cones, and sample handling consumables are strictly sterile and single-use. Our studio surfaces and microscopy equipment are thoroughly hospital-grade sanitised between every 1-on-1 appointment.'
+        text: 'All vaginal cytology swabs, AI catheters, collection cones, sample handling consumables, and ISO-compliant microchip implanters are strictly sterile and single-use. Our studio surfaces and microscopy equipment are thoroughly hospital-grade sanitised between every 1-on-1 appointment.'
       },
       {
         heading: 'Non-Veterinary Diagnostic Support & Referrals',
@@ -78,6 +78,10 @@ export const TERMS_AND_CONDITIONS: PolicySection[] = [
       {
         heading: 'Pregnancy Ultrasound & Estimated Litter Counts',
         text: 'Abdominal ultrasound scans (recommended from Day 25–30 post-mating) confirm gestation sacs and visible fetal heartbeats. While we provide an estimated puppy count, ultrasound litter counts remain indicative estimates only, as littermates can sit behind ribs or overlap during late-stage gestation.'
+      },
+      {
+        heading: 'Defra-Compliant Microchipping & Breeder Registration',
+        text: 'Prior to implantation, we always scan the dog or puppy to confirm no existing microchip is present. Under UK law, puppies must be microchipped and first registered to the breeder on a Defra-compliant database by 8 weeks of age before transfer to new owners. Every £25 microchipping appointment includes post-implant scan verification and database registration.'
       },
       {
         heading: 'Flexible Heat-Cycle Scheduling',
